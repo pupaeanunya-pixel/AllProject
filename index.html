@@ -945,7 +945,7 @@ function findRowIndex(sheet, id, rowIndex){
                 <label style="font-size:12.5px;font-weight:700;color:var(--ink);display:block;margin-bottom:5px">
                   1. Google Apps Script Web App URL <span style="color:#059669;font-weight:normal">(แนะนำ — สำหรับ เพิ่ม, ลบ, แก้ไข, ซิงก์ ครบวงจร)</span>
                 </label>
-                <input type="url" id="gsheetApiUrl" class="input-text" placeholder="https://script.google.com/macros/s/AKfycb.../exec" autocomplete="off">
+                <input type="url" id="gsheetApiUrl" class="input-text" value="https://script.google.com/macros/s/AKfycbzLzWGJI5Epv92hYM2mG-yHRFMJ9E8YPGA_DmAn1tRfGLBw27O0SFl-DWX6Qjk7uvSa/exec" placeholder="https://script.google.com/macros/s/AKfycb.../exec" autocomplete="off">
               </div>
 
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
@@ -2491,6 +2491,8 @@ const LS={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},
 /* ============================================================
    GOOGLE SHEETS SYNC
    ============================================================ */
+const DEFAULT_GSHEET_API_URL = 'https://script.google.com/macros/s/AKfycbzLzWGJI5Epv92hYM2mG-yHRFMJ9E8YPGA_DmAn1tRfGLBw27O0SFl-DWX6Qjk7uvSa/exec';
+
 function extractGSheetId(input){
   if(!input) return null;
   input = String(input).trim();
@@ -2534,7 +2536,7 @@ function setSyncSpinning(on){
 }
 
 function updateGSheetUI(){
-  const apiUrl = LS.get('pt_gsheet_api_url') || '';
+  const apiUrl = LS.get('pt_gsheet_api_url') || DEFAULT_GSHEET_API_URL;
   const url = LS.get('pt_gsheet_url') || '';
   const tab = LS.get('pt_gsheet_tab') || '';
   const auto = LS.get('pt_gsheet_auto') !== '0';
@@ -2575,7 +2577,7 @@ function updateGSheetUI(){
 }
 
 async function syncGoogleSheet(silent = false){
-  const apiUrl = ($('#gsheetApiUrl')?.value || LS.get('pt_gsheet_api_url') || '').trim();
+  const apiUrl = ($('#gsheetApiUrl')?.value || LS.get('pt_gsheet_api_url') || DEFAULT_GSHEET_API_URL).trim();
   const urlInput = ($('#gsheetUrl')?.value || LS.get('pt_gsheet_url') || '').trim();
   const tabName = ($('#gsheetTab')?.value || LS.get('pt_gsheet_tab') || '').trim();
 
@@ -2968,7 +2970,7 @@ const GSheetDB = {
   storageKey: 'pt_gsheet_cache',
 
   getApiUrl(){
-    return ($('#gsheetApiUrl')?.value || LS.get('pt_gsheet_api_url') || '').trim();
+    return ($('#gsheetApiUrl')?.value || LS.get('pt_gsheet_api_url') || DEFAULT_GSHEET_API_URL).trim();
   },
 
   getTabName(){
@@ -2980,7 +2982,10 @@ const GSheetDB = {
   },
 
   init(){
-    const apiUrl = LS.get('pt_gsheet_api_url') || '';
+    const apiUrl = LS.get('pt_gsheet_api_url') || DEFAULT_GSHEET_API_URL;
+    if(!LS.get('pt_gsheet_api_url') && DEFAULT_GSHEET_API_URL){
+      LS.set('pt_gsheet_api_url', DEFAULT_GSHEET_API_URL);
+    }
     if($('#gsheetApiUrl') && apiUrl) $('#gsheetApiUrl').value = apiUrl;
     const url = LS.get('pt_gsheet_url') || '';
     if($('#gsheetUrl') && url) $('#gsheetUrl').value = url;
@@ -3153,7 +3158,7 @@ const GSheetDB = {
   },
 
   async setupSheet(){
-    const apiUrl = ($('#gsheetApiUrl')?.value || LS.get('pt_gsheet_api_url') || '').trim();
+    const apiUrl = ($('#gsheetApiUrl')?.value || LS.get('pt_gsheet_api_url') || DEFAULT_GSHEET_API_URL).trim();
     const tabName = ($('#gsheetTab')?.value || LS.get('pt_gsheet_tab') || '').trim();
     if(apiUrl) LS.set('pt_gsheet_api_url', apiUrl);
     if(tabName) LS.set('pt_gsheet_tab', tabName);
@@ -3392,8 +3397,8 @@ function boot(){
   updateGSheetUI();
 
   // หากตั้งค่า Google Sheets ไว้ และเปิด Auto-sync ให้ซิงก์ดึงข้อมูลสดในเบื้องหลัง
-  if((LS.get('pt_gsheet_api_url') || LS.get('pt_gsheet_url')) && LS.get('pt_gsheet_auto') !== '0'){
-    setTimeout(()=>syncGoogleSheet(true), 650);
+  if((LS.get('pt_gsheet_api_url') || DEFAULT_GSHEET_API_URL || LS.get('pt_gsheet_url')) && LS.get('pt_gsheet_auto') !== '0'){
+    setTimeout(()=>syncGoogleSheet(true), 300);
   }
 
   let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(render,260)});
