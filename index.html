@@ -283,6 +283,11 @@ tbody tr.clickable{cursor:pointer}
 .pill{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11.5px;
   font-weight:600;white-space:nowrap;border:1px solid transparent}
 .pill i{width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.wt-sel{padding:4px 10px;border-radius:20px;font-size:11.5px;font-weight:600;border:1px solid var(--line);
+  background:var(--surface-2);color:var(--ink-2);cursor:pointer;transition:var(--t);min-width:96px;outline:none}
+.wt-sel:hover,.wt-sel:focus{border-color:var(--blue-400)}
+.wt-sel[data-v="scada"]{color:#0284C7;background:rgba(56,189,248,.14);border-color:rgba(56,189,248,.35)}
+.wt-sel[data-v="non scada"]{color:#7C3AED;background:rgba(168,85,247,.14);border-color:rgba(168,85,247,.35)}
 .mini{height:6px;border-radius:20px;background:var(--surface-3);overflow:hidden;min-width:56px}
 .mini i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,var(--blue-500),var(--acc-500))}
 .pager{display:flex;align-items:center;gap:8px;justify-content:space-between;margin-top:13px;flex-wrap:wrap}
@@ -567,6 +572,7 @@ textarea.input-text{font-family:inherit;resize:vertical}
           <svg><use href="#i-search"/></svg>
           <input type="search" id="q" placeholder="ค้นหาชื่อโครงการ / หน่วยงาน…" autocomplete="off">
         </div>
+        <div class="ms" id="ms-workType"></div>
         <div class="ms" id="ms-unit"></div>
         <div class="ms" id="ms-year"></div>
         <div class="ms" id="ms-source"></div>
@@ -759,7 +765,7 @@ textarea.input-text{font-family:inherit;resize:vertical}
  * PP.Track Dashboard — Google Apps Script Backend (Code.gs)
  */
 const DEFAULT_SHEET_NAME = 'โครงการ';
-const HEADERS = ['No','Project Name','Area','ผู้รับผิดชอบ','ปีงบประมาณ','งบประมาณที่ได้รับ','งบประมาณที่ใช้ไป','งบคงเหลือ','Type','Status','% ความสำเร็จ','การดำเนินงานปัจจุบัน','Priority','วันที่เริ่มต้น','วันที่ติดตามความคืบหน้า','วันที่สิ้นสุด','หมายเหตุ/ปัญหา','ID'];
+const HEADERS = ['No','Project Name','Area','ผู้รับผิดชอบ','ปีงบประมาณ','งบประมาณที่ได้รับ','งบประมาณที่ใช้ไป','งบคงเหลือ','Type','Status','% ความสำเร็จ','การดำเนินงานปัจจุบัน','Priority','วันที่เริ่มต้น','วันที่ติดตามความคืบหน้า','วันที่สิ้นสุด','หมายเหตุ/ปัญหา','ID','ประเภทงาน'];
 
 function onOpen(){
   try {
@@ -809,8 +815,9 @@ function ensureHeaders(sheet, forceFormat){
     sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold').setBackground('#4338CA').setFontColor('#FFFFFF').setHorizontalAlignment('center').setVerticalAlignment('middle');
     sheet.setRowHeight(1, 36);
     sheet.setFrozenRows(1);
-    const widths = [60, 260, 130, 160, 100, 140, 140, 140, 130, 160, 110, 220, 90, 120, 150, 120, 200, 140];
+    const widths = [60, 260, 130, 160, 100, 140, 140, 140, 130, 160, 110, 220, 90, 120, 150, 120, 200, 140, 130];
     widths.forEach((w, idx) => { try { sheet.setColumnWidth(idx + 1, w); } catch(e){} });
+    try { const rule = SpreadsheetApp.newDataValidation().requireValueInList(['scada', 'non scada'], true).setAllowInvalid(true).build(); sheet.getRange(2, 19, 500, 1).setDataValidation(rule); } catch(e){}
   }
 }
 
@@ -863,7 +870,7 @@ function doPost(e){
       const remain = (item.remain !== '' && item.remain != null) ? Number(item.remain) : (budget - used);
       const prog = Number(item.prog) || 0;
       const newId = 'gs_' + new Date().getTime() + '_' + Math.floor(Math.random()*1000);
-      const row = [item.seq || sheet.getLastRow(), item.project||'', item.area||'', item.unit||'', item.year||'', budget, used, remain, item.source||'', item.status||'อยู่ระหว่างดำเนินการ', prog, item.detail||'', item.priority||'', item.start||'', item.follow||'', item.end||'', item.problem||'', newId];
+      const row = [item.seq || sheet.getLastRow(), item.project||'', item.area||'', item.unit||'', item.year||'', budget, used, remain, item.source||'', item.status||'อยู่ระหว่างดำเนินการ', prog, item.detail||'', item.priority||'', item.start||'', item.follow||'', item.end||'', item.problem||'', newId, item.workType||''];
       sheet.appendRow(row);
       return jsonResponse({ status: 'success', action: 'create', record: { ...item, seq: row[0], id: newId, _rowIndex: sheet.getLastRow() } });
     }
@@ -876,7 +883,7 @@ function doPost(e){
       const prog = item.prog != null && item.prog !== '' ? Number(item.prog) : null;
       const ex = sheet.getRange(targetRow, 1, 1, HEADERS.length).getValues()[0];
       const rowId = payload.id || ex[17] || ('gs_' + targetRow);
-      const row = [item.seq || ex[0] || (targetRow - 1), item.project != null ? item.project : ex[1], item.area != null ? item.area : ex[2], item.unit != null ? item.unit : ex[3], item.year != null ? item.year : ex[4], budget, used, remain, item.source != null ? item.source : ex[8], item.status != null ? item.status : ex[9], prog != null ? prog : (Number(ex[10]) || 0), item.detail != null ? item.detail : ex[11], item.priority != null ? item.priority : ex[12], item.start != null ? item.start : ex[13], item.follow != null ? item.follow : ex[14], item.end != null ? item.end : ex[15], item.problem != null ? item.problem : ex[16], rowId];
+      const row = [item.seq || ex[0] || (targetRow - 1), item.project != null ? item.project : ex[1], item.area != null ? item.area : ex[2], item.unit != null ? item.unit : ex[3], item.year != null ? item.year : ex[4], budget, used, remain, item.source != null ? item.source : ex[8], item.status != null ? item.status : ex[9], prog != null ? prog : (Number(ex[10]) || 0), item.detail != null ? item.detail : ex[11], item.priority != null ? item.priority : ex[12], item.start != null ? item.start : ex[13], item.follow != null ? item.follow : ex[14], item.end != null ? item.end : ex[15], item.problem != null ? item.problem : ex[16], rowId, item.workType != null ? item.workType : (ex[18] || '')];
       sheet.getRange(targetRow, 1, 1, HEADERS.length).setValues([row]);
       return jsonResponse({ status: 'success', action: 'update', record: { ...item, id: rowId, _rowIndex: targetRow } });
     }
@@ -896,9 +903,9 @@ function doPost(e){
         const p = Number(r.prog != null ? r.prog : (Array.isArray(r)?r[10]:0)) || 0;
         const newId = 'gs_' + new Date().getTime() + '_' + i;
         if(Array.isArray(r)){
-          toAppend.push([r[0]||(startSeq+i), r[1]||'', r[2]||'', r[3]||'', r[4]||'', b, u, b-u, r[8]||'', r[9]||'', p, r[11]||'', r[12]||'', r[13]||'', r[14]||'', r[15]||'', r[16]||'', newId]);
+          toAppend.push([r[0]||(startSeq+i), r[1]||'', r[2]||'', r[3]||'', r[4]||'', b, u, b-u, r[8]||'', r[9]||'', p, r[11]||'', r[12]||'', r[13]||'', r[14]||'', r[15]||'', r[16]||'', newId, r[18]||r[17]||'']);
         } else {
-          toAppend.push([r.seq||(startSeq+i), r.project||'', r.area||'', r.unit||'', r.year||'', b, u, b-u, r.source||'', r.status||'อยู่ระหว่างดำเนินการ', p, r.detail||'', r.priority||'', r.start||'', r.follow||'', r.end||'', r.problem||'', newId]);
+          toAppend.push([r.seq||(startSeq+i), r.project||'', r.area||'', r.unit||'', r.year||'', b, u, b-u, r.source||'', r.status||'อยู่ระหว่างดำเนินการ', p, r.detail||'', r.priority||'', r.start||'', r.follow||'', r.end||'', r.problem||'', newId, r.workType||'']);
         }
       }
       if(toAppend.length) sheet.getRange(sheet.getLastRow()+1, 1, toAppend.length, HEADERS.length).setValues(toAppend);
@@ -920,9 +927,9 @@ function getAllRecords(sheet){
     const r = raw[i];
     if(!r.some(v=>v!==''&&v!==null)) continue;
     const fmt = v => (v instanceof Date) ? `${v.getFullYear()}-${String(v.getMonth()+1).padStart(2,'0')}-${String(v.getDate()).padStart(2,'0')}` : (v?v.toString():'');
-    const row = [r[0]||(i+1), r[1]?r[1].toString():'', r[2]?r[2].toString():'', r[3]?r[3].toString():'', r[4]?r[4].toString():'', Number(r[5])||0, Number(r[6])||0, Number(r[7])||((Number(r[5])||0)-(Number(r[6])||0)), r[8]?r[8].toString():'', r[9]?r[9].toString():'', Number(r[10])||0, r[11]?r[11].toString():'', r[12]?r[12].toString():'', fmt(r[13]), fmt(r[14]), fmt(r[15]), r[16]?r[16].toString():'', r[17]?r[17].toString():('gs_'+(i+2))];
+    const row = [r[0]||(i+1), r[1]?r[1].toString():'', r[2]?r[2].toString():'', r[3]?r[3].toString():'', r[4]?r[4].toString():'', Number(r[5])||0, Number(r[6])||0, Number(r[7])||((Number(r[5])||0)-(Number(r[6])||0)), r[8]?r[8].toString():'', r[9]?r[9].toString():'', Number(r[10])||0, r[11]?r[11].toString():'', r[12]?r[12].toString():'', fmt(r[13]), fmt(r[14]), fmt(r[15]), r[16]?r[16].toString():'', r[17]?r[17].toString():('gs_'+(i+2)), r[18]?r[18].toString():''];
     rows.push(row);
-    records.push({ seq:row[0], project:row[1], area:row[2], unit:row[3], year:row[4], budget:row[5], used:row[6], remain:row[7], source:row[8], status:row[9], prog:row[10], detail:row[11], priority:row[12], start:row[13], follow:row[14], end:row[15], problem:row[16], id:row[17], _rowIndex:i+2 });
+    records.push({ seq:row[0], project:row[1], area:row[2], unit:row[3], year:row[4], budget:row[5], used:row[6], remain:row[7], source:row[8], status:row[9], prog:row[10], detail:row[11], priority:row[12], start:row[13], follow:row[14], end:row[15], problem:row[16], id:row[17], workType:row[18], _rowIndex:i+2 });
   }
   return { rows, records };
 }
@@ -1008,7 +1015,7 @@ function findRowIndex(sheet, id, rowIndex){
               <button class="btn btn-ghost btn-sm" id="btnClear"><svg><use href="#i-reset"/></svg>ล้างข้อมูลทั้งหมด</button>
             </div>
             <div style="height:14px"></div>
-            <div class="note warn"><b>ข้อแนะนำการจัดไฟล์:</b> ให้แถวแรกของชีทเป็นชื่อหัวคอลัมน์ และแถวถัดไปเป็นข้อมูล ชื่อคอลัมน์ที่ระบบรู้จักอัตโนมัติ ได้แก่ No · Project Name · Area · ผู้รับผิดชอบ · ปีงบประมาณ · งบประมาณที่ได้รับ · งบประมาณที่ใช้ไป · งบคงเหลือ · Type · Status · การดำเนินงานปัจจุบัน · Priority · วันที่เริ่มต้น · วันที่ติดตามความคืบหน้า · วันที่สิ้นสุด · หมายเหตุ/ปัญหา</div>
+            <div class="note warn"><b>ข้อแนะนำการจัดไฟล์:</b> ให้แถวแรกของชีทเป็นชื่อหัวคอลัมน์ และแถวถัดไปเป็นข้อมูล ชื่อคอลัมน์ที่ระบบรู้จักอัตโนมัติ ได้แก่ No · Project Name · Area · ผู้รับผิดชอบ · ปีงบประมาณ · งบประมาณที่ได้รับ · งบประมาณที่ใช้ไป · งบคงเหลือ · Type · ประเภทงาน · Status · การดำเนินงานปัจจุบัน · Priority · วันที่เริ่มต้น · วันที่ติดตามความคืบหน้า · วันที่สิ้นสุด · หมายเหตุ/ปัญหา</div>
           </div>
           <div class="card c5">
             <div class="card-h"><div><h3>ข้อมูลชุดปัจจุบัน</h3><p>สรุปไฟล์ที่กำลังใช้แสดงผล</p></div></div>
@@ -1047,7 +1054,7 @@ function findRowIndex(sheet, id, rowIndex){
             <div class="wc-step"><b>3</b><div><h5>ใช้งาน</h5><p>กรองข้อมูล ดูกราฟ และส่งออกรายงานได้ทันที</p></div></div>
           </div>
           <div class="wc-note">คอลัมน์ที่ระบบรู้จักอัตโนมัติ: No · Project Name · Area · ผู้รับผิดชอบ · ปีงบประมาณ ·
-            งบประมาณที่ได้รับ · งบประมาณที่ใช้ไป · งบคงเหลือ · Type · Status · การดำเนินงานปัจจุบัน · Priority · วันที่เริ่มต้น · วันที่ติดตามความคืบหน้า · วันที่สิ้นสุด · หมายเหตุ/ปัญหา</div>
+            งบประมาณที่ได้รับ · งบประมาณที่ใช้ไป · งบคงเหลือ · Type · ประเภทงาน · Status · การดำเนินงานปัจจุบัน · Priority · วันที่เริ่มต้น · วันที่ติดตามความคืบหน้า · วันที่สิ้นสุด · หมายเหตุ/ปัญหา</div>
         </div>
       </div>
 
@@ -1134,7 +1141,7 @@ function findRowIndex(sheet, id, rowIndex){
             <input type="text" id="fProject" class="input-text" placeholder="ระบุชื่อโครงการ..." required autocomplete="off">
           </div>
 
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
             <div>
               <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Area</label>
               <input type="text" id="fArea" class="input-text" list="dlAreas" placeholder="ระบุพื้นที่ (Area)" autocomplete="off">
@@ -1149,13 +1156,20 @@ function findRowIndex(sheet, id, rowIndex){
               <input type="text" id="fYear" class="input-text" list="dlYears" placeholder="เช่น 2568, 2569" autocomplete="off">
               <datalist id="dlYears"></datalist>
             </div>
-          </div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
             <div>
               <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Type</label>
               <input type="text" id="fSource" class="input-text" list="dlSources" placeholder="ระบุประเภท / แหล่งเงิน" autocomplete="off">
               <datalist id="dlSources"></datalist>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">ประเภทงาน</label>
+              <select id="fWorkType" class="input-text" style="height:44px">
+                <option value="scada">scada</option>
+                <option value="non scada">non scada</option>
+              </select>
             </div>
             <div>
               <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Status</label>
@@ -1344,7 +1358,8 @@ const FIELDS=[
   ['start','วันที่เริ่มต้น'],
   ['follow','วันที่ติดตามความคืบหน้า'],
   ['end','วันที่สิ้นสุด'],
-  ['problem','หมายเหตุ/ปัญหา']
+  ['problem','หมายเหตุ/ปัญหา'],
+  ['workType','ประเภทงาน']
 ];
 const ALIAS={
   seq:['no','ลำดับที่','ลำดับ','ที่','ลําดับที่'],
@@ -1363,7 +1378,8 @@ const ALIAS={
   start:['วันที่เริ่มต้น','วันเริ่ม','เริ่มต้น','วันที่เริ่ม','start','เริ่มสัญญา','วันเริ่มสัญญา'],
   follow:['วันที่ติดตามความคืบหน้า','วันติดตาม','วันที่ติดตาม','ติดตามความคืบหน้า','followup'],
   end:['วันที่สิ้นสุด','วันสิ้นสุด','สิ้นสุด','แล้วเสร็จ','end','สิ้นสุดสัญญา','วันสิ้นสุดสัญญา'],
-  problem:['หมายเหตุ/ปัญหา','ปัญหา/อุปสรรค/แนวทางการแก้ไข','ปัญหา','อุปสรรค','แนวทางการแก้ไข','หมายเหตุ','problem','remark']
+  problem:['หมายเหตุ/ปัญหา','ปัญหา/อุปสรรค/แนวทางการแก้ไข','ปัญหา','อุปสรรค','แนวทางการแก้ไข','หมายเหตุ','problem','remark'],
+  workType:['ประเภทงาน','worktype','scada','ประเภทระบบ','กลุ่มงาน']
 };
 const STATUS_META=[
   ['สิ้นสุดการดำเนินการ','#14B8A6'],
@@ -1398,13 +1414,27 @@ function priorityPill(v){
   const c = p==='1st'?'#EF4444' : p==='2nd'?'#F59E0B' : p==='3rd'?'#10B981' : '#6366F1';
   return `<span class="pill" style="color:${c};background:${c}1f;border-color:${c}40"><i></i>${esc(p)}</span>`;
 }
+function fmtWorkType(v){
+  const s=String(v||'').trim();
+  if(!s||s==='—'||s==='ไม่ระบุ'||s.startsWith('gs_')) return '—';
+  const l=s.toLowerCase().replace(/[-_]/g,' ').replace(/\s+/g,' ').trim();
+  if(l==='non scada'||l==='nonscada') return 'non scada';
+  if(l==='scada') return 'scada';
+  return s;
+}
+function workTypePill(v){
+  const w=fmtWorkType(v);
+  if(w==='—') return '—';
+  const c = w==='scada'?'#0284C7' : w==='non scada'?'#7C3AED' : '#6366F1';
+  return `<span class="pill" style="color:${c};background:${c}1f;border-color:${c}40"><i></i>${esc(w)}</span>`;
+}
 const PALETTE=['#6366F1','#EC4899','#38BDF8','#A855F7','#F472B6','#14B8A6','#818CF8','#0EA5E9','#C084FC','#4F46E5','#2DD4BF','#F9A8D4'];
 const colorAt=i=>PALETTE[i%PALETTE.length];
 
 const S={
   wb:null, sheets:[], sheet:'', cols:[], rows:[], map:{}, recs:[], view:[],
   fileName:'ตัวอย่างข้อมูลผลการดำเนินงานโครงการ.xlsx', fileSize:'',
-  f:{unit:new Set(),year:new Set(),source:new Set(),status:new Set()}, q:'',
+  f:{unit:new Set(),year:new Set(),source:new Set(),workType:new Set(),status:new Set()}, q:'',
   page:'overview', tPage:1, tRows:25, sortKey:'budget', sortDir:-1,
   segTrend:'budget', segUnit:'budget', numFmt:'full'
 };
@@ -1446,6 +1476,7 @@ function buildRecs(){
       unit:String(g(r,'unit')||'ไม่ระบุ').trim()||'ไม่ระบุ',
       year:String(g(r,'year')||'ไม่ระบุ').trim()||'ไม่ระบุ',
       source:String(g(r,'source')||'ไม่ระบุ').trim()||'ไม่ระบุ',
+      workType:fmtWorkType(g(r,'workType')),
       budget, used, remain, status,
       detail:String(g(r,'detail')||'').trim(),
       priority:fmtPriority(g(r,'priority')),
@@ -1461,9 +1492,11 @@ function applyFilters(){
     if(S.f.unit.size&&!S.f.unit.has(r.unit))return false;
     if(S.f.year.size&&!S.f.year.has(r.year))return false;
     if(S.f.source.size&&!S.f.source.has(r.source))return false;
+    if(S.f.workType&&S.f.workType.size&&!S.f.workType.has(r.workType))return false;
     if(S.f.status.size&&!S.f.status.has(r.status))return false;
     if(q&&!(r.project.toLowerCase().indexOf(q)>-1||r.unit.toLowerCase().indexOf(q)>-1
         ||r.area.toLowerCase().indexOf(q)>-1||r.priority.toLowerCase().indexOf(q)>-1
+        ||r.workType.toLowerCase().indexOf(q)>-1
         ||r.status.toLowerCase().indexOf(q)>-1||r.detail.toLowerCase().indexOf(q)>-1))return false;
     return true;
   });
@@ -1922,6 +1955,7 @@ function legendHtml(ser,o){
    MULTI-SELECT
    ============================================================ */
 const MS=[
+  {id:'ms-workType',key:'workType',label:'ประเภทงาน',fixed:['scada','non scada']},
   {id:'ms-unit',key:'unit',label:'หน่วยงาน'},
   {id:'ms-year',key:'year',label:'ปีงบประมาณ'},
   {id:'ms-source',key:'source',label:'แหล่งเงิน'},
@@ -1931,8 +1965,14 @@ function buildFilters(){
   MS.forEach(m=>{
     const host=$('#'+m.id); if(!host)return;
     const counts=new Map();
-    S.recs.forEach(r=>counts.set(r[m.key],(counts.get(r[m.key])||0)+1));
-    const opts=[...counts.entries()].sort((a,b)=>b[1]-a[1]);
+    if(m.fixed) m.fixed.forEach(v=>counts.set(v,0));
+    S.recs.forEach(r=>{
+      const val=r[m.key];
+      if(m.fixed && (!val || val==='—')) return;
+      counts.set(val,(counts.get(val)||0)+1);
+    });
+    const opts=m.fixed ? [...counts.entries()] : [...counts.entries()].sort((a,b)=>b[1]-a[1]);
+    if(!S.f[m.key]) S.f[m.key]=new Set();
     S.f[m.key]=new Set([...S.f[m.key]].filter(v=>counts.has(v)));
     host.innerHTML=`
       <button class="ms-btn" type="button" aria-expanded="false">
@@ -1944,7 +1984,7 @@ function buildFilters(){
         <input class="ms-search" type="text" placeholder="ค้นหา${esc(m.label)}…">
         <div class="ms-acts"><button type="button" data-a="all">เลือกทั้งหมด</button><button type="button" data-a="none">ล้าง</button></div>
         <div class="ms-list">${opts.length?opts.map(([v,n])=>`
-          <label class="ms-opt"><input type="checkbox" value="${esc(v)}">
+          <label class="ms-opt"><input type="checkbox" value="${esc(v)}" ${S.f[m.key].has(v)?'checked':''}>
             <span class="ms-box"><svg><use href="#i-check"/></svg></span>
             <span class="lbl" title="${esc(v)}">${esc(v)}</span><span class="n">${n}</span></label>`).join('')
           :'<div style="padding:14px 10px;text-align:center;font-size:12.5px;color:var(--faint)">ยังไม่มีข้อมูลให้กรอง</div>'}</div>
@@ -2098,6 +2138,7 @@ const COLS=[
   {k:'used',t:'งบประมาณที่ใช้ไป',n:1},
   {k:'remain',t:'งบคงเหลือ',n:1},
   {k:'source',t:'Type'},
+  {k:'workType',t:'ประเภทงาน'},
   {k:'status',t:'Status'},
   {k:'priority',t:'Priority'},
   {k:'prog',t:'คืบหน้า',n:1}
@@ -2140,6 +2181,14 @@ function renderProjects(){
       <td>${esc(r.unit)}</td><td>${esc(r.year)}</td>
       <td class="num">${nf(r.budget)}</td><td class="num">${nf(r.used)}</td><td class="num">${nf(r.remain)}</td>
       <td>${esc(r.source)}</td>
+      <td onclick="event.stopPropagation()">
+        <select class="wt-sel" data-i="${r.i}" data-v="${esc(r.workType==='—'?'':r.workType)}" title="เลือกประเภทงาน">
+          <option value="">— เลือก —</option>
+          <option value="scada" ${r.workType==='scada'?'selected':''}>scada</option>
+          <option value="non scada" ${r.workType==='non scada'?'selected':''}>non scada</option>
+          ${(r.workType&&r.workType!=='—'&&r.workType!=='scada'&&r.workType!=='non scada')?`<option value="${esc(r.workType)}" selected>${esc(r.workType)}</option>`:''}
+        </select>
+      </td>
       <td><span class="pill" style="color:${r.color};background:${r.color}1f;border-color:${r.color}40"><i></i>${esc(r.status)}</span></td>
       <td>${priorityPill(r.priority)}</td>
       <td class="num"><div style="display:flex;align-items:center;gap:7px;justify-content:flex-end">
@@ -2157,6 +2206,15 @@ function renderProjects(){
     renderProjects();
   });
   $$('#tb-projects tbody tr').forEach(tr=>tr.onclick=()=>openDetail(+tr.dataset.i));
+  $$('#tb-projects select.wt-sel').forEach(sel=>{
+    sel.onchange=(e)=>{
+      e.stopPropagation();
+      const idx=+sel.dataset.i;
+      const val=sel.value;
+      sel.setAttribute('data-v', val);
+      quickUpdateWorkType(idx, val);
+    };
+  });
   $$('#tb-projects button[data-act="edit"]').forEach(b=>{
     b.onclick=(e)=>{ e.stopPropagation(); openEditForm(+b.dataset.i); };
   });
@@ -2220,7 +2278,7 @@ function renderUnits(){
   $$('#deptGrid .dept').forEach(d=>d.onclick=()=>{
     const u=d.dataset.u;
     const host=$('#ms-unit'); $$('.ms-opt input',host).forEach(c=>c.checked=(c.value===u));
-    syncMS(MS[0],host); go('projects'); refresh();
+    syncMS(MS.find(m=>m.key==='unit'),host); go('projects'); refresh();
   });
 }
 function renderProgress(){
@@ -2245,7 +2303,7 @@ function renderProgress(){
   $$('#statusGrid .dept').forEach(d=>d.onclick=()=>{
     const v=d.dataset.s, host=$('#ms-status');
     $$('.ms-opt input',host).forEach(c=>c.checked=(c.value===v));
-    syncMS(MS[3],host); go('projects'); refresh();
+    syncMS(MS.find(m=>m.key==='status'),host); go('projects'); refresh();
   });
 }
 function renderReport(){
@@ -2307,6 +2365,7 @@ function openDetail(i){
       <dt>ผู้รับผิดชอบ</dt><dd>${esc(r.unit)}</dd>
       <dt>ปีงบประมาณ</dt><dd>${esc(r.year)}</dd>
       <dt>Type</dt><dd>${esc(r.source)}</dd>
+      <dt>ประเภทงาน</dt><dd>${workTypePill(r.workType)}</dd>
       <dt>Status</dt><dd><span class="pill" style="color:${r.color};background:${r.color}1f;border-color:${r.color}40"><i></i>${esc(r.status)}</span></dd>
       <dt>Priority</dt><dd>${priorityPill(r.priority)}</dd>
       <dt>ความคืบหน้า</dt><dd>${r.prog}%</dd>
@@ -2419,7 +2478,7 @@ function readFile(f){
     try{
       const wb=XLSX.read(new Uint8Array(e.target.result),{type:'array',cellDates:true});
       S.wb=wb; S.sheets=wb.SheetNames; S.fileName=f.name;
-      S.f={unit:new Set(),year:new Set(),source:new Set(),status:new Set()}; S.q=''; $('#q').value='';
+      S.f={unit:new Set(),year:new Set(),source:new Set(),workType:new Set(),status:new Set()}; S.q=''; $('#q').value='';
       loadSheet(wb.SheetNames[0]);
       go('overview');
     }catch(err){ console.error(err); toast('อ่านไฟล์ไม่สำเร็จ ลองบันทึกไฟล์เป็น .xlsx แล้วอัปโหลดใหม่','err'); }
@@ -2430,7 +2489,7 @@ function readFile(f){
 function exportCsv(){
   const head=FIELDS.map(f=>f[1]);
   const lines=[head.join(',')].concat(S.view.map(r=>{
-    const vals=[r.seq,r.project,r.area==='—'?'':r.area,r.unit,r.year,r.budget,r.used,r.remain,r.source,r.status,r.prog,r.detail,r.priority==='—'?'':r.priority,r.startRaw,r.followRaw,r.endRaw,r.problem];
+    const vals=[r.seq,r.project,r.area==='—'?'':r.area,r.unit,r.year,r.budget,r.used,r.remain,r.source,r.status,r.prog,r.detail,r.priority==='—'?'':r.priority,r.startRaw,r.followRaw,r.endRaw,r.problem,r.workType==='—'?'':r.workType];
     return vals.map(v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"').join(',');
   }));
   const blob=new Blob(['\uFEFF'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
@@ -2448,6 +2507,7 @@ function exportXlsx(){
     'งบประมาณที่ใช้ไป':r.used,
     'งบคงเหลือ':r.remain,
     'Type':r.source,
+    'ประเภทงาน':r.workType==='—'?'':r.workType,
     'Status':r.status,
     '% ความสำเร็จ':r.prog,
     'การดำเนินงานปัจจุบัน':r.detail,
@@ -2469,8 +2529,8 @@ function downloadTemplate(){
   if(typeof XLSX==='undefined'){toast('ไม่พร้อมใช้งาน','err');return}
   const head=FIELDS.map(f=>f[1]);
   const ex=[
-    [1,'โครงการตัวอย่าง ก','พื้นที่ 1','กองการศึกษาฯ','2569',500000,120000,380000,'รายได้','อยู่ระหว่างดำเนินการ',55,'ทำสัญญาแล้ว','1st','2569-10-01','2569-11-15','2569-12-31',''],
-    [2,'โครงการตัวอย่าง ข','พื้นที่ 2','กองช่าง','2569',1200000,1200000,0,'เงินอุดหนุนทั่วไป','สิ้นสุดการดำเนินการ',100,'เบิกจ่ายแล้ว','2nd','2569-10-15','2570-01-15','2570-03-31','']
+    [1,'โครงการตัวอย่าง ก','พื้นที่ 1','กองการศึกษาฯ','2569',500000,120000,380000,'รายได้','อยู่ระหว่างดำเนินการ',55,'ทำสัญญาแล้ว','1st','2569-10-01','2569-11-15','2569-12-31','','scada'],
+    [2,'โครงการตัวอย่าง ข','พื้นที่ 2','กองช่าง','2569',1200000,1200000,0,'เงินอุดหนุนทั่วไป','สิ้นสุดการดำเนินการ',100,'เบิกจ่ายแล้ว','2nd','2569-10-15','2570-01-15','2570-03-31','','non scada']
   ];
   const wb=XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet([head,...ex]),'รวม');
@@ -2606,9 +2666,18 @@ async function syncGoogleSheet(silent = false){
 
       ensureStandardCols();
       if(data.rows && Array.isArray(data.rows)){
+        const wtMap = getWorkTypeLocalMap();
         S.rows = data.rows.map((r, i) => {
-          const rowArr = [...r];
-          rowArr._dbId = (data.records && data.records[i] && data.records[i].id) || r[17] || r[16] || r[15] || ('gs_' + (i + 2));
+          const rec = (data.records && data.records[i]) || {};
+          const rowArr = r.slice(0, 17);
+          while(rowArr.length < 17) rowArr.push('');
+          const dbId = rec.id || r[17] || r[16] || r[15] || ('gs_' + (i + 2));
+          const srvWt = rec.workType || (r.length > 18 ? r[18] : (r[17] && !String(r[17]).startsWith('gs_') ? r[17] : ''));
+          const projName = String(r[1] || '').trim();
+          const wt = srvWt || wtMap[dbId] || (projName ? wtMap['p:' + projName] : '') || '';
+          rowArr[17] = wt;
+          rowArr._dbId = dbId;
+          if(rec._rowIndex) rowArr._rowIndex = rec._rowIndex;
           return rowArr;
         });
       }
@@ -2662,7 +2731,7 @@ async function syncGoogleSheet(silent = false){
       return rowArr;
     });
     S.map = autoMap(S.cols);
-    S.f = {unit:new Set(), year:new Set(), source:new Set(), status:new Set()};
+    S.f = {unit:new Set(), year:new Set(), source:new Set(), workType:new Set(), status:new Set()};
     S.q = '';
     const qInp = $('#q'); if(qInp) qInp.value = '';
 
@@ -2713,8 +2782,15 @@ function setAccent(c){
 function loadDemo(){
   S.wb=null; S.sheets=['รวม']; S.sheet='รวม';
   S.fileName='PP.Track_ตัวอย่างข้อมูลโครงการ.xlsx'; S.fileSize='';
-  S.cols=DEMO.cols.slice(); S.rows=DEMO.rows.map(r=>r.slice()); S.map=autoMap(S.cols);
-  S.f={unit:new Set(),year:new Set(),source:new Set(),status:new Set()}; S.q=''; $('#q').value='';
+  S.cols=DEMO.cols.slice();
+  if(!S.cols.includes('ประเภทงาน')) S.cols.push('ประเภทงาน');
+  S.rows=DEMO.rows.map((r,idx)=>{
+    const arr=r.slice();
+    if(arr.length<S.cols.length) arr.push(idx%2===0?'scada':'non scada');
+    return arr;
+  });
+  S.map=autoMap(S.cols);
+  S.f={unit:new Set(),year:new Set(),source:new Set(),workType:new Set(),status:new Set()}; S.q=''; $('#q').value='';
   DB.saveLocal();
   reload(); if(S.page==='data')renderData(); else go('overview');
   toast('โหลดข้อมูลตัวอย่าง '+nf(S.recs.length)+' รายการแล้ว','ok');
@@ -2723,6 +2799,46 @@ function loadDemo(){
 /* ============================================================
    GOOGLE SHEETS DATABASE & CRUD MANAGEMENT (GOOGLE APPS SCRIPT / LOCAL CACHE)
    ============================================================ */
+function getWorkTypeLocalMap(){
+  try {
+    return JSON.parse(LS.get('pt_worktype_map') || '{}') || {};
+  } catch(e){ return {}; }
+}
+function saveWorkTypeLocal(row, workType){
+  try {
+    const mp = getWorkTypeLocalMap();
+    const val = (workType === '—' ? '' : (workType || ''));
+    if(row && row._dbId) mp[row._dbId] = val;
+    const pIdx = S.map ? S.map.project : 1;
+    const proj = row && pIdx != null && row[pIdx] ? String(row[pIdx]).trim() : '';
+    if(proj) mp['p:' + proj] = val;
+    LS.set('pt_worktype_map', JSON.stringify(mp));
+  } catch(e){}
+}
+async function quickUpdateWorkType(idx, val){
+  ensureStandardCols();
+  const row = S.rows[idx];
+  if(!row) return;
+  if(S.map.workType != null) row[S.map.workType] = val;
+  saveWorkTypeLocal(row, val);
+  DB.saveLocal();
+  reload();
+  try {
+    if(DB.hasApi()){
+      const rec = rowToGSheetRecord(row);
+      await DB.callApi({
+        action: 'update',
+        id: row._dbId || null,
+        rowIndex: row._rowIndex || (idx + 2),
+        data: rec
+      });
+    }
+    toast(`อัปเดตประเภทงานเป็น "${val || 'ไม่ระบุ'}" แล้ว`, 'ok');
+  } catch(err){
+    console.warn('Quick update workType sync warning:', err);
+    toast(`บันทึกประเภทงาน "${val || 'ไม่ระบุ'}" ในเครื่องแล้ว`, 'ok');
+  }
+}
 function ensureFieldCol(key, defaultHeader){
   if(S.map[key] == null){
     const colIdx = S.cols.length;
@@ -2759,6 +2875,7 @@ function rowToGSheetRecord(row){
   const used = toNum(g('used'));
   const remain = g('remain') !== '' ? toNum(g('remain')) : (budget - used);
   const prog = g('prog') !== '' ? clamp(toNum(g('prog')), 0, 100) : 0;
+  const wt = fmtWorkType(g('workType'));
   return {
     id: row._dbId || ('gs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5)),
     seq: parseInt(g('seq'), 10) || 1,
@@ -2770,6 +2887,7 @@ function rowToGSheetRecord(row){
     used,
     remain,
     source: String(g('source') || ''),
+    workType: wt === '—' ? '' : wt,
     status: String(g('status') || 'อยู่ระหว่างดำเนินการ'),
     prog,
     detail: String(g('detail') || ''),
@@ -2795,6 +2913,7 @@ function gSheetRecordToRow(rec){
   if(m.used != null) r[m.used] = Number(rec.used) || 0;
   if(m.remain != null) r[m.remain] = (rec.remain != null && rec.remain !== '') ? Number(rec.remain) : ((Number(rec.budget)||0) - (Number(rec.used)||0));
   if(m.source != null) r[m.source] = rec.source || '';
+  if(m.workType != null) r[m.workType] = rec.workType || '';
   if(m.status != null) r[m.status] = rec.status || 'อยู่ระหว่างดำเนินการ';
   if(m.prog != null) r[m.prog] = (rec.prog != null && rec.prog !== '') ? Number(rec.prog) : 0;
   if(m.detail != null) r[m.detail] = rec.detail || '';
@@ -2827,6 +2946,7 @@ function openAddForm(){
   const nowThYear = String(new Date().getFullYear() + 543);
   $('#fYear').value = S.f.year.size === 1 ? [...S.f.year][0] : (S.recs[0]?.year || nowThYear);
   $('#fSource').value = S.f.source.size === 1 ? [...S.f.source][0] : '';
+  if($('#fWorkType')) $('#fWorkType').value = (S.f.workType && S.f.workType.size === 1) ? [...S.f.workType][0] : 'scada';
   $('#fStatus').value = 'อยู่ระหว่างดำเนินการ';
   $('#fProg').value = '0';
   $('#fPriority').value = '1st';
@@ -2859,6 +2979,8 @@ function openEditForm(i){
   $('#fUnit').value = g('unit') || '';
   $('#fYear').value = g('year') || '';
   $('#fSource').value = g('source') || '';
+  const wt = fmtWorkType(g('workType'));
+  if($('#fWorkType')) $('#fWorkType').value = ['scada','non scada'].includes(wt) ? wt : 'scada';
   $('#fStatus').value = g('status') || 'อยู่ระหว่างดำเนินการ';
   $('#fProg').value = g('prog') !== '' ? clamp(toNum(g('prog')), 0, 100) : 0;
   const pr = fmtPriority(g('priority'));
@@ -2912,6 +3034,7 @@ async function saveProjectForm(){
     unit: $('#fUnit').value.trim() || 'ไม่ระบุ',
     year: $('#fYear').value.trim() || String(new Date().getFullYear() + 543),
     source: $('#fSource').value.trim() || 'ไม่ระบุ',
+    workType: $('#fWorkType') ? $('#fWorkType').value.trim() : 'scada',
     status: $('#fStatus').value || 'อยู่ระหว่างดำเนินการ',
     prog,
     priority: $('#fPriority').value.trim(),
@@ -3074,6 +3197,7 @@ const GSheetDB = {
     if(m.unit != null) row[m.unit] = formData.unit;
     if(m.year != null) row[m.year] = formData.year;
     if(m.source != null) row[m.source] = formData.source;
+    if(m.workType != null) row[m.workType] = formData.workType || '';
     if(m.status != null) row[m.status] = formData.status;
     if(m.prog != null) row[m.prog] = formData.prog;
     if(m.priority != null) row[m.priority] = formData.priority;
@@ -3098,6 +3222,7 @@ const GSheetDB = {
       }
     }
 
+    saveWorkTypeLocal(row, formData.workType);
     S.rows.push(row);
     this.saveLocal();
     updateGSheetUI();
@@ -3114,6 +3239,7 @@ const GSheetDB = {
     if(m.unit != null) row[m.unit] = formData.unit;
     if(m.year != null) row[m.year] = formData.year;
     if(m.source != null) row[m.source] = formData.source;
+    if(m.workType != null) row[m.workType] = formData.workType || '';
     if(m.status != null) row[m.status] = formData.status;
     if(m.prog != null) row[m.prog] = formData.prog;
     if(m.priority != null) row[m.priority] = formData.priority;
@@ -3125,6 +3251,8 @@ const GSheetDB = {
     if(m.end != null) row[m.end] = formData.end;
     if(m.detail != null) row[m.detail] = formData.detail;
     if(m.problem != null) row[m.problem] = formData.problem;
+
+    saveWorkTypeLocal(row, formData.workType);
 
     if(this.hasApi()){
       const rec = rowToGSheetRecord(row);
@@ -3329,9 +3457,10 @@ function boot(){
   $('#wcUpload').onclick=()=>$('#file').click();
   $('#btnClear').onclick=()=>{
     S.wb=null; S.cols=[]; S.rows=[]; S.map={}; S.sheet=''; S.sheets=[]; S.fileName=''; S.fileSize='';
-    S.f={unit:new Set(),year:new Set(),source:new Set(),status:new Set()}; S.q=''; $('#q').value='';
+    S.f={unit:new Set(),year:new Set(),source:new Set(),workType:new Set(),status:new Set()}; S.q=''; $('#q').value='';
     LS.set('pt_gsheet_cache', '');
     LS.set('pt_local_db', '');
+    LS.set('pt_worktype_map', '');
     reload(); renderData(); toast('ล้างข้อมูลออกจากระบบแล้ว','ok');
   };
   const drop=$('#drop'), file=$('#file');
