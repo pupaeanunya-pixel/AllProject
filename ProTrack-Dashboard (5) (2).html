@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ระบบติดตามการดำเนินโครงการ | ProTrack</title>
+<title>ระบบติดตามการดำเนินโครงการ | PP.Track</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 3 57 17v30L32 61 7 47V17z' fill='%231D4ED8'/%3E%3Cpath d='M20 42V30h7v12zm10 0V22h7v20zm10 0V26h7v16z' fill='%23F97316'/%3E%3C/svg%3E">
+<link rel="icon" href="https://lh3.googleusercontent.com/d/1kH8HErbms_U0xnoiJ7jlW7r79FK3hXeB">
 <style>
 /* ============ TOKENS ============ */
 :root{
@@ -77,7 +77,7 @@ a{color:inherit}
 .sidebar::after{content:"";position:absolute;inset:auto -40% -30% -40%;height:290px;
   background:radial-gradient(closest-side,rgba(236,72,153,.34),transparent 72%);pointer-events:none}
 .brand{display:flex;align-items:center;gap:12px;padding:22px 20px 18px;position:relative;z-index:2}
-.brand-mark{width:46px;height:46px;flex:0 0 46px;filter:drop-shadow(0 5px 12px rgba(249,115,22,.36))}
+.brand-mark{width:46px;height:46px;flex:0 0 46px;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25))}
 .brand-txt{min-width:0}
 .brand-name{font-size:20px;font-weight:800;letter-spacing:.2px;line-height:1.1;color:#fff}
 .brand-name b{color:var(--acc-400);font-weight:800}
@@ -358,7 +358,7 @@ tbody tr.clickable{cursor:pointer}
 .wc-card::after{content:"";position:absolute;inset:auto -18% -50% 42%;height:320px;
   background:radial-gradient(closest-side,color-mix(in srgb,var(--acc-500) 22%,transparent),transparent 72%);pointer-events:none}
 .wc-card>*{position:relative;z-index:1}
-.wc-logo{width:92px;height:92px;filter:drop-shadow(0 14px 28px rgba(29,78,216,.32));margin-bottom:16px}
+.wc-logo{width:92px;height:92px;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.18));margin-bottom:16px}
 .wc-card h2{font-size:23px;font-weight:800;letter-spacing:-.3px;margin-bottom:8px}
 .wc-card>p{font-size:14.5px;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.75}
 .wc-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0 6px}
@@ -465,36 +465,27 @@ tbody tr.clickable{cursor:pointer}
   .content{padding:0}.card{break-inside:avoid;box-shadow:none;border-color:#ccc}
   body{background:#fff}
 }
+/* Google Sheets & Sync styles */
+.btn-success{background:linear-gradient(96deg,#10B981,#059669);color:#fff;box-shadow:0 10px 22px rgba(16,185,129,.3)}
+.btn-success:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(16,185,129,.42)}
+.input-text{width:100%;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface-2);font-size:13.5px;color:var(--ink);transition:var(--t)}
+.input-text:focus{outline:none;border-color:var(--blue-400);box-shadow:0 0 0 3px rgba(47,107,234,.16);background:var(--surface)}
+.btn-danger{background:linear-gradient(96deg,#F43F5E,#E11D48);color:#fff;box-shadow:0 10px 22px rgba(244,63,94,.3)}
+.btn-danger:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(244,63,94,.42)}
+.tbl-acts{display:inline-flex;align-items:center;gap:5px;justify-content:center;vertical-align:middle}
+.btn-sm-act{width:28px;height:28px;min-width:28px;min-height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;padding:0;color:var(--muted);transition:var(--t);border:1px solid var(--line);background:var(--surface-2);cursor:pointer;overflow:hidden}
+.btn-sm-act svg{width:14px;height:14px;min-width:14px;min-height:14px;max-width:14px;max-height:14px;display:block;flex-shrink:0;pointer-events:none}
+.btn-sm-act:hover{background:var(--surface-3);color:var(--blue-600);border-color:var(--blue-400)}
+.btn-sm-act.del:hover, .btn-sm-act.danger:hover{background:rgba(244,63,94,.12);color:var(--danger);border-color:rgba(244,63,94,.3)}
+textarea.input-text{font-family:inherit;resize:vertical}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin .85s linear infinite;transform-origin:center}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="logo" viewBox="0 0 64 64">
-  <linearGradient id="lgHex" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#4A87F5"/><stop offset=".48" stop-color="#1D4ED8"/><stop offset="1" stop-color="#08214A"/>
-  </linearGradient>
-  <linearGradient id="lgOr" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#FDBA74"/><stop offset="1" stop-color="#EA6A0B"/>
-  </linearGradient>
-  <linearGradient id="lgWh" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#AFCBF7"/>
-  </linearGradient>
-  <path d="M32 2.6 58.2 17.3v29.4L32 61.4 5.8 46.7V17.3z" fill="url(#lgHex)"/>
-  <path d="M32 2.6 58.2 17.3 32 32 5.8 17.3z" fill="#fff" opacity=".13"/>
-  <ellipse cx="33" cy="48.6" rx="20" ry="3.4" fill="#04122C" opacity=".3"/>
-  <g>
-    <path d="M15 36h8v11h-8z" fill="url(#lgWh)" opacity=".92"/>
-    <path d="M15 36l3.6-3.6h8L23 36z" fill="#EAF2FE"/>
-    <path d="M23 36l3.6-3.6v11L23 47z" fill="#7FA9EE"/>
-    <path d="M26 29h8v18h-8z" fill="url(#lgWh)" opacity=".92"/>
-    <path d="M26 29l3.6-3.6h8L34 29z" fill="#EAF2FE"/>
-    <path d="M34 29l3.6-3.6v18L34 47z" fill="#7FA9EE"/>
-    <path d="M37 22h8v25h-8z" fill="url(#lgOr)"/>
-    <path d="M37 22l3.6-3.6h8L45 22z" fill="#FED0A3"/>
-    <path d="M45 22l3.6-3.6v25L45 47z" fill="#C4560A"/>
-  </g>
-  <path d="M5.8 46.7V17.3L32 2.6l14 7.9" fill="none" stroke="#F97316" stroke-width="3.4" stroke-linecap="round"/>
-  <circle cx="46" cy="10.5" r="3.6" fill="#F97316"/><circle cx="46" cy="10.5" r="1.5" fill="#fff"/>
+  <image href="https://lh3.googleusercontent.com/d/1kH8HErbms_U0xnoiJ7jlW7r79FK3hXeB" x="0" y="0" width="64" height="64" preserveAspectRatio="xMidYMid meet"/>
 </symbol>
 <symbol id="i-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></g></symbol>
 <symbol id="i-list" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.6" cy="6" r="1.3"/><circle cx="3.6" cy="12" r="1.3"/><circle cx="3.6" cy="18" r="1.3"/></g></symbol>
@@ -519,15 +510,20 @@ tbody tr.clickable{cursor:pointer}
 <symbol id="i-collapse" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3.5" width="19" height="17" rx="3"/><path d="M9.5 3.5v17M6.4 9.5 4.2 12l2.2 2.5"/></g></symbol>
 <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 <symbol id="i-reset" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12a9.5 9.5 0 1 1 3 6.9"/><path d="M2.5 20v-6h6"/></g></symbol>
+<symbol id="i-sheet" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 2v6h6M8 13h8M8 17h8M10 9H8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M17 3a2.8 2.8 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
 </defs></svg>
 
 <div class="app">
   <!-- ===== SIDEBAR ===== -->
   <aside class="sidebar" id="sidebar">
     <div class="brand">
-      <svg class="brand-mark"><use href="#logo"/></svg>
+      <img class="brand-mark" src="https://lh3.googleusercontent.com/d/1kH8HErbms_U0xnoiJ7jlW7r79FK3hXeB" alt="PP.Track Logo" style="object-fit:contain">
       <div class="brand-txt">
-        <div class="brand-name">Pro<b>Track</b></div>
+        <div class="brand-name">PP.<b>Track</b></div>
         <div class="brand-sub">ระบบติดตามการดำเนินโครงการ</div>
       </div>
     </div>
@@ -540,19 +536,12 @@ tbody tr.clickable{cursor:pointer}
       <button title="ความคืบหน้า" class="nav-item" data-page="progress"><svg><use href="#i-pulse"/></svg><span>ความคืบหน้า</span></button>
       <div class="nav-label">จัดการข้อมูล</div>
       <button title="รายงานสรุป" class="nav-item" data-page="report"><svg><use href="#i-report"/></svg><span>รายงานสรุป</span></button>
-      <button title="นำเข้าข้อมูล Excel" class="nav-item" data-page="data"><svg><use href="#i-upload"/></svg><span>นำเข้าข้อมูล Excel</span></button>
+      <button title="จัดการข้อมูล (Excel / Google Sheets)" class="nav-item" data-page="data"><svg><use href="#i-upload"/></svg><span>จัดการข้อมูล (Excel / Sheets)</span></button>
       <button title="ตั้งค่า" class="nav-item" data-page="settings"><svg><use href="#i-gear"/></svg><span>ตั้งค่า</span></button>
     </nav>
     <div class="sb-foot">
       <button class="nav-item sb-toggle" id="sbToggle" title="ย่อ / ขยายเมนู">
         <svg><use href="#i-collapse"/></svg><span>ย่อเมนู</span></button>
-      <a class="dev-card" href="https://www.facebook.com/AjarnJennie/" target="_blank" rel="noopener">
-        <div class="dev-av">AJ</div>
-        <div>
-          <div class="dev-name">ดร.ศิวพร ลินทะลึก</div>
-          <div class="dev-role">อาจารย์เจนนี่ · ผู้พัฒนาระบบ</div>
-        </div>
-      </a>
     </div>
   </aside>
   <div class="scrim" id="scrim"></div>
@@ -567,7 +556,9 @@ tbody tr.clickable{cursor:pointer}
           <p id="pgSub">ข้อมูลล่าสุด — ตัวอย่างข้อมูลผลการดำเนินงานโครงการ/กิจกรรม</p>
         </div>
         <div class="tb-spacer"></div>
-        <button class="btn btn-primary" id="btnUploadTop"><svg><use href="#i-upload"/></svg><span class="hide-s">อัปโหลด Excel</span></button>
+        <button class="btn btn-success" id="btnSyncTop" style="display:none" title="ดึงข้อมูลล่าสุดจาก Google Sheets"><svg class="sync-ic"><use href="#i-reset"/></svg><span class="hide-s">ซิงก์ Google Sheets</span></button>
+        <button class="btn btn-ghost" id="btnAddTop" title="เพิ่มโครงการใหม่"><svg><use href="#i-plus"/></svg><span class="hide-s">เพิ่มโครงการ</span></button>
+        <button class="btn btn-primary" id="btnUploadTop"><svg><use href="#i-upload"/></svg><span class="hide-s">จัดการข้อมูล</span></button>
         <button class="icon-btn" id="btnTheme" aria-label="สลับธีมสว่าง/มืด" title="สลับธีมสว่าง / มืด"><svg id="themeIc"><use href="#i-moon"/></svg></button>
       </div>
       <div class="filterbar">
@@ -638,6 +629,7 @@ tbody tr.clickable{cursor:pointer}
           <div class="card-h">
             <div><h3>ทะเบียนโครงการ / กิจกรรม / ครุภัณฑ์</h3><p id="prjSub">แสดงทั้งหมด</p></div>
             <div class="sp"></div>
+            <button class="btn btn-primary btn-sm no-print" id="btnOpenAdd"><svg><use href="#i-plus"/></svg>เพิ่มโครงการใหม่</button>
             <button class="btn btn-ghost btn-sm no-print" id="btnCsv"><svg><use href="#i-download"/></svg><span class="hide-s">ดาวน์โหลด CSV</span></button>
           </div>
           <div class="tbl-wrap" id="tb-projects"></div>
@@ -715,6 +707,292 @@ tbody tr.clickable{cursor:pointer}
       <!-- ========== DATA ========== -->
       <section class="page" id="page-data">
         <div class="grid">
+          <!-- GOOGLE SHEETS FULL DATABASE CARD -->
+          <div class="card c12" id="cardGSheet" style="border:1.5px solid rgba(16,185,129,.4);position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#10B981,#059669,#34D399)"></div>
+            <div class="card-h">
+              <div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+                  <span id="gsheetApiBadge" class="pill" style="display:none;color:#059669;background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.25);font-size:12px">
+                    <i></i> ฐานข้อมูล Google Sheets (เพิ่ม/ลบ/แก้ไข เรียลไทม์)
+                  </span>
+                  <span id="gsheetReadBadge" class="pill" style="display:none;color:#6366F1;background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.25);font-size:12px">
+                    <i></i> เชื่อมต่อ Google Sheets (อ่านอย่างเดียว)
+                  </span>
+                  <span id="gsheetLocalBadge" class="pill" style="color:var(--muted);background:var(--surface-3);font-size:12px">
+                    <i></i> โหมดบันทึกในเครื่อง (ออฟไลน์)
+                  </span>
+                </div>
+                <h3>ฐานข้อมูล Google Sheets ออนไลน์ (บันทึก สด เพิ่ม ลบ แก้ไข ครบวงจร)</h3>
+                <p>บันทึกและซิงก์ข้อมูลโครงการลง Google Sheets ของคุณโดยตรงผ่าน Google Apps Script Web App รองรับการทำงานร่วมกันทุกที่ทุกเวลา</p>
+              </div>
+              <div class="sp"></div>
+              <button class="btn btn-ghost btn-sm" id="btnToggleGuide" type="button">
+                <svg><use href="#i-sheet"/></svg>วิธีติดตั้งไฟล์ Apps Script (.gs)
+              </button>
+            </div>
+
+            <!-- Setup guide box (collapsible) -->
+            <div id="gsheetGuideBox" style="display:none;background:var(--surface-2);border-radius:14px;padding:16px 18px;margin-bottom:16px;border:1px solid var(--line);font-size:13px;line-height:1.75">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+                <div style="font-weight:700;color:var(--ink);font-size:14px">📋 ขั้นตอนติดตั้ง Code.gs ใน Google Sheets (เพื่อเปิดใช้ระบบเพิ่ม/ลบ/แก้ไข):</div>
+                <button class="btn btn-ghost btn-sm" id="btnCopyGsCode" type="button" style="font-size:12px"><svg><use href="#i-check"/></svg>คัดลอกโค้ด Code.gs</button>
+              </div>
+              <ol style="margin-left:20px;display:flex;flex-direction:column;gap:6px">
+                <li>เปิดไฟล์ <b>Google Sheets</b> ของคุณ (หรือสร้างชีทใหม่)</li>
+                <li>ไปที่เมนูด้านบน <b>"ส่วนขยาย" (Extensions) &rarr; "Apps Script"</b></li>
+                <li>ลบโค้ดเดิมทั้งหมดในหน้าต่าง แล้ววางโค้ดจากไฟล์ <code>Code.gs</code> (หรือกดปุ่มคัดลอกด้านบน) แล้วกดปุ่ม <b>บันทึก (แผ่นดิสก์)</b></li>
+                <li>กดปุ่มสีน้ำเงินมุมขวาบน <b>"การทำให้ใช้งานได้" (Deploy) &rarr; "การทำให้ใช้งานได้รายการใหม่" (New deployment)</b></li>
+                <li>เลือกประเภท <b>"เว็บแอป" (Web app)</b> แล้วตั้งค่า:
+                  <ul style="margin-left:18px;list-style:disc">
+                    <li><b>คำอธิบาย:</b> PP.Track API</li>
+                    <li><b>ดำเนินการในฐานะ (Execute as):</b> ฉัน (Me)</li>
+                    <li><b>ผู้ที่มีสิทธิ์เข้าถึง (Who has access):</b> <b>ทุกคน (Anyone)</b> <i>(สำคัญมาก)</i></li>
+                  </ul>
+                </li>
+                <li>กด <b>"ทำให้ใช้งานได้" (Deploy)</b> ให้สิทธิ์เข้าถึง และคัดลอก <b>"URL เว็บแอป"</b> (ลงท้ายด้วย <code>/exec</code>) มาวางในช่องด้านล่าง</li>
+              </ol>
+
+              <div style="margin-top:12px">
+                <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:4px">โค้ด Code.gs ที่สร้างไว้ให้ในโฟลเดอร์:</div>
+                <pre style="background:var(--navy-900);color:#E0E7FF;padding:12px;border-radius:10px;font-size:11.5px;max-height:220px;overflow-y:auto;user-select:all" id="gsCodeBlock">/**
+ * PP.Track Dashboard — Google Apps Script Backend (Code.gs)
+ */
+const DEFAULT_SHEET_NAME = 'โครงการ';
+const HEADERS = ['No','Project Name','Area','ผู้รับผิดชอบ','ปีงบประมาณ','งบประมาณที่ได้รับ','งบประมาณที่ใช้ไป','งบคงเหลือ','Type','Status','% ความสำเร็จ','การดำเนินงานปัจจุบัน','Priority','วันที่เริ่มต้น','วันที่ติดตามความคืบหน้า','วันที่สิ้นสุด','หมายเหตุ/ปัญหา','ID'];
+
+function onOpen(){
+  try {
+    SpreadsheetApp.getUi().createMenu('🚀 PP.Track').addItem('✨ สร้างชีตและคอลัมน์อัตโนมัติ', 'setupSheetMenu').addToUi();
+  } catch(e){}
+}
+
+function setupSheetMenu(){
+  const sheet = setupSheet('');
+  try { SpreadsheetApp.getUi().alert('✅ สร้างชีต "' + sheet.getName() + '" และตั้งค่าหัวคอลัมน์ทั้ง ' + HEADERS.length + ' คอลัมน์เรียบร้อยแล้ว!'); } catch(e){}
+}
+
+function setupSheet(tabName){
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const cleanName = (tabName && tabName.toString().trim() !== '') ? tabName.toString().trim() : '';
+  let sheet = cleanName ? ss.getSheetByName(cleanName) : (ss.getSheetByName(DEFAULT_SHEET_NAME) || ss.getSheets()[0]);
+  if(!sheet) sheet = ss.insertSheet(cleanName || DEFAULT_SHEET_NAME);
+  ensureHeaders(sheet, true);
+  return sheet;
+}
+
+function getTargetSheet(tabName){
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const cleanName = (tabName && tabName.toString().trim() !== '') ? tabName.toString().trim() : '';
+  let sheet = cleanName ? ss.getSheetByName(cleanName) : (ss.getSheetByName(DEFAULT_SHEET_NAME) || ss.getSheets()[0]);
+  if(!sheet) sheet = ss.insertSheet(cleanName || DEFAULT_SHEET_NAME);
+  ensureHeaders(sheet, false);
+  return sheet;
+}
+
+function ensureHeaders(sheet, forceFormat){
+  const lastRow = sheet.getLastRow();
+  let needHeader = (lastRow === 0);
+  if(!needHeader){
+    const firstRow = sheet.getRange(1, 1, 1, HEADERS.length).getValues()[0];
+    const hasAll = HEADERS.every((h, idx) => String(firstRow[idx] || '').trim() === h);
+    if(!hasAll){
+      const isHeaderOrEmpty = firstRow.every(v => v === '' || isNaN(Number(v))) || String(firstRow[0]).toLowerCase() === 'no' || String(firstRow[0]).indexOf('ลำดับ') > -1;
+      if(!isHeaderOrEmpty && !forceFormat) sheet.insertRowBefore(1);
+      sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+      needHeader = true;
+    }
+  } else {
+    sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+  }
+  if(needHeader || forceFormat){
+    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold').setBackground('#4338CA').setFontColor('#FFFFFF').setHorizontalAlignment('center').setVerticalAlignment('middle');
+    sheet.setRowHeight(1, 36);
+    sheet.setFrozenRows(1);
+    const widths = [60, 260, 130, 160, 100, 140, 140, 140, 130, 160, 110, 220, 90, 120, 150, 120, 200, 140];
+    widths.forEach((w, idx) => { try { sheet.setColumnWidth(idx + 1, w); } catch(e){} });
+  }
+}
+
+function jsonResponse(data){
+  return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);
+}
+
+function doGet(e){
+  try {
+    const params = (e && e.parameter) || {};
+    const tabName = params.sheet || params.tab || '';
+    const action = params.action || 'read';
+    if(action === 'setup' || action === 'init_sheet'){
+      const s = setupSheet(tabName);
+      return jsonResponse({ status: 'success', action: 'setup', sheetName: s.getName(), cols: HEADERS, message: 'สร้างชีต "' + s.getName() + '" และคอลัมน์อัตโนมัติเรียบร้อยแล้ว' });
+    }
+    const sheet = getTargetSheet(tabName);
+    if(action === 'read'){
+      const data = getAllRecords(sheet);
+      return jsonResponse({ status: 'success', action: 'read', cols: HEADERS, rows: data.rows, records: data.records, count: data.rows.length });
+    }
+    return jsonResponse({ status: 'success', message: 'PP.Track API is ready' });
+  } catch(err){
+    return jsonResponse({ status: 'error', message: err.toString() });
+  }
+}
+
+function doPost(e){
+  try {
+    let payload = {};
+    if(e && e.postData && e.postData.contents){
+      try { payload = JSON.parse(e.postData.contents); } catch(err){ payload = e.parameter || {}; }
+    } else if(e && e.parameter) payload = e.parameter;
+
+    const action = payload.action || 'read';
+    const tabName = payload.sheet || payload.tab || '';
+    if(action === 'setup' || action === 'init_sheet'){
+      const s = setupSheet(tabName);
+      return jsonResponse({ status: 'success', action: 'setup', sheetName: s.getName(), cols: HEADERS, message: 'สร้างชีต "' + s.getName() + '" และคอลัมน์อัตโนมัติเรียบร้อยแล้ว' });
+    }
+    const sheet = getTargetSheet(tabName);
+
+    if(action === 'read'){
+      const data = getAllRecords(sheet);
+      return jsonResponse({ status: 'success', action: 'read', cols: HEADERS, rows: data.rows, records: data.records, count: data.rows.length });
+    }
+    if(action === 'create' || action === 'add'){
+      const item = payload.data || payload;
+      const budget = Number(item.budget) || 0, used = Number(item.used) || 0;
+      const remain = (item.remain !== '' && item.remain != null) ? Number(item.remain) : (budget - used);
+      const prog = Number(item.prog) || 0;
+      const newId = 'gs_' + new Date().getTime() + '_' + Math.floor(Math.random()*1000);
+      const row = [item.seq || sheet.getLastRow(), item.project||'', item.area||'', item.unit||'', item.year||'', budget, used, remain, item.source||'', item.status||'อยู่ระหว่างดำเนินการ', prog, item.detail||'', item.priority||'', item.start||'', item.follow||'', item.end||'', item.problem||'', newId];
+      sheet.appendRow(row);
+      return jsonResponse({ status: 'success', action: 'create', record: { ...item, seq: row[0], id: newId, _rowIndex: sheet.getLastRow() } });
+    }
+    if(action === 'update' || action === 'edit'){
+      const targetRow = findRowIndex(sheet, payload.id, payload.rowIndex);
+      if(targetRow < 2) throw new Error('ไม่พบแถวข้อมูล');
+      const item = payload.data || payload;
+      const budget = Number(item.budget) || 0, used = Number(item.used) || 0;
+      const remain = (item.remain !== '' && item.remain != null) ? Number(item.remain) : (budget - used);
+      const prog = item.prog != null && item.prog !== '' ? Number(item.prog) : null;
+      const ex = sheet.getRange(targetRow, 1, 1, HEADERS.length).getValues()[0];
+      const rowId = payload.id || ex[17] || ('gs_' + targetRow);
+      const row = [item.seq || ex[0] || (targetRow - 1), item.project != null ? item.project : ex[1], item.area != null ? item.area : ex[2], item.unit != null ? item.unit : ex[3], item.year != null ? item.year : ex[4], budget, used, remain, item.source != null ? item.source : ex[8], item.status != null ? item.status : ex[9], prog != null ? prog : (Number(ex[10]) || 0), item.detail != null ? item.detail : ex[11], item.priority != null ? item.priority : ex[12], item.start != null ? item.start : ex[13], item.follow != null ? item.follow : ex[14], item.end != null ? item.end : ex[15], item.problem != null ? item.problem : ex[16], rowId];
+      sheet.getRange(targetRow, 1, 1, HEADERS.length).setValues([row]);
+      return jsonResponse({ status: 'success', action: 'update', record: { ...item, id: rowId, _rowIndex: targetRow } });
+    }
+    if(action === 'delete'){
+      const targetRow = findRowIndex(sheet, payload.id, payload.rowIndex);
+      if(targetRow >= 2){ sheet.deleteRow(targetRow); return jsonResponse({ status: 'success', action: 'delete', id: payload.id }); }
+      throw new Error('ไม่พบแถวข้อมูล');
+    }
+    if(action === 'batch'){
+      const rows = payload.rows || [];
+      const toAppend = [];
+      const startSeq = sheet.getLastRow();
+      for(let i=0; i&lt;rows.length; i++){
+        const r = rows[i];
+        const b = Number(r.budget || (Array.isArray(r)?r[5]:0)) || 0;
+        const u = Number(r.used || (Array.isArray(r)?r[6]:0)) || 0;
+        const p = Number(r.prog != null ? r.prog : (Array.isArray(r)?r[10]:0)) || 0;
+        const newId = 'gs_' + new Date().getTime() + '_' + i;
+        if(Array.isArray(r)){
+          toAppend.push([r[0]||(startSeq+i), r[1]||'', r[2]||'', r[3]||'', r[4]||'', b, u, b-u, r[8]||'', r[9]||'', p, r[11]||'', r[12]||'', r[13]||'', r[14]||'', r[15]||'', r[16]||'', newId]);
+        } else {
+          toAppend.push([r.seq||(startSeq+i), r.project||'', r.area||'', r.unit||'', r.year||'', b, u, b-u, r.source||'', r.status||'อยู่ระหว่างดำเนินการ', p, r.detail||'', r.priority||'', r.start||'', r.follow||'', r.end||'', r.problem||'', newId]);
+        }
+      }
+      if(toAppend.length) sheet.getRange(sheet.getLastRow()+1, 1, toAppend.length, HEADERS.length).setValues(toAppend);
+      return jsonResponse({ status: 'success', action: 'batch', count: toAppend.length });
+    }
+    return jsonResponse({ status: 'error', message: 'Unknown action: ' + action });
+  } catch(err){
+    return jsonResponse({ status: 'error', message: err.toString() });
+  }
+}
+
+function getAllRecords(sheet){
+  const lastRow = sheet.getLastRow();
+  const lastCol = Math.max(sheet.getLastColumn(), HEADERS.length);
+  if(lastRow &lt;= 1) return { rows: [], records: [] };
+  const raw = sheet.getRange(2, 1, lastRow - 1, lastCol).getValues();
+  const rows = [], records = [];
+  for(let i=0; i&lt;raw.length; i++){
+    const r = raw[i];
+    if(!r.some(v=>v!==''&&v!==null)) continue;
+    const fmt = v => (v instanceof Date) ? `${v.getFullYear()}-${String(v.getMonth()+1).padStart(2,'0')}-${String(v.getDate()).padStart(2,'0')}` : (v?v.toString():'');
+    const row = [r[0]||(i+1), r[1]?r[1].toString():'', r[2]?r[2].toString():'', r[3]?r[3].toString():'', r[4]?r[4].toString():'', Number(r[5])||0, Number(r[6])||0, Number(r[7])||((Number(r[5])||0)-(Number(r[6])||0)), r[8]?r[8].toString():'', r[9]?r[9].toString():'', Number(r[10])||0, r[11]?r[11].toString():'', r[12]?r[12].toString():'', fmt(r[13]), fmt(r[14]), fmt(r[15]), r[16]?r[16].toString():'', r[17]?r[17].toString():('gs_'+(i+2))];
+    rows.push(row);
+    records.push({ seq:row[0], project:row[1], area:row[2], unit:row[3], year:row[4], budget:row[5], used:row[6], remain:row[7], source:row[8], status:row[9], prog:row[10], detail:row[11], priority:row[12], start:row[13], follow:row[14], end:row[15], problem:row[16], id:row[17], _rowIndex:i+2 });
+  }
+  return { rows, records };
+}
+
+function findRowIndex(sheet, id, rowIndex){
+  const lastRow = sheet.getLastRow();
+  if(lastRow &lt;= 1) return -1;
+  if(id){
+    const col = sheet.getRange(2, 18, lastRow - 1, 1).getValues();
+    for(let i=0; i&lt;col.length; i++) if(col[i][0] && col[i][0].toString() === id.toString()) return i + 2;
+  }
+  if(rowIndex && rowIndex >= 2 && rowIndex &lt;= lastRow) return rowIndex;
+  return -1;
+}</pre>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div>
+                <label style="font-size:12.5px;font-weight:700;color:var(--ink);display:block;margin-bottom:5px">
+                  1. Google Apps Script Web App URL <span style="color:#059669;font-weight:normal">(แนะนำ — สำหรับ เพิ่ม, ลบ, แก้ไข, ซิงก์ ครบวงจร)</span>
+                </label>
+                <input type="url" id="gsheetApiUrl" class="input-text" placeholder="https://script.google.com/macros/s/AKfycb.../exec" autocomplete="off">
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div>
+                  <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:5px">
+                    2. ลิงก์ Google Sheets ทั่วไป (สำหรับเปิดดู หรือโหมดอ่านอย่างเดียว)
+                  </label>
+                  <input type="url" id="gsheetUrl" class="input-text" placeholder="https://docs.google.com/spreadsheets/d/xxxx/edit" autocomplete="off">
+                </div>
+                <div>
+                  <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:5px">ชื่อแผ่นงาน / ชีท (หากเว้นว่างจะใช้ชีทแรก)</label>
+                  <input type="text" id="gsheetTab" class="input-text" placeholder="เช่น โครงการ หรือ Sheet1">
+                </div>
+              </div>
+
+              <div>
+                <label style="display:inline-flex;align-items:center;gap:7px;cursor:pointer;font-size:13px;user-select:none">
+                  <input type="checkbox" id="gsheetAutoSync" checked style="width:16px;height:16px;accent-color:#059669">
+                  <span>ซิงก์ดึงข้อมูลสดจาก Google Sheets อัตโนมัติเมื่อเปิดหน้าเว็บ</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:center">
+              <button class="btn btn-success btn-sm" id="btnConnectGSheet" type="button">
+                <svg><use href="#i-reset"/></svg><span id="btnConnectGSheetTxt">เชื่อมต่อและซิงก์ข้อมูล</span>
+              </button>
+              <button class="btn btn-blue btn-sm" id="btnSetupGSheet" type="button">
+                <svg><use href="#i-plus"/></svg>สร้างชีตและคอลัมน์อัตโนมัติ
+              </button>
+              <button class="btn btn-ghost btn-sm" id="btnSyncGSheetNow" type="button" style="display:none">
+                <svg><use href="#i-reset"/></svg>ซิงก์ข้อมูลเดี๋ยวนี้
+              </button>
+              <button class="btn btn-ghost btn-sm" id="btnMigrateToGSheet" type="button" style="display:none">
+                <svg><use href="#i-upload"/></svg>ส่งข้อมูลปัจจุบันขึ้น Google Sheets
+              </button>
+              <a class="btn btn-ghost btn-sm" id="btnOpenGSheet" href="#" target="_blank" rel="noopener" style="display:none">
+                <svg><use href="#i-arrow"/></svg>เปิดใน Google Sheets
+              </a>
+              <button class="btn btn-ghost btn-sm" id="btnDisconnectGSheet" type="button" style="display:none;color:var(--danger)">
+                <svg><use href="#i-x"/></svg>ยกเลิกการเชื่อมต่อ
+              </button>
+              <div class="sp"></div>
+              <span id="gsheetSyncInfo" style="font-size:12px;color:var(--muted)"></span>
+            </div>
+          </div>
+
           <div class="card c7">
             <div class="card-h"><div><h3>นำเข้าข้อมูลจากไฟล์ Excel</h3><p>รองรับ .xlsx .xlsm .xls และ .csv — ข้อมูลทั้งหมดประมวลผลในเครื่องของคุณ ไม่มีการส่งขึ้นเซิร์ฟเวอร์</p></div></div>
             <div class="drop" id="drop">
@@ -730,7 +1008,7 @@ tbody tr.clickable{cursor:pointer}
               <button class="btn btn-ghost btn-sm" id="btnClear"><svg><use href="#i-reset"/></svg>ล้างข้อมูลทั้งหมด</button>
             </div>
             <div style="height:14px"></div>
-            <div class="note warn"><b>ข้อแนะนำการจัดไฟล์:</b> ให้แถวแรกของชีทเป็นชื่อหัวคอลัมน์ และแถวถัดไปเป็นข้อมูล ชื่อคอลัมน์ที่ระบบรู้จักอัตโนมัติ ได้แก่ หน่วยงาน · ปีงบประมาณ · โครงการ/กิจกรรม/ครุภัณฑ์ · แหล่งเงิน · งบประมาณที่ได้รับ · งบประมาณที่ใช้ · คงเหลือ · วันที่เริ่มต้น · วันที่สิ้นสุด · สถานะโครงการ · รายละเอียด · ปัญหา/อุปสรรค</div>
+            <div class="note warn"><b>ข้อแนะนำการจัดไฟล์:</b> ให้แถวแรกของชีทเป็นชื่อหัวคอลัมน์ และแถวถัดไปเป็นข้อมูล ชื่อคอลัมน์ที่ระบบรู้จักอัตโนมัติ ได้แก่ No · Project Name · Area · ผู้รับผิดชอบ · ปีงบประมาณ · งบประมาณที่ได้รับ · งบประมาณที่ใช้ไป · งบคงเหลือ · Type · Status · การดำเนินงานปัจจุบัน · Priority · วันที่เริ่มต้น · วันที่ติดตามความคืบหน้า · วันที่สิ้นสุด · หมายเหตุ/ปัญหา</div>
           </div>
           <div class="card c5">
             <div class="card-h"><div><h3>ข้อมูลชุดปัจจุบัน</h3><p>สรุปไฟล์ที่กำลังใช้แสดงผล</p></div></div>
@@ -754,7 +1032,7 @@ tbody tr.clickable{cursor:pointer}
       <!-- การ์ดเริ่มต้นใช้งาน -->
         <div class="welcome" id="welcome">
         <div class="wc-card">
-          <svg class="wc-logo"><use href="#logo"/></svg>
+          <img class="wc-logo" src="https://lh3.googleusercontent.com/d/1kH8HErbms_U0xnoiJ7jlW7r79FK3hXeB" alt="PP.Track Logo" style="object-fit:contain">
           <h2>เริ่มต้นใช้งาน</h2>
           <p>แดชบอร์ดนี้ทำงานกับไฟล์ Excel ของคุณโดยตรง อัปโหลดไฟล์ทะเบียนโครงการเข้ามา
              แล้วกราฟ ตัวกรอง และรายงานทั้งหมดจะสร้างขึ้นตามข้อมูลในไฟล์ทันที</p>
@@ -768,8 +1046,8 @@ tbody tr.clickable{cursor:pointer}
             <div class="wc-step"><b>2</b><div><h5>อัปโหลด</h5><p>ลากไฟล์มาวาง ระบบจับคู่คอลัมน์ให้เอง</p></div></div>
             <div class="wc-step"><b>3</b><div><h5>ใช้งาน</h5><p>กรองข้อมูล ดูกราฟ และส่งออกรายงานได้ทันที</p></div></div>
           </div>
-          <div class="wc-note">คอลัมน์ที่ระบบรู้จักอัตโนมัติ: หน่วยงาน · ปีงบประมาณ · ชื่อโครงการ · แหล่งเงิน ·
-            งบประมาณที่ได้รับ · งบประมาณที่ใช้ · คงเหลือ · วันที่เริ่มต้น · วันที่สิ้นสุด · สถานะโครงการ · รายละเอียด · ปัญหา/อุปสรรค</div>
+          <div class="wc-note">คอลัมน์ที่ระบบรู้จักอัตโนมัติ: No · Project Name · Area · ผู้รับผิดชอบ · ปีงบประมาณ ·
+            งบประมาณที่ได้รับ · งบประมาณที่ใช้ไป · งบคงเหลือ · Type · Status · การดำเนินงานปัจจุบัน · Priority · วันที่เริ่มต้น · วันที่ติดตามความคืบหน้า · วันที่สิ้นสุด · หมายเหตุ/ปัญหา</div>
         </div>
       </div>
 
@@ -807,18 +1085,16 @@ tbody tr.clickable{cursor:pointer}
             <div class="card-h"><div><h3>เกี่ยวกับระบบ</h3></div></div>
             <div class="grid" style="gap:18px">
               <div class="c8">
-                <div class="note"><b>ProTrack — ระบบติดตามการดำเนินโครงการ</b><br>
+                <div class="note"><b>PP.Track — ระบบติดตามการดำเนินโครงการ</b><br>
                 ทำงานได้ทั้งหมดในไฟล์ HTML เพียงไฟล์เดียว ไม่ต้องติดตั้งโปรแกรมเพิ่มและไม่ต้องเชื่อมต่ออินเทอร์เน็ต สามารถคัดลอกไฟล์ไปแจกจ่าย เปิดใช้งานบนคอมพิวเตอร์ แท็บเล็ต หรือมือถือได้ทันที ข้อมูล Excel ที่อัปโหลดจะถูกประมวลผลภายในเบราว์เซอร์ของผู้ใช้เท่านั้น</div>
                 <div style="height:14px"></div>
                 <dl class="kv">
                   <dt>เวอร์ชัน</dt><dd>1.0</dd>
-                  <dt>ผู้พัฒนา</dt><dd>ดร.ศิวพร ลินทะลึก (อาจารย์เจนนี่)</dd>
-                  <dt>ติดต่อ</dt><dd><a class="fb" href="https://www.facebook.com/AjarnJennie/" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>facebook.com/AjarnJennie</a></dd>
-                  <dt>รูปแบบไฟล์ที่รองรับ</dt><dd>.xlsx · .xlsm · .xls · .csv</dd>
+                  <dt>รูปแบบไฟล์ที่รองรับ</dt><dd>.xlsx · .xlsm · .xls · .csv · Google Sheets</dd>
                 </dl>
               </div>
               <div class="c4" style="display:grid;place-items:center">
-                <svg style="width:150px;height:150px;filter:drop-shadow(0 14px 30px rgba(29,78,216,.28))"><use href="#logo"/></svg>
+                <img src="https://lh3.googleusercontent.com/d/1kH8HErbms_U0xnoiJ7jlW7r79FK3hXeB" alt="PP.Track Logo" style="width:130px;height:130px;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(0,0,0,.15))">
               </div>
             </div>
           </div>
@@ -826,9 +1102,7 @@ tbody tr.clickable{cursor:pointer}
       </section>
 
       <div class="foot">
-        พัฒนาโดย <b>ดร.ศิวพร ลินทะลึก (อาจารย์เจนนี่)</b> ·
-        <a class="fb" href="https://www.facebook.com/AjarnJennie/" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>facebook.com/AjarnJennie</a><br>
-        ProTrack — ระบบติดตามการดำเนินโครงการ · ใช้งานได้ฟรี เผยแพร่ต่อได้
+        PP.Track — ระบบติดตามการดำเนินโครงการ
       </div>
     </main>
   </div>
@@ -839,6 +1113,126 @@ tbody tr.clickable{cursor:pointer}
     <button class="icon-btn" id="mClose" aria-label="ปิด"><svg><use href="#i-x"/></svg></button></div>
   <div class="modal-b" id="mBody"></div>
 </div></div>
+
+<!-- ========== PROJECT FORM MODAL (ADD / EDIT) ========== -->
+<div class="ov" id="ovForm">
+  <div class="modal" style="max-width:680px">
+    <div class="modal-h">
+      <h3 id="formTitle">เพิ่มโครงการใหม่</h3>
+      <button class="icon-btn" id="formClose" aria-label="ปิด"><svg><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-b" style="max-height:calc(85vh - 120px);overflow-y:auto">
+      <form id="projectForm" onsubmit="return false">
+        <input type="hidden" id="fId" value="">
+        <input type="hidden" id="fIndex" value="-1">
+
+        <div style="display:flex;flex-direction:column;gap:13px">
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">
+              Project Name <span style="color:var(--danger)">*</span>
+            </label>
+            <input type="text" id="fProject" class="input-text" placeholder="ระบุชื่อโครงการ..." required autocomplete="off">
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Area</label>
+              <input type="text" id="fArea" class="input-text" list="dlAreas" placeholder="ระบุพื้นที่ (Area)" autocomplete="off">
+              <datalist id="dlAreas"></datalist>
+            </div>
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">ผู้รับผิดชอบ</label>
+              <input type="text" id="fUnit" class="input-text" placeholder="ระบุผู้รับผิดชอบ" autocomplete="off">
+            </div>
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">ปีงบประมาณ</label>
+              <input type="text" id="fYear" class="input-text" list="dlYears" placeholder="เช่น 2568, 2569" autocomplete="off">
+              <datalist id="dlYears"></datalist>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Type</label>
+              <input type="text" id="fSource" class="input-text" list="dlSources" placeholder="ระบุประเภท / แหล่งเงิน" autocomplete="off">
+              <datalist id="dlSources"></datalist>
+            </div>
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Status</label>
+              <select id="fStatus" class="input-text" style="height:44px">
+                <option value="เริ่มดำเนินการ">เริ่มดำเนินการ</option>
+                <option value="อยู่ระหว่างดำเนินการ" selected>อยู่ระหว่างดำเนินการ</option>
+                <option value="สิ้นสุดการดำเนินการ">สิ้นสุดการดำเนินการ</option>
+                <option value="อยุ่ระหว่างปรับปรุง">อยุ่ระหว่างปรับปรุง</option>
+                <option value="ยังไม่เริ่มดำเนินการ">ยังไม่เริ่มดำเนินการ</option>
+                <option value="อยู่ระหว่างการวางแผน">อยู่ระหว่างการวางแผน</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">% ความสำเร็จของโครงการ</label>
+              <input type="number" id="fProg" class="input-text" min="0" max="100" step="any" placeholder="0 - 100">
+            </div>
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">Priority</label>
+              <select id="fPriority" class="input-text" style="height:44px">
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">งบประมาณที่ได้รับ (บาท)</label>
+              <input type="number" id="fBudget" class="input-text" min="0" step="any" placeholder="0">
+            </div>
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">งบประมาณที่ใช้ไป (บาท)</label>
+              <input type="number" id="fUsed" class="input-text" min="0" step="any" placeholder="0">
+            </div>
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">งบคงเหลือ (บาท)</label>
+              <input type="text" id="fRemain" class="input-text" readonly style="background:var(--surface-3);color:var(--ink-2);font-weight:700">
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">วันที่เริ่มต้น</label>
+              <input type="date" id="fStart" class="input-text">
+            </div>
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">วันที่ติดตามความคืบหน้า</label>
+              <input type="date" id="fFollow" class="input-text">
+            </div>
+            <div>
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">วันที่สิ้นสุด</label>
+              <input type="date" id="fEnd" class="input-text">
+            </div>
+          </div>
+
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">การดำเนินงานปัจจุบัน</label>
+            <textarea id="fDetail" class="input-text" rows="2" placeholder="ระบุการดำเนินงานปัจจุบัน เช่น อยู่ระหว่างเบิกจ่ายงวดที่ 1, ส่งมอบงานแล้ว"></textarea>
+          </div>
+
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">หมายเหตุ/ปัญหา</label>
+            <textarea id="fProblem" class="input-text" rows="2" placeholder="ระบุหมายเหตุหรือปัญหาในการดำเนินงาน (ถ้ามี)"></textarea>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:20px;padding-top:14px;border-top:1px solid var(--line)">
+          <button type="button" class="btn btn-ghost" id="btnCancelForm">ยกเลิก</button>
+          <button type="button" class="btn btn-primary" id="btnSaveForm">
+            <svg><use href="#i-check"/></svg>บันทึกข้อมูล
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <div class="tip" id="tip"></div>
 <div class="toast" id="toast"></div>
 <script>/*! SheetJS (xlsx) 0.18.5 | https://sheetjs.com | Apache-2.0 */
@@ -864,9 +1258,7 @@ var DEMO={"cols":["ลำดับที่","หน่วยงาน","ปี�
 </script>
 <script>
 /* ============================================================
-   ProTrack — ระบบติดตามการดำเนินโครงการ
-   ผู้พัฒนา: ดร.ศิวพร ลินทะลึก (อาจารย์เจนนี่)
-   https://www.facebook.com/AjarnJennie/
+   PP.Track — ระบบติดตามการดำเนินโครงการ
    ============================================================ */
 (function(){
 "use strict";
@@ -937,39 +1329,75 @@ function toast(msg,kind){
 
 /* ---------- state ---------- */
 const FIELDS=[
-  ['seq','ลำดับที่'],['unit','หน่วยงาน'],['year','ปีงบประมาณ'],['project','โครงการ /กิจกรรม/ครุภัณฑ์'],
-  ['source','แหล่งเงิน'],['budget','งบประมาณที่ได้รับ'],['used','งบประมาณที่ใช้'],['remain','คงเหลือ'],
-  ['start','วันที่เริ่มต้น'],['end','วันที่สิ้นสุด'],['status','สถานะโครงการ'],['detail','รายละเอียด'],
-  ['cstart','เริ่มสัญญา'],['cend','สิ้นสุดสัญญา'],['problem','ปัญหา/อุปสรรค/ แนวทางการแก้ไข']
+  ['seq','No'],
+  ['project','Project Name'],
+  ['area','Area'],
+  ['unit','ผู้รับผิดชอบ'],
+  ['year','ปีงบประมาณ'],
+  ['budget','งบประมาณที่ได้รับ'],
+  ['used','งบประมาณที่ใช้ไป'],
+  ['remain','งบคงเหลือ'],
+  ['source','Type'],
+  ['status','Status'],
+  ['prog','% ความสำเร็จ'],
+  ['detail','การดำเนินงานปัจจุบัน'],
+  ['priority','Priority'],
+  ['start','วันที่เริ่มต้น'],
+  ['follow','วันที่ติดตามความคืบหน้า'],
+  ['end','วันที่สิ้นสุด'],
+  ['problem','หมายเหตุ/ปัญหา']
 ];
 const ALIAS={
-  seq:['ลำดับ','ที่','no','ลําดับที่'],
-  unit:['หน่วยงาน','กอง','สำนัก','สังกัด','หน่วยงานที่รับผิดชอบ','department'],
+  seq:['no','ลำดับที่','ลำดับ','ที่','ลําดับที่'],
+  project:['projectname','ชื่อโครงการ','โครงการ','โครงการ/กิจกรรม/ครุภัณฑ์','กิจกรรม','ครุภัณฑ์','รายการ','project'],
+  area:['area','พื้นที่','เขต','โซน','ตำบล','อำเภอ','สถานที่'],
+  unit:['ผู้รับผิดชอบ','หน่วยงาน','กอง','สำนัก','สังกัด','หน่วยงานที่รับผิดชอบ','owner','responsible','department'],
   year:['ปีงบประมาณ','ปีงบ','ปี','fiscal','ปีงบฯ'],
-  project:['โครงการ','กิจกรรม','ครุภัณฑ์','ชื่อโครงการ','รายการ','project'],
-  source:['แหล่งเงิน','แหล่งงบประมาณ','ที่มาของเงิน','source'],
   budget:['งบประมาณที่ได้รับ','งบที่ได้รับ','งบประมาณ','วงเงิน','งบตั้งไว้','budget'],
-  used:['งบประมาณที่ใช้','งบที่ใช้','เบิกจ่าย','ใช้ไป','ผูกพัน','used'],
-  remain:['คงเหลือ','งบคงเหลือ','เหลือจ่าย','remain'],
-  start:['วันที่เริ่มต้น','วันเริ่ม','เริ่มต้น','วันที่เริ่ม','start'],
-  end:['วันที่สิ้นสุด','วันสิ้นสุด','สิ้นสุด','แล้วเสร็จ','end'],
-  status:['สถานะโครงการ','สถานะ','status'],
-  detail:['รายละเอียด','ขั้นตอน','ผลการดำเนินงาน','detail'],
-  cstart:['เริ่มสัญญา','วันเริ่มสัญญา'],
-  cend:['สิ้นสุดสัญญา','วันสิ้นสุดสัญญา'],
-  problem:['ปัญหา','อุปสรรค','แนวทางการแก้ไข','หมายเหตุ','problem']
+  used:['งบประมาณที่ใช้ไป','งบประมาณที่ใช้','งบที่ใช้','เบิกจ่าย','ใช้ไป','ผูกพัน','used'],
+  remain:['งบคงเหลือ','คงเหลือ','เหลือจ่าย','remain'],
+  source:['type','ประเภท','แหล่งเงิน','แหล่งงบประมาณ','ที่มาของเงิน','source'],
+  status:['status','สถานะโครงการ','สถานะ'],
+  prog:['%ความสำเร็จ','ความสำเร็จ','ความคืบหน้า','%ความคืบหน้า','ร้อยละความสำเร็จ','progress','prog','%'],
+  detail:['การดำเนินงานปัจจุบัน','รายละเอียด','ขั้นตอน','ผลการดำเนินงาน','detail','currentoperation'],
+  priority:['priority','ความสำคัญ','ลำดับความสำคัญ','ระดับความสำคัญ'],
+  start:['วันที่เริ่มต้น','วันเริ่ม','เริ่มต้น','วันที่เริ่ม','start','เริ่มสัญญา','วันเริ่มสัญญา'],
+  follow:['วันที่ติดตามความคืบหน้า','วันติดตาม','วันที่ติดตาม','ติดตามความคืบหน้า','followup'],
+  end:['วันที่สิ้นสุด','วันสิ้นสุด','สิ้นสุด','แล้วเสร็จ','end','สิ้นสุดสัญญา','วันสิ้นสุดสัญญา'],
+  problem:['หมายเหตุ/ปัญหา','ปัญหา/อุปสรรค/แนวทางการแก้ไข','ปัญหา','อุปสรรค','แนวทางการแก้ไข','หมายเหตุ','problem','remark']
 };
 const STATUS_META=[
-  ['ดำเนินการแล้วเสร็จ','#14B8A6',100],
-  ['อยู่ระหว่างดำเนินการ','#6366F1',60],
-  ['ก่อหนี้ผูกพัน','#EC4899',35],
-  ['ยังไม่ได้ดำเนินการ','#A5ACD6',5]
+  ['สิ้นสุดการดำเนินการ','#14B8A6'],
+  ['อยู่ระหว่างดำเนินการ','#6366F1'],
+  ['เริ่มดำเนินการ','#38BDF8'],
+  ['อยุ่ระหว่างปรับปรุง','#F59E0B'],
+  ['อยู่ระหว่างปรับปรุง','#F59E0B'],
+  ['อยู่ระหว่างการวางแผน','#A855F7'],
+  ['ยังไม่เริ่มดำเนินการ','#A5ACD6'],
+  ['ดำเนินการแล้วเสร็จ','#14B8A6'],
+  ['ก่อหนี้ผูกพัน','#EC4899'],
+  ['ยังไม่ได้ดำเนินการ','#A5ACD6']
 ];
 
 function statusInfo(s){
   const t=String(s||'ไม่ระบุ');
-  for(const [k,c,p] of STATUS_META) if(t.indexOf(k)>-1) return {color:c,prog:p};
-  return {color:'#A855F7',prog:20};
+  for(const [k,c] of STATUS_META) if(t.indexOf(k)>-1) return {color:c};
+  return {color:'#A855F7'};
+}
+function fmtPriority(v){
+  const s=String(v||'').trim();
+  const l=s.toLowerCase();
+  if(!s||s==='—')return '—';
+  if(l==='1'||l==='1st'||l.includes('1st')||s==='สูง')return '1st';
+  if(l==='2'||l==='2nd'||l.includes('2nd')||s==='ปานกลาง')return '2nd';
+  if(l==='3'||l==='3rd'||l.includes('3rd')||s==='ต่ำ')return '3rd';
+  return s;
+}
+function priorityPill(v){
+  const p=fmtPriority(v);
+  if(p==='—') return '—';
+  const c = p==='1st'?'#EF4444' : p==='2nd'?'#F59E0B' : p==='3rd'?'#10B981' : '#6366F1';
+  return `<span class="pill" style="color:${c};background:${c}1f;border-color:${c}40"><i></i>${esc(p)}</span>`;
 }
 const PALETTE=['#6366F1','#EC4899','#38BDF8','#A855F7','#F472B6','#14B8A6','#818CF8','#0EA5E9','#C084FC','#4F46E5','#2DD4BF','#F9A8D4'];
 const colorAt=i=>PALETTE[i%PALETTE.length];
@@ -1010,17 +1438,21 @@ function buildRecs(){
     let remain=m.remain!=null&&g(r,'remain')!==''?toNum(g(r,'remain')):budget-used;
     const status=String(g(r,'status')||'ไม่ระบุสถานะ').trim()||'ไม่ระบุสถานะ';
     const si=statusInfo(status);
+    const progVal=m.prog!=null&&g(r,'prog')!==''?clamp(toNum(g(r,'prog')),0,100):0;
     const e=parseDate(g(r,'end')), st=parseDate(g(r,'start'));
     return {
       i, seq:m.seq!=null?(g(r,'seq')||i+1):i+1,
-      unit:String(g(r,'unit')||'ไม่ระบุหน่วยงาน').trim()||'ไม่ระบุหน่วยงาน',
-      year:String(g(r,'year')||'ไม่ระบุ').trim()||'ไม่ระบุ',
       project:String(g(r,'project')||'(ไม่ระบุชื่อรายการ)').trim()||'(ไม่ระบุชื่อรายการ)',
+      area:String(g(r,'area')||'—').trim()||'—',
+      unit:String(g(r,'unit')||'ไม่ระบุ').trim()||'ไม่ระบุ',
+      year:String(g(r,'year')||'ไม่ระบุ').trim()||'ไม่ระบุ',
       source:String(g(r,'source')||'ไม่ระบุ').trim()||'ไม่ระบุ',
-      budget, used, remain, status, detail:String(g(r,'detail')||'').trim(),
+      budget, used, remain, status,
+      detail:String(g(r,'detail')||'').trim(),
+      priority:fmtPriority(g(r,'priority')),
       problem:String(g(r,'problem')||'').trim(),
-      startRaw:g(r,'start'), endRaw:g(r,'end'), cstartRaw:g(r,'cstart'), cendRaw:g(r,'cend'),
-      endM:e.ok?e.m:0, startM:st.ok?st.m:0, color:si.color, prog:si.prog
+      startRaw:g(r,'start'), followRaw:g(r,'follow'), endRaw:g(r,'end'),
+      endM:e.ok?e.m:0, startM:st.ok?st.m:0, color:si.color, prog:progVal
     };
   }).filter(r=>r.project!=='(ไม่ระบุชื่อรายการ)'||r.budget>0);
 }
@@ -1032,6 +1464,7 @@ function applyFilters(){
     if(S.f.source.size&&!S.f.source.has(r.source))return false;
     if(S.f.status.size&&!S.f.status.has(r.status))return false;
     if(q&&!(r.project.toLowerCase().indexOf(q)>-1||r.unit.toLowerCase().indexOf(q)>-1
+        ||r.area.toLowerCase().indexOf(q)>-1||r.priority.toLowerCase().indexOf(q)>-1
         ||r.status.toLowerCase().indexOf(q)>-1||r.detail.toLowerCase().indexOf(q)>-1))return false;
     return true;
   });
@@ -1580,7 +2013,7 @@ function kpiCard(o){
 }
 function kpiSet(){
   const v=S.view, b=sum(v,'budget'), u=sum(v,'used'), r=sum(v,'remain');
-  const done=v.filter(x=>x.prog===100).length;
+  const done=v.filter(x=>x.prog===100||x.status==='สิ้นสุดการดำเนินการ').length;
   const progAvg=v.length?v.reduce((s,x)=>s+x.prog,0)/v.length:0;
   return [
     kpiCard({hero:true,go:'projects',ic:'folder',c:'#6366F1',label:'โครงการ / กิจกรรมทั้งหมด',
@@ -1657,11 +2090,18 @@ function emptyBox(msg){
       :'ลองปรับหรือล้างตัวกรองด้านบน แล้วดูผลอีกครั้ง'}</p></div>`;
 }
 const COLS=[
-  {k:'seq',t:'ลำดับ',w:'62px'},
-  {k:'project',t:'โครงการ / กิจกรรม / ครุภัณฑ์',cls:'ell'},
-  {k:'unit',t:'หน่วยงาน'},{k:'year',t:'ปีงบ'},{k:'source',t:'แหล่งเงิน'},
-  {k:'budget',t:'งบที่ได้รับ',n:1},{k:'used',t:'ใช้ไป',n:1},{k:'remain',t:'คงเหลือ',n:1},
-  {k:'status',t:'สถานะ'},{k:'prog',t:'คืบหน้า',n:1}
+  {k:'seq',t:'No',w:'54px'},
+  {k:'project',t:'Project Name',cls:'ell'},
+  {k:'area',t:'Area'},
+  {k:'unit',t:'ผู้รับผิดชอบ'},
+  {k:'year',t:'ปีงบประมาณ'},
+  {k:'budget',t:'งบประมาณที่ได้รับ',n:1},
+  {k:'used',t:'งบประมาณที่ใช้ไป',n:1},
+  {k:'remain',t:'งบคงเหลือ',n:1},
+  {k:'source',t:'Type'},
+  {k:'status',t:'Status'},
+  {k:'priority',t:'Priority'},
+  {k:'prog',t:'คืบหน้า',n:1}
 ];
 function renderProjects(){
   $('#kpis2').innerHTML=kpiSet();
@@ -1675,18 +2115,42 @@ function renderProjects(){
   S.tPage=clamp(S.tPage,1,pages);
   const slice=arr.slice((S.tPage-1)*per,S.tPage*per);
   $('#prjSub').textContent=`พบ ${nf(arr.length)} รายการ · แสดงหน้า ${S.tPage} จาก ${pages}`;
-  if(!arr.length){ $('#tb-projects').innerHTML=emptyBox('ไม่พบโครงการตามเงื่อนไข'); $('#pager').innerHTML=''; return; }
+  if(!arr.length){
+    if(!S.rows.length){
+      $('#tb-projects').innerHTML=`<div class="empty-box" style="padding:48px 20px;text-align:center">
+        <svg style="width:48px;height:48px;stroke:var(--muted);fill:none;stroke-width:1.6;margin-bottom:12px"><use href="#i-folder"/></svg>
+        <div style="font-weight:700;font-size:16px;color:var(--ink);margin-bottom:6px">ยังไม่มีข้อมูลโครงการในระบบ</div>
+        <p style="color:var(--muted);font-size:13px;margin-bottom:18px">กดปุ่มด้านล่างเพื่อเริ่มสร้างโครงการแรก หรือนำเข้าไฟล์ Excel</p>
+        <button class="btn btn-primary btn-sm" id="btnEmptyAdd"><svg><use href="#i-plus"/></svg>เพิ่มโครงการใหม่</button>
+      </div>`;
+      const btnE=$('#btnEmptyAdd'); if(btnE) btnE.onclick=openAddForm;
+    } else {
+      $('#tb-projects').innerHTML=emptyBox('ไม่พบโครงการตามเงื่อนไข');
+    }
+    $('#pager').innerHTML='';
+    return;
+  }
   $('#tb-projects').innerHTML=`<table><thead><tr>`+COLS.map(c=>
     `<th class="srt ${S.sortKey===c.k?'on':''} ${c.n?'num':''}" data-k="${c.k}" style="${c.w?'width:'+c.w:''}">
       ${esc(c.t)} <span class="ar">${S.sortKey===c.k?(S.sortDir>0?'▲':'▼'):'⇅'}</span></th>`).join('')
+    +`<th style="width:78px;text-align:center" class="no-print">จัดการ</th>`
     +`</tr></thead><tbody>`+slice.map(r=>`<tr class="clickable" data-i="${r.i}">
       <td class="num">${esc(r.seq)}</td>
       <td class="ell" title="${esc(r.project)}">${esc(r.project)}</td>
-      <td>${esc(r.unit)}</td><td>${esc(r.year)}</td><td>${esc(r.source)}</td>
+      <td>${esc(r.area)}</td>
+      <td>${esc(r.unit)}</td><td>${esc(r.year)}</td>
       <td class="num">${nf(r.budget)}</td><td class="num">${nf(r.used)}</td><td class="num">${nf(r.remain)}</td>
+      <td>${esc(r.source)}</td>
       <td><span class="pill" style="color:${r.color};background:${r.color}1f;border-color:${r.color}40"><i></i>${esc(r.status)}</span></td>
+      <td>${priorityPill(r.priority)}</td>
       <td class="num"><div style="display:flex;align-items:center;gap:7px;justify-content:flex-end">
-        <div class="mini"><i style="width:${r.prog}%"></i></div><b>${r.prog}%</b></div></td></tr>`).join('')
+        <div class="mini"><i style="width:${r.prog}%"></i></div><b>${r.prog}%</b></div></td>
+      <td style="text-align:center" class="no-print" onclick="event.stopPropagation()">
+        <div class="tbl-acts">
+          <button class="btn-sm-act" data-act="edit" data-i="${r.i}" title="แก้ไขโครงการ"><svg width="14" height="14" viewBox="0 0 24 24"><use href="#i-edit"/></svg></button>
+          <button class="btn-sm-act del" data-act="del" data-i="${r.i}" title="ลบโครงการ"><svg width="14" height="14" viewBox="0 0 24 24"><use href="#i-trash"/></svg></button>
+        </div>
+      </td></tr>`).join('')
     +`</tbody></table>`;
   $$('#tb-projects th.srt').forEach(th=>th.onclick=()=>{
     const k=th.dataset.k;
@@ -1694,6 +2158,12 @@ function renderProjects(){
     renderProjects();
   });
   $$('#tb-projects tbody tr').forEach(tr=>tr.onclick=()=>openDetail(+tr.dataset.i));
+  $$('#tb-projects button[data-act="edit"]').forEach(b=>{
+    b.onclick=(e)=>{ e.stopPropagation(); openEditForm(+b.dataset.i); };
+  });
+  $$('#tb-projects button[data-act="del"]').forEach(b=>{
+    b.onclick=(e)=>{ e.stopPropagation(); confirmDeleteProject(+b.dataset.i); };
+  });
   // pager
   const btn=(p,l,d,on)=>`<button ${d?'disabled':''} class="${on?'on':''}" data-p="${p}">${l}</button>`;
   let pg='';
@@ -1821,8 +2291,7 @@ function renderReport(){
       <td>${esc(o.project)}</td><td>${esc(o.unit)}</td><td class="num">${nf(o.budget)}</td>
       <td>${esc(o.status)}</td></tr>`).join('')}</tbody></table></div>
     <div style="height:18px"></div>
-    <div class="note warn">รายงานฉบับนี้จัดทำโดยระบบ ProTrack — ระบบติดตามการดำเนินโครงการ
-      พัฒนาโดย ดร.ศิวพร ลินทะลึก (อาจารย์เจนนี่)</div>`;
+    <div class="note warn">รายงานฉบับนี้จัดทำโดยระบบ PP.Track — ระบบติดตามการดำเนินโครงการ</div>`;
 }
 function openDetail(i){
   const r=S.recs.find(x=>x.i===i); if(!r)return;
@@ -1834,18 +2303,28 @@ function openDetail(i){
       ${kpiCard({ic:'bank',c:'#38BDF8',label:'คงเหลือ',value:nf(r.remain),unit:'บาท'})}
     </div>
     <dl class="kv">
-      <dt>หน่วยงาน</dt><dd>${esc(r.unit)}</dd>
+      <dt>No</dt><dd>${esc(r.seq)}</dd>
+      <dt>Area</dt><dd>${esc(r.area||'—')}</dd>
+      <dt>ผู้รับผิดชอบ</dt><dd>${esc(r.unit)}</dd>
       <dt>ปีงบประมาณ</dt><dd>${esc(r.year)}</dd>
-      <dt>แหล่งเงิน</dt><dd>${esc(r.source)}</dd>
-      <dt>สถานะ</dt><dd><span class="pill" style="color:${r.color};background:${r.color}1f;border-color:${r.color}40"><i></i>${esc(r.status)}</span></dd>
+      <dt>Type</dt><dd>${esc(r.source)}</dd>
+      <dt>Status</dt><dd><span class="pill" style="color:${r.color};background:${r.color}1f;border-color:${r.color}40"><i></i>${esc(r.status)}</span></dd>
+      <dt>Priority</dt><dd>${priorityPill(r.priority)}</dd>
       <dt>ความคืบหน้า</dt><dd>${r.prog}%</dd>
-      <dt>รายละเอียดล่าสุด</dt><dd>${esc(r.detail||'—')}</dd>
+      <dt>การดำเนินงานปัจจุบัน</dt><dd>${esc(r.detail||'—')}</dd>
       <dt>วันที่เริ่มต้น</dt><dd>${esc(dstr(r.startRaw))}</dd>
+      <dt>วันที่ติดตามความคืบหน้า</dt><dd>${esc(dstr(r.followRaw))}</dd>
       <dt>วันที่สิ้นสุด</dt><dd>${esc(dstr(r.endRaw))}</dd>
-      <dt>เริ่มสัญญา</dt><dd>${esc(dstr(r.cstartRaw))}</dd>
-      <dt>สิ้นสุดสัญญา</dt><dd>${esc(dstr(r.cendRaw))}</dd>
-      <dt>ปัญหา / อุปสรรค</dt><dd>${esc(r.problem||'—')}</dd>
-    </dl>`;
+      <dt>หมายเหตุ/ปัญหา</dt><dd>${esc(r.problem||'—')}</dd>
+    </dl>
+    <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:20px;padding-top:14px;border-top:1px solid var(--line)" class="no-print">
+      <button class="btn btn-ghost btn-sm" id="btnEditFromDetail"><svg><use href="#i-edit"/></svg>แก้ไขข้อมูล</button>
+      <button class="btn btn-ghost btn-sm btn-danger" id="btnDeleteFromDetail"><svg><use href="#i-trash"/></svg>ลบโครงการ</button>
+    </div>`;
+  const btnE=$('#btnEditFromDetail');
+  if(btnE) btnE.onclick=()=>{ $('#ov').classList.remove('on'); openEditForm(i); };
+  const btnD=$('#btnDeleteFromDetail');
+  if(btnD) btnD.onclick=()=>{ $('#ov').classList.remove('on'); confirmDeleteProject(i); };
   $('#ov').classList.add('on');
 }
 
@@ -1859,7 +2338,7 @@ const TITLES={
   units:['หน่วยงาน','ผลการดำเนินงานรายหน่วยงาน'],
   progress:['ความคืบหน้า','ติดตามสถานะการดำเนินงานของแต่ละโครงการ'],
   report:['รายงานสรุป','รายงานพร้อมพิมพ์ตามเงื่อนไขตัวกรอง'],
-  data:['นำเข้าข้อมูล Excel','อัปโหลดไฟล์ของคุณเพื่อแสดงผลบนแดชบอร์ดนี้'],
+  data:['จัดการและนำเข้าข้อมูล','เชื่อมต่อ Google Sheets ออนไลน์ หรืออัปโหลดไฟล์ Excel'],
   settings:['ตั้งค่า','ปรับธีม สี และรูปแบบการแสดงผล']
 };
 function go(p){
@@ -1913,6 +2392,7 @@ function renderData(){
       <select data-k="${k}"><option value="">— ไม่ใช้ —</option>
       ${S.cols.map((c,i)=>`<option value="${i}" ${S.map[k]===i?'selected':''}>${esc(c||('คอลัมน์ '+(i+1)))}</option>`).join('')}
       </select></div>`).join('');
+  updateGSheetUI();
 }
 function loadSheet(name){
   const ws=S.wb.Sheets[name]; if(!ws)return;
@@ -1949,37 +2429,53 @@ function readFile(f){
   fr.readAsArrayBuffer(f);
 }
 function exportCsv(){
-  const head=COLS.map(c=>c.t);
-  const lines=[head.join(',')].concat(S.view.map(r=>COLS.map(c=>{
-    let v=r[c.k]; if(c.k==='prog')v=r.prog+'%';
-    return '"'+String(v==null?'':v).replace(/"/g,'""')+'"';
-  }).join(',')));
+  const head=FIELDS.map(f=>f[1]);
+  const lines=[head.join(',')].concat(S.view.map(r=>{
+    const vals=[r.seq,r.project,r.area==='—'?'':r.area,r.unit,r.year,r.budget,r.used,r.remain,r.source,r.status,r.prog,r.detail,r.priority==='—'?'':r.priority,r.startRaw,r.followRaw,r.endRaw,r.problem];
+    return vals.map(v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"').join(',');
+  }));
   const blob=new Blob(['\uFEFF'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
-  dl(blob,'ProTrack_โครงการ.csv'); toast('ดาวน์โหลด CSV แล้ว','ok');
+  dl(blob,'PP.Track_โครงการ.csv'); toast('ดาวน์โหลด CSV แล้ว','ok');
 }
 function exportXlsx(){
   if(typeof XLSX==='undefined'){exportCsv();return}
-  const rows=S.view.map(r=>({'ลำดับ':r.seq,'โครงการ/กิจกรรม/ครุภัณฑ์':r.project,'หน่วยงาน':r.unit,'ปีงบประมาณ':r.year,
-    'แหล่งเงิน':r.source,'งบประมาณที่ได้รับ':r.budget,'งบประมาณที่ใช้':r.used,'คงเหลือ':r.remain,
-    'สถานะโครงการ':r.status,'รายละเอียด':r.detail,'ความคืบหน้า (%)':r.prog}));
-  const un=agg(S.view,'unit').sort((a,b)=>b.budget-a.budget).map(o=>({'หน่วยงาน':o.key,'จำนวนโครงการ':o.n,
+  const rows=S.view.map(r=>({
+    'No':r.seq,
+    'Project Name':r.project,
+    'Area':r.area==='—'?'':r.area,
+    'ผู้รับผิดชอบ':r.unit,
+    'ปีงบประมาณ':r.year,
+    'งบประมาณที่ได้รับ':r.budget,
+    'งบประมาณที่ใช้ไป':r.used,
+    'งบคงเหลือ':r.remain,
+    'Type':r.source,
+    'Status':r.status,
+    '% ความสำเร็จ':r.prog,
+    'การดำเนินงานปัจจุบัน':r.detail,
+    'Priority':r.priority==='—'?'':r.priority,
+    'วันที่เริ่มต้น':r.startRaw||'',
+    'วันที่ติดตามความคืบหน้า':r.followRaw||'',
+    'วันที่สิ้นสุด':r.endRaw||'',
+    'หมายเหตุ/ปัญหา':r.problem||''
+  }));
+  const un=agg(S.view,'unit').sort((a,b)=>b.budget-a.budget).map(o=>({'ผู้รับผิดชอบ':o.key,'จำนวนโครงการ':o.n,
     'งบที่ได้รับ':o.budget,'งบที่ใช้':o.used,'คงเหลือ':o.remain,'% เบิกจ่าย':+nfd(pct(o.used,o.budget),2)}));
   const wb=XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(rows),'ทะเบียนโครงการ');
-  XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(un),'สรุปรายหน่วยงาน');
-  XLSX.writeFile(wb,'ProTrack_รายงานสรุป.xlsx');
+  XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(un),'สรุปรายผู้รับผิดชอบ');
+  XLSX.writeFile(wb,'PP.Track_รายงานสรุป.xlsx');
   toast('ส่งออกไฟล์ Excel แล้ว','ok');
 }
 function downloadTemplate(){
   if(typeof XLSX==='undefined'){toast('ไม่พร้อมใช้งาน','err');return}
   const head=FIELDS.map(f=>f[1]);
-  const ex=[[1,'กองการศึกษาฯ','2569','โครงการตัวอย่าง ก','รายได้',500000,120000,380000,'2569-10-01','2569-12-31',
-    'อยู่ระหว่างดำเนินการ','ทำสัญญาแล้ว','','',''],
-    [2,'กองช่าง','2569','โครงการตัวอย่าง ข','เงินอุดหนุนทั่วไป',1200000,1200000,0,'2569-10-15','2570-03-31',
-    'ดำเนินการแล้วเสร็จ','เบิกจ่ายแล้ว','','','']];
+  const ex=[
+    [1,'โครงการตัวอย่าง ก','พื้นที่ 1','กองการศึกษาฯ','2569',500000,120000,380000,'รายได้','อยู่ระหว่างดำเนินการ',55,'ทำสัญญาแล้ว','1st','2569-10-01','2569-11-15','2569-12-31',''],
+    [2,'โครงการตัวอย่าง ข','พื้นที่ 2','กองช่าง','2569',1200000,1200000,0,'เงินอุดหนุนทั่วไป','สิ้นสุดการดำเนินการ',100,'เบิกจ่ายแล้ว','2nd','2569-10-15','2570-01-15','2570-03-31','']
+  ];
   const wb=XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb,XLSX.utils.aoa_to_sheet([head,...ex]),'รวม');
-  XLSX.writeFile(wb,'ProTrack_แม่แบบข้อมูลโครงการ.xlsx');
+  XLSX.writeFile(wb,'PP.Track_แม่แบบข้อมูลโครงการ.xlsx');
   toast('ดาวน์โหลดไฟล์ตัวอย่างแล้ว','ok');
 }
 function dl(blob,name){
@@ -1992,6 +2488,213 @@ function dl(blob,name){
    ============================================================ */
 const LS={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},
           set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+
+/* ============================================================
+   GOOGLE SHEETS SYNC
+   ============================================================ */
+function extractGSheetId(input){
+  if(!input) return null;
+  input = String(input).trim();
+  const m = input.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+  if(m) return m[1];
+  if(/^[a-zA-Z0-9-_]{20,}$/.test(input)) return input;
+  return null;
+}
+
+function getGSheetFetchUrl(input, tabName){
+  if(!input) return null;
+  input = String(input).trim();
+  if(input.includes('/pubhtml') || input.includes('/pub?')){
+    let u = input.replace('/pubhtml', '/pub');
+    if(!u.includes('output=csv')){
+      u += (u.includes('?') ? '&' : '?') + 'output=csv';
+    }
+    if(tabName && !u.includes('gid=')){
+      u += '&sheet=' + encodeURIComponent(tabName.trim());
+    }
+    return u;
+  }
+  const id = extractGSheetId(input);
+  if(!id) return null;
+  let url = `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv`;
+  if(tabName && tabName.trim()){
+    url += `&sheet=${encodeURIComponent(tabName.trim())}`;
+  } else {
+    const gidMatch = input.match(/[#&?]gid=([0-9]+)/);
+    if(gidMatch) url += `&gid=${gidMatch[1]}`;
+  }
+  return url;
+}
+
+function setSyncSpinning(on){
+  $$('.sync-ic, #btnConnectGSheet svg, #btnSyncGSheetNow svg').forEach(svg=>{
+    svg.classList.toggle('spin', on);
+  });
+  const topTxt = $('#btnSyncTop span');
+  if(topTxt) topTxt.textContent = on ? 'กำลังซิงก์...' : 'ซิงก์ Google Sheets';
+}
+
+function updateGSheetUI(){
+  const apiUrl = LS.get('pt_gsheet_api_url') || '';
+  const url = LS.get('pt_gsheet_url') || '';
+  const tab = LS.get('pt_gsheet_tab') || '';
+  const auto = LS.get('pt_gsheet_auto') !== '0';
+  const lastSync = LS.get('pt_gsheet_last_sync') || '';
+
+  const inpApi = $('#gsheetApiUrl'); if(inpApi && !inpApi.value) inpApi.value = apiUrl;
+  const inpUrl = $('#gsheetUrl'); if(inpUrl && !inpUrl.value) inpUrl.value = url;
+  const inpTab = $('#gsheetTab'); if(inpTab && !inpTab.value) inpTab.value = tab;
+  const chkAuto = $('#gsheetAutoSync'); if(chkAuto) chkAuto.checked = auto;
+
+  const hasApi = !!apiUrl;
+  const hasUrl = !!url;
+  const isConnected = hasApi || hasUrl;
+
+  const bApi = $('#gsheetApiBadge'); if(bApi) bApi.style.display = hasApi ? 'inline-flex' : 'none';
+  const bRead = $('#gsheetReadBadge'); if(bRead) bRead.style.display = (!hasApi && hasUrl) ? 'inline-flex' : 'none';
+  const bLocal = $('#gsheetLocalBadge'); if(bLocal) bLocal.style.display = !isConnected ? 'inline-flex' : 'none';
+
+  const btnSyncTop = $('#btnSyncTop'); if(btnSyncTop) btnSyncTop.style.display = isConnected ? 'inline-flex' : 'none';
+  const btnSyncNow = $('#btnSyncGSheetNow'); if(btnSyncNow) btnSyncNow.style.display = isConnected ? 'inline-flex' : 'none';
+  const btnMigrate = $('#btnMigrateToGSheet'); if(btnMigrate) btnMigrate.style.display = (hasApi && S.rows.length) ? 'inline-flex' : 'none';
+
+  const btnOpen = $('#btnOpenGSheet');
+  if(btnOpen){
+    const openUrl = url || (apiUrl ? apiUrl.replace(/\/exec.*$/, '') : '');
+    btnOpen.style.display = (openUrl && openUrl.startsWith('http')) ? 'inline-flex' : 'none';
+    btnOpen.href = openUrl;
+  }
+  const btnDisc = $('#btnDisconnectGSheet'); if(btnDisc) btnDisc.style.display = isConnected ? 'inline-flex' : 'none';
+  const btnConnTxt = $('#btnConnectGSheetTxt'); if(btnConnTxt) btnConnTxt.textContent = isConnected ? 'บันทึกและซิงก์ใหม่' : 'เชื่อมต่อและซิงก์ข้อมูล';
+
+  const info = $('#gsheetSyncInfo');
+  if(info){
+    info.textContent = isConnected
+      ? (lastSync ? `ซิงก์ล่าสุด: ${lastSync}` : 'เชื่อมต่อแล้ว รอการซิงก์')
+      : '';
+  }
+}
+
+async function syncGoogleSheet(silent = false){
+  const apiUrl = ($('#gsheetApiUrl')?.value || LS.get('pt_gsheet_api_url') || '').trim();
+  const urlInput = ($('#gsheetUrl')?.value || LS.get('pt_gsheet_url') || '').trim();
+  const tabName = ($('#gsheetTab')?.value || LS.get('pt_gsheet_tab') || '').trim();
+
+  if(apiUrl) LS.set('pt_gsheet_api_url', apiUrl);
+  if(urlInput) LS.set('pt_gsheet_url', urlInput);
+  if(tabName) LS.set('pt_gsheet_tab', tabName);
+
+  if(!apiUrl && !urlInput){
+    if(!silent) toast('กรุณาระบุ Web App URL หรือ ลิงก์ Google Sheets ก่อน','err');
+    return false;
+  }
+
+  setSyncSpinning(true);
+  if(!silent) toast('กำลังดึงข้อมูลจาก Google Sheets...','info');
+
+  try{
+    // 1. ถ้ามี Apps Script Web App URL ให้ดึงผ่าน Web App API
+    if(apiUrl){
+      let fetchUrl = apiUrl + (apiUrl.includes('?') ? '&' : '?') + 'action=read';
+      if(tabName) fetchUrl += '&sheet=' + encodeURIComponent(tabName);
+
+      const resp = await fetch(fetchUrl);
+      if(!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data = await resp.json();
+      if(data.status === 'error') throw new Error(data.message || 'API Error');
+
+      ensureStandardCols();
+      if(data.rows && Array.isArray(data.rows)){
+        S.rows = data.rows.map((r, i) => {
+          const rowArr = [...r];
+          rowArr._dbId = (data.records && data.records[i] && data.records[i].id) || r[17] || r[16] || r[15] || ('gs_' + (i + 2));
+          return rowArr;
+        });
+      }
+      S.sheet = tabName || 'Google Sheets';
+      S.fileName = 'Google Sheets (' + S.rows.length + ' รายการ)';
+      reload();
+      GSheetDB.saveLocal();
+      if(!silent) toast(`ซิงก์ Google Sheets สำเร็จ ${nf(S.rows.length)} รายการ`, 'ok');
+      updateGSheetUI();
+      return true;
+    }
+
+    // 2. ถ้าไม่มี Web App URL แต่มี ลิงก์ Google Sheets ธรรมดา ให้ดึงผ่าน CSV Export
+    const fetchUrl = getGSheetFetchUrl(urlInput, tabName);
+    if(!fetchUrl) throw new Error('รูปแบบลิงก์ Google Sheets ไม่ถูกต้อง');
+
+    const resp = await fetch(fetchUrl);
+    if(!resp.ok) throw new Error('HTTP ' + resp.status);
+    const text = await resp.text();
+
+    if(text.includes('<!DOCTYPE html') || text.includes('accounts.google.com') || text.includes('ServiceLogin')){
+      throw new Error('AUTH_REQUIRED');
+    }
+
+    if(typeof XLSX === 'undefined') throw new Error('NO_XLSX');
+    const wb = XLSX.read(text, {type:'string', cellDates:true});
+    const sName = wb.SheetNames[0];
+    const ws = wb.Sheets[sName];
+    const aoa = XLSX.utils.sheet_to_json(ws, {header:1, raw:false, cellDates:true, defval:''});
+
+    if(!aoa || !aoa.length) throw new Error('EMPTY_SHEET');
+
+    let hi = 0;
+    for(let i=0; i<Math.min(aoa.length, 12); i++){
+      const f = aoa[i].filter(x=>String(x).trim()!=='').length;
+      const fh = aoa[hi].filter(x=>String(x).trim()!=='').length;
+      if(f > fh) hi = i;
+    }
+
+    const cols = aoa[hi].map((c,i)=>String(c||'').trim()||('คอลัมน์ '+(i+1)));
+    const rows = aoa.slice(hi+1).filter(r=>r.some(c=>String(c).trim()!==''));
+
+    S.wb = wb;
+    S.sheets = wb.SheetNames;
+    S.sheet = tabName || 'Google Sheets';
+    S.fileName = 'Google Sheets' + (tabName ? ` (${tabName})` : '');
+    S.cols = cols;
+    S.rows = rows.map((r, i) => {
+      const rowArr = [...r];
+      rowArr._dbId = 'gs_' + (i + 2);
+      return rowArr;
+    });
+    S.map = autoMap(S.cols);
+    S.f = {unit:new Set(), year:new Set(), source:new Set(), status:new Set()};
+    S.q = '';
+    const qInp = $('#q'); if(qInp) qInp.value = '';
+
+    reload();
+    GSheetDB.saveLocal();
+    updateGSheetUI();
+    if(!silent) toast(`ซิงก์ Google Sheets แล้ว ${nf(S.recs.length)} รายการ`,'ok');
+    return true;
+  }catch(err){
+    console.error('Google Sheets sync error:', err);
+    if(err.message === 'AUTH_REQUIRED'){
+      toast('ไม่สามารถเข้าถึงได้: กรุณาตั้งค่าแชร์ชีทเป็น "ทุกคนที่มีลิงก์มีสิทธิ์ดู"','err');
+      const gb = $('#gsheetGuideBox'); if(gb) gb.style.display = 'block';
+    }else{
+      toast('ซิงก์ไม่สำเร็จ: ' + (err.message || 'ตรวจสอบการเชื่อมต่อ'),'err');
+    }
+    return false;
+  }finally{
+    setSyncSpinning(false);
+  }
+}
+
+function disconnectGoogleSheet(){
+  LS.set('pt_gsheet_api_url','');
+  LS.set('pt_gsheet_url','');
+  LS.set('pt_gsheet_tab','');
+  LS.set('pt_gsheet_last_sync','');
+  const inpApi = $('#gsheetApiUrl'); if(inpApi) inpApi.value = '';
+  const inpUrl = $('#gsheetUrl'); if(inpUrl) inpUrl.value = '';
+  const inpTab = $('#gsheetTab'); if(inpTab) inpTab.value = '';
+  updateGSheetUI();
+  toast('ยกเลิกการเชื่อมต่อ Google Sheets แล้ว','ok');
+}
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
   $('#themeIc').innerHTML=`<use href="#i-${t==='dark'?'sun':'moon'}"/>`;
@@ -2008,15 +2711,549 @@ function setAccent(c){
 }
 function loadDemo(){
   S.wb=null; S.sheets=['รวม']; S.sheet='รวม';
-  S.fileName='ProTrack_ตัวอย่างข้อมูลโครงการ.xlsx'; S.fileSize='';
+  S.fileName='PP.Track_ตัวอย่างข้อมูลโครงการ.xlsx'; S.fileSize='';
   S.cols=DEMO.cols.slice(); S.rows=DEMO.rows.map(r=>r.slice()); S.map=autoMap(S.cols);
   S.f={unit:new Set(),year:new Set(),source:new Set(),status:new Set()}; S.q=''; $('#q').value='';
+  DB.saveLocal();
   reload(); if(S.page==='data')renderData(); else go('overview');
   toast('โหลดข้อมูลตัวอย่าง '+nf(S.recs.length)+' รายการแล้ว','ok');
 }
+
+/* ============================================================
+   GOOGLE SHEETS DATABASE & CRUD MANAGEMENT (GOOGLE APPS SCRIPT / LOCAL CACHE)
+   ============================================================ */
+function ensureFieldCol(key, defaultHeader){
+  if(S.map[key] == null){
+    const colIdx = S.cols.length;
+    S.cols.push(defaultHeader);
+    S.map[key] = colIdx;
+    S.rows.forEach(r => { while(r.length < S.cols.length) r.push(''); });
+  }
+}
+function ensureStandardCols(){
+  if(!S.cols || !S.cols.length){
+    S.cols = FIELDS.map(f => f[1]);
+    S.map = {};
+    FIELDS.forEach(([k], idx) => { S.map[k] = idx; });
+    if(!S.sheet) S.sheet = 'Google Sheets';
+    if(!S.sheets || !S.sheets.length) S.sheets = ['Google Sheets'];
+    if(!S.fileName) S.fileName = 'Google Sheets (ฐานข้อมูล)';
+  } else {
+    FIELDS.forEach(([k, label]) => {
+      ensureFieldCol(k, label);
+    });
+  }
+}
+function toIsoDate(v){
+  const p = parseDate(v);
+  if(!p.ok) return '';
+  const mm = String(p.m).padStart(2, '0');
+  const dd = String(p.d).padStart(2, '0');
+  return `${p.y}-${mm}-${dd}`;
+}
+function rowToGSheetRecord(row){
+  const m = S.map;
+  const g = (k) => (m[k] != null && row[m[k]] != null) ? row[m[k]] : '';
+  const budget = toNum(g('budget'));
+  const used = toNum(g('used'));
+  const remain = g('remain') !== '' ? toNum(g('remain')) : (budget - used);
+  const prog = g('prog') !== '' ? clamp(toNum(g('prog')), 0, 100) : 0;
+  return {
+    id: row._dbId || ('gs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5)),
+    seq: parseInt(g('seq'), 10) || 1,
+    project: String(g('project') || ''),
+    area: String(g('area') || ''),
+    unit: String(g('unit') || ''),
+    year: String(g('year') || ''),
+    budget,
+    used,
+    remain,
+    source: String(g('source') || ''),
+    status: String(g('status') || 'อยู่ระหว่างดำเนินการ'),
+    prog,
+    detail: String(g('detail') || ''),
+    priority: String(g('priority') || ''),
+    start: String(g('start') || ''),
+    follow: String(g('follow') || ''),
+    end: String(g('end') || ''),
+    problem: String(g('problem') || '')
+  };
+}
+function gSheetRecordToRow(rec){
+  ensureStandardCols();
+  const m = S.map;
+  const r = new Array(S.cols.length).fill('');
+  r._dbId = rec.id || ('gs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5));
+  if(rec._rowIndex) r._rowIndex = rec._rowIndex;
+  if(m.seq != null) r[m.seq] = rec.seq;
+  if(m.project != null) r[m.project] = rec.project || '';
+  if(m.area != null) r[m.area] = rec.area || '';
+  if(m.unit != null) r[m.unit] = rec.unit || '';
+  if(m.year != null) r[m.year] = rec.year || '';
+  if(m.budget != null) r[m.budget] = Number(rec.budget) || 0;
+  if(m.used != null) r[m.used] = Number(rec.used) || 0;
+  if(m.remain != null) r[m.remain] = (rec.remain != null && rec.remain !== '') ? Number(rec.remain) : ((Number(rec.budget)||0) - (Number(rec.used)||0));
+  if(m.source != null) r[m.source] = rec.source || '';
+  if(m.status != null) r[m.status] = rec.status || 'อยู่ระหว่างดำเนินการ';
+  if(m.prog != null) r[m.prog] = (rec.prog != null && rec.prog !== '') ? Number(rec.prog) : 0;
+  if(m.detail != null) r[m.detail] = rec.detail || '';
+  if(m.priority != null) r[m.priority] = rec.priority || '';
+  if(m.start != null) r[m.start] = rec.start || rec.start_date || '';
+  if(m.follow != null) r[m.follow] = rec.follow || rec.follow_date || '';
+  if(m.end != null) r[m.end] = rec.end || rec.end_date || '';
+  if(m.problem != null) r[m.problem] = rec.problem || '';
+  return r;
+}
+function populateDatalists(){
+  const getUniq = (key) => [...new Set(S.recs.map(r => r[key]).filter(v => v && v !== '—'))].sort((a,b)=>String(a).localeCompare(String(b),'th'));
+  const fill = (id, vals) => {
+    const el = $('#' + id);
+    if(el) el.innerHTML = vals.map(v => `<option value="${esc(v)}">`).join('');
+  };
+  fill('dlAreas', getUniq('area'));
+  fill('dlYears', getUniq('year'));
+  fill('dlSources', getUniq('source'));
+}
+
+function openAddForm(){
+  ensureStandardCols();
+  $('#formTitle').textContent = 'เพิ่มโครงการใหม่';
+  $('#fId').value = '';
+  $('#fIndex').value = '-1';
+  $('#fProject').value = '';
+  $('#fArea').value = '';
+  $('#fUnit').value = S.f.unit.size === 1 ? [...S.f.unit][0] : '';
+  const nowThYear = String(new Date().getFullYear() + 543);
+  $('#fYear').value = S.f.year.size === 1 ? [...S.f.year][0] : (S.recs[0]?.year || nowThYear);
+  $('#fSource').value = S.f.source.size === 1 ? [...S.f.source][0] : '';
+  $('#fStatus').value = 'อยู่ระหว่างดำเนินการ';
+  $('#fProg').value = '0';
+  $('#fPriority').value = '1st';
+  $('#fBudget').value = '';
+  $('#fUsed').value = '';
+  $('#fRemain').value = '0';
+  $('#fStart').value = '';
+  $('#fFollow').value = '';
+  $('#fEnd').value = '';
+  $('#fDetail').value = '';
+  $('#fProblem').value = '';
+  
+  populateDatalists();
+  $('#ovForm').classList.add('on');
+  setTimeout(() => $('#fProject').focus(), 150);
+}
+
+function openEditForm(i){
+  ensureStandardCols();
+  const row = S.rows[i];
+  if(!row) return;
+  const m = S.map;
+  const g = (k) => (m[k] != null && row[m[k]] != null) ? row[m[k]] : '';
+
+  $('#formTitle').textContent = 'แก้ไขข้อมูลโครงการ';
+  $('#fId').value = row._dbId || '';
+  $('#fIndex').value = i;
+  $('#fProject').value = g('project') || '';
+  $('#fArea').value = g('area') || '';
+  $('#fUnit').value = g('unit') || '';
+  $('#fYear').value = g('year') || '';
+  $('#fSource').value = g('source') || '';
+  $('#fStatus').value = g('status') || 'อยู่ระหว่างดำเนินการ';
+  $('#fProg').value = g('prog') !== '' ? clamp(toNum(g('prog')), 0, 100) : 0;
+  const pr = fmtPriority(g('priority'));
+  $('#fPriority').value = ['1st','2nd','3rd'].includes(pr) ? pr : '1st';
+  $('#fBudget').value = g('budget') !== '' ? g('budget') : '';
+  $('#fUsed').value = g('used') !== '' ? g('used') : '';
+  const b = toNum(g('budget')), u = toNum(g('used'));
+  const rm = g('remain') !== '' ? toNum(g('remain')) : (b - u);
+  $('#fRemain').value = nf(rm);
+  
+  $('#fStart').value = toIsoDate(g('start'));
+  $('#fFollow').value = toIsoDate(g('follow'));
+  $('#fEnd').value = toIsoDate(g('end'));
+  $('#fDetail').value = g('detail') || '';
+  $('#fProblem').value = g('problem') || '';
+
+  populateDatalists();
+  $('#ovForm').classList.add('on');
+  setTimeout(() => $('#fProject').focus(), 150);
+}
+
+function closeFormModal(){
+  $('#ovForm').classList.remove('on');
+}
+
+function updateFormRemain(){
+  const b = parseFloat($('#fBudget').value) || 0;
+  const u = parseFloat($('#fUsed').value) || 0;
+  $('#fRemain').value = nf(b - u);
+}
+
+async function saveProjectForm(){
+  const project = $('#fProject').value.trim();
+  if(!project){
+    toast('กรุณาระบุชื่อโครงการ (Project Name)','err');
+    $('#fProject').focus();
+    return;
+  }
+  ensureStandardCols();
+
+  const idx = parseInt($('#fIndex').value, 10);
+  const budget = parseFloat($('#fBudget').value) || 0;
+  const used = parseFloat($('#fUsed').value) || 0;
+  const remain = budget - used;
+  const prog = clamp(parseFloat($('#fProg').value) || 0, 0, 100);
+
+  const data = {
+    id: $('#fId').value || null,
+    project,
+    area: $('#fArea').value.trim(),
+    unit: $('#fUnit').value.trim() || 'ไม่ระบุ',
+    year: $('#fYear').value.trim() || String(new Date().getFullYear() + 543),
+    source: $('#fSource').value.trim() || 'ไม่ระบุ',
+    status: $('#fStatus').value || 'อยู่ระหว่างดำเนินการ',
+    prog,
+    priority: $('#fPriority').value.trim(),
+    budget,
+    used,
+    remain,
+    start: $('#fStart').value || '',
+    follow: $('#fFollow').value || '',
+    end: $('#fEnd').value || '',
+    detail: $('#fDetail').value.trim(),
+    problem: $('#fProblem').value.trim()
+  };
+
+  const btn = $('#btnSaveForm');
+  const oldText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = `<span class="spin">⏳</span> กำลังบันทึก...`;
+
+  try {
+    if(idx >= 0 && S.rows[idx]){
+      await DB.updateProject(idx, data);
+      toast('แก้ไขข้อมูลโครงการสำเร็จ', 'ok');
+    } else {
+      await DB.addProject(data);
+      toast('เพิ่มโครงการใหม่สำเร็จ', 'ok');
+    }
+    closeFormModal();
+    reload();
+  } catch(err){
+    console.error('Save project error:', err);
+    toast('เกิดข้อผิดพลาดในการบันทึก: ' + (err.message || err), 'err');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = oldText;
+  }
+}
+
+async function confirmDeleteProject(i){
+  const row = S.rows[i];
+  if(!row) return;
+  const name = (S.map.project != null && row[S.map.project]) ? row[S.map.project] : 'โครงการนี้';
+  if(!confirm(`ยืนยันการลบโครงการ:\n"${name}"\n\nการดำเนินการนี้จะลบออกจากฐานข้อมูลและไม่สามารถเรียกคืนได้`)){
+    return;
+  }
+  try {
+    await DB.deleteProject(i);
+    toast('ลบโครงการเรียบร้อยแล้ว', 'ok');
+    reload();
+  } catch(err){
+    console.error('Delete project error:', err);
+    toast('เกิดข้อผิดพลาดในการลบ: ' + (err.message || err), 'err');
+  }
+}
+
+const GSheetDB = {
+  storageKey: 'pt_gsheet_cache',
+
+  getApiUrl(){
+    return ($('#gsheetApiUrl')?.value || LS.get('pt_gsheet_api_url') || '').trim();
+  },
+
+  getTabName(){
+    return ($('#gsheetTab')?.value || LS.get('pt_gsheet_tab') || '').trim();
+  },
+
+  hasApi(){
+    return Boolean(this.getApiUrl());
+  },
+
+  init(){
+    const apiUrl = LS.get('pt_gsheet_api_url') || '';
+    if($('#gsheetApiUrl') && apiUrl) $('#gsheetApiUrl').value = apiUrl;
+    const url = LS.get('pt_gsheet_url') || '';
+    if($('#gsheetUrl') && url) $('#gsheetUrl').value = url;
+    const tab = LS.get('pt_gsheet_tab') || '';
+    if($('#gsheetTab') && tab) $('#gsheetTab').value = tab;
+
+    this.loadLocal();
+    updateGSheetUI();
+  },
+
+  loadLocal(){
+    if(!S.rows || !S.rows.length){
+      const saved = LS.get(this.storageKey);
+      if(saved){
+        try {
+          const d = JSON.parse(saved);
+          if(d && d.rows && d.rows.length){
+            S.cols = d.cols || FIELDS.map(f=>f[1]);
+            S.map = d.map || autoMap(S.cols);
+            S.rows = d.rows;
+            S.sheet = d.sheet || 'Google Sheets';
+            S.fileName = d.fileName || 'Google Sheets (แคชออฟไลน์)';
+            S.fileSize = d.fileSize || '';
+          }
+        } catch(e){}
+      }
+    }
+  },
+
+  saveLocal(){
+    if(!S.rows || !S.cols) return;
+    try {
+      const data = {
+        cols: S.cols,
+        map: S.map,
+        rows: S.rows.map(r => {
+          const rowArr = [...r];
+          if(r._dbId) rowArr._dbId = r._dbId;
+          if(r._rowIndex) rowArr._rowIndex = r._rowIndex;
+          return rowArr;
+        }),
+        sheet: S.sheet || 'Google Sheets',
+        fileName: S.fileName || 'Google Sheets (ฐานข้อมูล)',
+        fileSize: S.fileSize || '',
+        savedAt: new Date().toISOString()
+      };
+      LS.set(this.storageKey, JSON.stringify(data));
+      LS.set('pt_local_db', JSON.stringify(data));
+    } catch(e){
+      console.warn('LocalStorage save failed:', e);
+    }
+  },
+
+  async callApi(payload){
+    const apiUrl = this.getApiUrl();
+    if(!apiUrl) throw new Error('ยังไม่ได้ระบุ Web App URL ของ Google Apps Script');
+
+    payload.sheet = payload.sheet || payload.tab || this.getTabName();
+
+    const res = await fetch(apiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+
+    if(!res.ok){
+      throw new Error(`HTTP ${res.status}: ไม่สามารถเชื่อมต่อ Google Sheets Web App ได้`);
+    }
+
+    const json = await res.json();
+    if(json && json.status === 'error'){
+      throw new Error(json.message || 'เกิดข้อผิดพลาดในการประมวลผลบน Google Sheets');
+    }
+    return json;
+  },
+
+  async addProject(formData){
+    ensureStandardCols();
+    const m = S.map;
+    const row = new Array(S.cols.length).fill('');
+    const nextSeq = S.rows.length + 1;
+
+    if(m.seq != null) row[m.seq] = nextSeq;
+    if(m.project != null) row[m.project] = formData.project;
+    if(m.area != null) row[m.area] = formData.area;
+    if(m.unit != null) row[m.unit] = formData.unit;
+    if(m.year != null) row[m.year] = formData.year;
+    if(m.source != null) row[m.source] = formData.source;
+    if(m.status != null) row[m.status] = formData.status;
+    if(m.prog != null) row[m.prog] = formData.prog;
+    if(m.priority != null) row[m.priority] = formData.priority;
+    if(m.budget != null) row[m.budget] = formData.budget;
+    if(m.used != null) row[m.used] = formData.used;
+    if(m.remain != null) row[m.remain] = formData.remain;
+    if(m.start != null) row[m.start] = formData.start;
+    if(m.follow != null) row[m.follow] = formData.follow;
+    if(m.end != null) row[m.end] = formData.end;
+    if(m.detail != null) row[m.detail] = formData.detail;
+    if(m.problem != null) row[m.problem] = formData.problem;
+
+    const newId = 'gs_' + Date.now() + '_' + Math.random().toString(36).substr(2,5);
+    row._dbId = newId;
+
+    if(this.hasApi()){
+      const rec = rowToGSheetRecord(row);
+      const res = await this.callApi({ action: 'create', data: rec });
+      if(res && res.record){
+        if(res.record.id) row._dbId = res.record.id;
+        if(res.record._rowIndex) row._rowIndex = res.record._rowIndex;
+      }
+    }
+
+    S.rows.push(row);
+    this.saveLocal();
+    updateGSheetUI();
+  },
+
+  async updateProject(idx, formData){
+    ensureStandardCols();
+    const row = S.rows[idx];
+    if(!row) throw new Error('ไม่พบแถวข้อมูลที่ต้องการแก้ไข');
+    const m = S.map;
+
+    if(m.project != null) row[m.project] = formData.project;
+    if(m.area != null) row[m.area] = formData.area;
+    if(m.unit != null) row[m.unit] = formData.unit;
+    if(m.year != null) row[m.year] = formData.year;
+    if(m.source != null) row[m.source] = formData.source;
+    if(m.status != null) row[m.status] = formData.status;
+    if(m.prog != null) row[m.prog] = formData.prog;
+    if(m.priority != null) row[m.priority] = formData.priority;
+    if(m.budget != null) row[m.budget] = formData.budget;
+    if(m.used != null) row[m.used] = formData.used;
+    if(m.remain != null) row[m.remain] = formData.remain;
+    if(m.start != null) row[m.start] = formData.start;
+    if(m.follow != null) row[m.follow] = formData.follow;
+    if(m.end != null) row[m.end] = formData.end;
+    if(m.detail != null) row[m.detail] = formData.detail;
+    if(m.problem != null) row[m.problem] = formData.problem;
+
+    if(this.hasApi()){
+      const rec = rowToGSheetRecord(row);
+      await this.callApi({
+        action: 'update',
+        id: row._dbId || null,
+        rowIndex: row._rowIndex || (idx + 2),
+        data: rec
+      });
+    }
+
+    this.saveLocal();
+    updateGSheetUI();
+  },
+
+  async deleteProject(idx){
+    const row = S.rows[idx];
+    if(!row) return;
+
+    if(this.hasApi()){
+      await this.callApi({
+        action: 'delete',
+        id: row._dbId || null,
+        rowIndex: row._rowIndex || (idx + 2)
+      });
+    }
+
+    S.rows.splice(idx, 1);
+    this.saveLocal();
+    updateGSheetUI();
+  },
+
+  async setupSheet(){
+    const apiUrl = ($('#gsheetApiUrl')?.value || LS.get('pt_gsheet_api_url') || '').trim();
+    const tabName = ($('#gsheetTab')?.value || LS.get('pt_gsheet_tab') || '').trim();
+    if(apiUrl) LS.set('pt_gsheet_api_url', apiUrl);
+    if(tabName) LS.set('pt_gsheet_tab', tabName);
+
+    if(!apiUrl){
+      toast('กรุณาระบุ Google Apps Script Web App URL ก่อนกดสร้างชีตและคอลัมน์อัตโนมัติ', 'err');
+      const apiInp = $('#gsheetApiUrl');
+      if(apiInp) apiInp.focus();
+      return;
+    }
+
+    const btn = $('#btnSetupGSheet');
+    const oldText = btn ? btn.innerHTML : '';
+    if(btn){
+      btn.disabled = true;
+      btn.innerHTML = `<span class="spin">⏳</span> กำลังสร้างชีตและคอลัมน์...`;
+    }
+
+    try {
+      const res = await this.callApi({ action: 'setup', sheet: tabName });
+      toast(res.message || 'สร้างชีตและหัวคอลัมน์อัตโนมัติเรียบร้อยแล้ว', 'ok');
+      await syncGoogleSheet(true);
+    } catch(err){
+      console.error('Setup sheet error:', err);
+      toast('สร้างชีตไม่สำเร็จ: ' + (err.message || err), 'err');
+    } finally {
+      if(btn){
+        btn.disabled = false;
+        btn.innerHTML = oldText;
+      }
+    }
+  },
+
+  async migrateCurrentToGSheet(){
+    if(!this.hasApi()){
+      toast('กรุณาระบุ Web App URL ของ Google Apps Script ก่อนส่งข้อมูล', 'err');
+      const apiInp = $('#gsheetApiUrl');
+      if(apiInp) apiInp.focus();
+      return;
+    }
+    if(!S.rows || !S.rows.length){
+      toast('ไม่มีข้อมูลโครงการในระบบสำหรับส่งขึ้น Google Sheets', 'warn');
+      return;
+    }
+
+    if(!confirm(`ต้องการส่งข้อมูลโครงการปัจจุบันจำนวน ${nf(S.rows.length)} รายการขึ้นไปยัง Google Sheets ใช่หรือไม่?`)){
+      return;
+    }
+
+    const btn = $('#btnMigrateToGSheet');
+    const oldText = btn ? btn.innerHTML : '';
+    if(btn){
+      btn.disabled = true;
+      btn.innerHTML = `<span class="spin">⏳</span> กำลังส่งข้อมูลขึ้น Google Sheets...`;
+    }
+
+    try {
+      const records = S.rows.map(r => rowToGSheetRecord(r));
+      const batchSize = 100;
+      for(let i=0; i<records.length; i+=batchSize){
+        const chunk = records.slice(i, i+batchSize);
+        await this.callApi({ action: 'batch', rows: chunk });
+      }
+
+      toast(`ส่งข้อมูลขึ้น Google Sheets สำเร็จ ${nf(records.length)} รายการ`, 'ok');
+      await syncGoogleSheet(false);
+    } catch(err){
+      console.error('Migration error:', err);
+      toast('ส่งข้อมูลไม่สำเร็จ: ' + (err.message || err), 'err');
+    } finally {
+      if(btn){
+        btn.disabled = false;
+        btn.innerHTML = oldText;
+      }
+    }
+  }
+};
+
+const DB = GSheetDB;
+
 function boot(){
-  // เริ่มต้นด้วยแดชบอร์ดว่าง รอไฟล์ Excel จากผู้ใช้
+  // เริ่มต้นด้วยแดชบอร์ดว่าง รอไฟล์ Excel จากผู้ใช้ หรือโหลดแคช Google Sheets หรือ Local DB
   S.cols=[]; S.rows=[]; S.map={}; S.sheet=''; S.sheets=[]; S.fileName=''; S.fileSize='';
+  const cached=LS.get('pt_gsheet_cache');
+  if(cached){
+    try{
+      const d=JSON.parse(cached);
+      if(d&&d.cols&&d.rows&&d.rows.length){
+        S.cols=d.cols; S.rows=d.rows; S.map=d.map||autoMap(S.cols);
+        S.sheet=d.sheet||'Google Sheets';
+        S.fileName=d.fileName||'Google Sheets (แคชออฟไลน์)';
+        S.fileSize=d.fileSize||'';
+      }
+    }catch(e){}
+  }
+
+  // เริ่มต้นการทำงานของระบบฐานข้อมูล Google Sheets (Apps Script / แคชในเครื่อง)
+  DB.init();
+
   reload();
   let dark=false;
   try{ dark=typeof matchMedia==='function'&&matchMedia('(prefers-color-scheme:dark)').matches; }catch(e){}
@@ -2051,9 +3288,25 @@ function boot(){
   let qt; $('#q').oninput=function(){clearTimeout(qt);const v=this.value;qt=setTimeout(()=>{S.q=v;refresh()},220)};
   document.addEventListener('click',e=>{ if(!e.target.closest('.ms'))$$('.ms.open').forEach(x=>x.classList.remove('open')); });
   document.addEventListener('click',e=>{ const g=e.target.closest('[data-go]'); if(g)go(g.dataset.go); });
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){$$('.ms.open').forEach(x=>x.classList.remove('open'));$('#ov').classList.remove('on');} });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+      $$('.ms.open').forEach(x=>x.classList.remove('open'));
+      $('#ov').classList.remove('on');
+      $('#ovForm').classList.remove('on');
+    }
+  });
   $('#mClose').onclick=()=>$('#ov').classList.remove('on');
   $('#ov').onclick=e=>{if(e.target.id==='ov')$('#ov').classList.remove('on')};
+
+  // Form Modal Event Listeners
+  const btnOpenAdd=$('#btnOpenAdd'); if(btnOpenAdd) btnOpenAdd.onclick=openAddForm;
+  const btnAddTop=$('#btnAddTop'); if(btnAddTop) btnAddTop.onclick=openAddForm;
+  const btnCancelForm=$('#btnCancelForm'); if(btnCancelForm) btnCancelForm.onclick=closeFormModal;
+  const formClose=$('#formClose'); if(formClose) formClose.onclick=closeFormModal;
+  const ovForm=$('#ovForm'); if(ovForm) ovForm.onclick=e=>{ if(e.target.id==='ovForm') closeFormModal(); };
+  const btnSaveForm=$('#btnSaveForm'); if(btnSaveForm) btnSaveForm.onclick=saveProjectForm;
+  const fBgt=$('#fBudget'); if(fBgt) fBgt.oninput=updateFormRemain;
+  const fUsd=$('#fUsed'); if(fUsd) fUsd.oninput=updateFormRemain;
   $$('#segTrend button').forEach(b=>b.onclick=()=>{$$('#segTrend button').forEach(x=>x.classList.remove('on'));
     b.classList.add('on'); S.segTrend=b.dataset.v; renderOverview();});
   $$('#segUnit button').forEach(b=>b.onclick=()=>{$$('#segUnit button').forEach(x=>x.classList.remove('on'));
@@ -2073,6 +3326,8 @@ function boot(){
   $('#btnClear').onclick=()=>{
     S.wb=null; S.cols=[]; S.rows=[]; S.map={}; S.sheet=''; S.sheets=[]; S.fileName=''; S.fileSize='';
     S.f={unit:new Set(),year:new Set(),source:new Set(),status:new Set()}; S.q=''; $('#q').value='';
+    LS.set('pt_gsheet_cache', '');
+    LS.set('pt_local_db', '');
     reload(); renderData(); toast('ล้างข้อมูลออกจากระบบแล้ว','ok');
   };
   const drop=$('#drop'), file=$('#file');
@@ -2086,6 +3341,62 @@ function boot(){
     $$('#mapGrid select').forEach(s=>{ if(s.value!=='')m[s.dataset.k]=+s.value; });
     S.map=m; reload(); renderData(); toast('ปรับการจับคู่คอลัมน์แล้ว','ok');
   };
+
+  // Google Sheets Event Listeners
+  const btnConn=$('#btnConnectGSheet'); if(btnConn) btnConn.onclick=()=>syncGoogleSheet(false);
+  const btnSetupG=$('#btnSetupGSheet'); if(btnSetupG) btnSetupG.onclick=()=>GSheetDB.setupSheet();
+  const btnSyncN=$('#btnSyncGSheetNow'); if(btnSyncN) btnSyncN.onclick=()=>syncGoogleSheet(false);
+  const btnSyncT=$('#btnSyncTop'); if(btnSyncT) btnSyncT.onclick=()=>syncGoogleSheet(false);
+  const btnDisc=$('#btnDisconnectGSheet'); if(btnDisc) btnDisc.onclick=disconnectGoogleSheet;
+  const btnMigGSheet=$('#btnMigrateToGSheet'); if(btnMigGSheet) btnMigGSheet.onclick=()=>GSheetDB.migrateCurrentToGSheet();
+  const btnCopyGs=$('#btnCopyGsCode');
+  if(btnCopyGs){
+    btnCopyGs.onclick=()=>{
+      const block=$('#gsCodeBlock');
+      const code=block ? block.textContent : '';
+      if(code){
+        navigator.clipboard.writeText(code).then(()=>toast('คัดลอกโค้ด Code.gs เรียบร้อยแล้ว','ok')).catch(()=>toast('ไม่สามารถคัดลอกได้','err'));
+      }
+    };
+  }
+  const btnGuide=$('#btnToggleGuide');
+  if(btnGuide){
+    btnGuide.onclick=()=>{
+      const g=$('#gsheetGuideBox');
+      if(g) g.style.display = g.style.display==='none' ? 'block' : 'none';
+    };
+  }
+  const autoChk=$('#gsheetAutoSync');
+  if(autoChk){
+    autoChk.onchange=function(){ LS.set('pt_gsheet_auto', this.checked ? '1' : '0'); };
+  }
+  const inpGApi=$('#gsheetApiUrl');
+  if(inpGApi){
+    inpGApi.onchange=function(){
+      LS.set('pt_gsheet_api_url', this.value.trim());
+      updateGSheetUI();
+    };
+  }
+  const inpGUrl=$('#gsheetUrl');
+  if(inpGUrl){
+    inpGUrl.onchange=function(){
+      LS.set('pt_gsheet_url', this.value.trim());
+      updateGSheetUI();
+    };
+  }
+  const inpGTab=$('#gsheetTab');
+  if(inpGTab){
+    inpGTab.onchange=function(){
+      LS.set('pt_gsheet_tab', this.value.trim());
+    };
+  }
+  updateGSheetUI();
+
+  // หากตั้งค่า Google Sheets ไว้ และเปิด Auto-sync ให้ซิงก์ดึงข้อมูลสดในเบื้องหลัง
+  if((LS.get('pt_gsheet_api_url') || LS.get('pt_gsheet_url')) && LS.get('pt_gsheet_auto') !== '0'){
+    setTimeout(()=>syncGoogleSheet(true), 650);
+  }
+
   let rt; addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(render,260)});
   window.addEventListener('beforeprint',()=>{});
 }
