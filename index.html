@@ -496,6 +496,7 @@ textarea.input-text{font-family:inherit;resize:vertical}
 <symbol id="i-list" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.6" cy="6" r="1.3"/><circle cx="3.6" cy="12" r="1.3"/><circle cx="3.6" cy="18" r="1.3"/></g></symbol>
 <symbol id="i-money" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5.5" width="20" height="13" rx="2.5"/><circle cx="12" cy="12" r="3"/><path d="M6 9v6M18 9v6"/></g></symbol>
 <symbol id="i-bank" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V8l8-5 8 5v13M9 21v-5h6v5M8.5 11.5h1M14.5 11.5h1"/></g></symbol>
+<symbol id="i-meeting" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
 <symbol id="i-pulse" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5-7 4 14L16 12h5"/></g></symbol>
 <symbol id="i-report" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2.5H7a2.5 2.5 0 0 0-2.5 2.5v14A2.5 2.5 0 0 0 7 21.5h10a2.5 2.5 0 0 0 2.5-2.5V8z"/><path d="M14 2.5V8h5.5M8.5 13h7M8.5 17h4.5"/></g></symbol>
 <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.6 1.6 0 0 0 .32 1.77l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.47V21a2 2 0 0 1-4 0v-.1A1.6 1.6 0 0 0 9.1 19.4a1.6 1.6 0 0 0-1.77.32l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.6 1.6 0 0 0 .32-1.77 1.6 1.6 0 0 0-1.47-.97H3a2 2 0 0 1 0-4h.1a1.6 1.6 0 0 0 1.47-1.08 1.6 1.6 0 0 0-.32-1.77l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.6 1.6 0 0 0 1.77.32H9a1.6 1.6 0 0 0 .97-1.47V3a2 2 0 0 1 4 0v.1a1.6 1.6 0 0 0 .97 1.47 1.6 1.6 0 0 0 1.77-.32l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.6 1.6 0 0 0-.32 1.77V9a1.6 1.6 0 0 0 1.47.97H21a2 2 0 0 1 0 4h-.1a1.6 1.6 0 0 0-1.5.97z"/></g></symbol>
@@ -537,8 +538,9 @@ textarea.input-text{font-family:inherit;resize:vertical}
       <button title="ภาพรวม" class="nav-item active" data-page="overview"><svg><use href="#i-grid"/></svg><span>ภาพรวม</span></button>
       <button title="ทะเบียนโครงการ" class="nav-item" data-page="projects"><svg><use href="#i-list"/></svg><span>ทะเบียนโครงการ</span><em class="badge" id="navCount">0</em></button>
       <button title="งบประมาณ" class="nav-item" data-page="budget"><svg><use href="#i-money"/></svg><span>งบประมาณ</span></button>
-      <button title="หน่วยงาน" class="nav-item" data-page="units"><svg><use href="#i-bank"/></svg><span>หน่วยงาน</span></button>
+      <button title="โครงการ" class="nav-item" data-page="units"><svg><use href="#i-folder"/></svg><span>โครงการ</span></button>
       <button title="ความคืบหน้า" class="nav-item" data-page="progress"><svg><use href="#i-pulse"/></svg><span>ความคืบหน้า</span></button>
+      <button title="ติดตามการประชุม" class="nav-item" data-page="meeting"><svg><use href="#i-meeting"/></svg><span>ติดตามการประชุม</span></button>
       <div class="nav-label">จัดการข้อมูล</div>
       <button title="รายงานสรุป" class="nav-item" data-page="report"><svg><use href="#i-report"/></svg><span>รายงานสรุป</span></button>
       <button title="จัดการข้อมูล (Excel / Google Sheets)" class="nav-item" data-page="data"><svg><use href="#i-upload"/></svg><span>จัดการข้อมูล (Excel / Sheets)</span></button>
@@ -633,7 +635,7 @@ textarea.input-text{font-family:inherit;resize:vertical}
         <div class="kpis" id="kpis2"></div>
         <div class="card">
           <div class="card-h">
-            <div><h3>ทะเบียนโครงการ / กิจกรรม / ครุภัณฑ์</h3><p id="prjSub">แสดงทั้งหมด</p></div>
+            <div><h3>ทะเบียนโครงการ</h3><p id="prjSub">แสดงทั้งหมด</p></div>
             <div class="sp"></div>
             <button class="btn btn-primary btn-sm no-print" id="btnOpenAdd"><svg><use href="#i-plus"/></svg>เพิ่มโครงการใหม่</button>
             <button class="btn btn-ghost btn-sm no-print" id="btnCsv"><svg><use href="#i-download"/></svg><span class="hide-s">ดาวน์โหลด CSV</span></button>
@@ -674,7 +676,23 @@ textarea.input-text{font-family:inherit;resize:vertical}
       <section class="page" id="page-units">
         <div class="grid">
           <div class="card c12">
-            <div class="card-h"><div><h3>อันดับหน่วยงานตามวงเงินงบประมาณ</h3><p>กราฟแท่งแนวนอน (หน่วย: บาท)</p></div></div>
+            <div class="card-h" style="flex-wrap:wrap;gap:10px">
+              <div>
+                <h3>อันดับโครงการตามวงเงินงบประมาณ</h3>
+                <p>ติดตามงบประมาณที่ได้รับ การเบิกจ่ายจริง และงบคงเหลือรายโครงการ (Project Name)</p>
+              </div>
+              <div class="sp"></div>
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:12px;color:var(--muted)">เรียงตาม:</span>
+                <select id="selProjBudgetSort" class="input-text" style="height:34px;font-size:12px;padding:2px 8px">
+                  <option value="budget_desc">งบประมาณสูงสุด ➔ ต่ำสุด</option>
+                  <option value="used_desc">ยอดใช้จ่ายไปมากสุด</option>
+                  <option value="remain_desc">งบคงเหลือมากสุด</option>
+                  <option value="prog_desc">ความคืบหน้าสูงสุด</option>
+                  <option value="prog_asc">ความคืบหน้าน้อยสุด</option>
+                </select>
+              </div>
+            </div>
             <div class="chart-wrap" id="ch-unitbar"></div>
           </div>
         </div>
@@ -694,6 +712,48 @@ textarea.input-text{font-family:inherit;resize:vertical}
             <div class="card-h"><div><h3>ติดตามรายสถานะ</h3><p>กดที่การ์ดสถานะเพื่อกรองทะเบียนโครงการ</p></div></div>
             <div class="dept-grid" id="statusGrid"></div>
           </div>
+        </div>
+      </section>
+
+            <!-- ========== MEETING TRACKING ========== -->
+      <section class="page" id="page-meeting">
+        <div class="kpis" id="kpis-meeting"></div>
+
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-h" style="flex-wrap:wrap;gap:12px">
+            <div>
+              <h3>ติดตามการประชุมโครงการ</h3>
+              <p id="meetingSub">บันทึกประเด็นการประชุม มติที่ประชุม และอัปเดต % ความคืบหน้ารายโครงการ</p>
+            </div>
+            <div class="sp"></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn-primary btn-sm no-print" id="btnOpenAddMeeting">
+                <svg style="width:14px;height:14px"><use href="#i-plus"/></svg> บันทึกผลการประชุม
+              </button>
+              <button class="btn btn-ghost btn-sm no-print" id="btnExportMeetingCsv">
+                <svg style="width:14px;height:14px"><use href="#i-download"/></svg> ดาวน์โหลด CSV
+              </button>
+            </div>
+          </div>
+
+          <!-- Meeting Filter Bar -->
+          <div style="display:flex;gap:12px;padding:12px 18px;background:var(--surface-2);border-bottom:1px solid var(--line);align-items:center;flex-wrap:wrap">
+            <div style="display:flex;align-items:center;gap:6px">
+              <span style="font-size:12px;font-weight:600;color:var(--muted)">รอบการประชุม:</span>
+              <select id="selMeetingRoundFilter" class="input-text" style="height:36px;font-size:12.5px;padding:4px 8px;min-width:180px">
+                <option value="">ทั้งหมดทุกรอบการประชุม</option>
+              </select>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <span style="font-size:12px;font-weight:600;color:var(--muted)">ค้นหาโครงการ:</span>
+              <input type="search" id="inpMeetingSearch" class="input-text" placeholder="พิมพ์ชื่อโครงการ หรือผู้รับผิดชอบ..." style="height:36px;font-size:12.5px;padding:4px 10px;min-width:220px">
+            </div>
+            <div class="sp"></div>
+            <span id="meetingCountTxt" style="font-size:12px;color:var(--muted)">0 รายการ</span>
+          </div>
+
+          <div class="tbl-wrap" id="tb-meeting"></div>
+          <div class="pager" id="pager-meeting"></div>
         </div>
       </section>
 
@@ -745,205 +805,1414 @@ textarea.input-text{font-family:inherit;resize:vertical}
                 <button class="btn btn-ghost btn-sm" id="btnCopyGsCode" type="button" style="font-size:12px"><svg><use href="#i-check"/></svg>คัดลอกโค้ด Code.gs</button>
               </div>
               <ol style="margin-left:20px;display:flex;flex-direction:column;gap:6px">
-                <li>เปิดไฟล์ <b>Google Sheets</b> ของคุณ (หรือสร้างชีทใหม่)</li>
+                <li>เปิดไฟล์ <b>Google Sheets</b> ของคุณ</li>
                 <li>ไปที่เมนูด้านบน <b>"ส่วนขยาย" (Extensions) &rarr; "Apps Script"</b></li>
                 <li>ลบโค้ดเดิมทั้งหมดในหน้าต่าง แล้ววางโค้ดจากไฟล์ <code>Code.gs</code> (หรือกดปุ่มคัดลอกด้านบน) แล้วกดปุ่ม <b>บันทึก (แผ่นดิสก์)</b></li>
-                <li>กดปุ่มสีน้ำเงินมุมขวาบน <b>"การทำให้ใช้งานได้" (Deploy) &rarr; "การทำให้ใช้งานได้รายการใหม่" (New deployment)</b></li>
-                <li>เลือกประเภท <b>"เว็บแอป" (Web app)</b> แล้วตั้งค่า:
-                  <ul style="margin-left:18px;list-style:disc">
-                    <li><b>คำอธิบาย:</b> PP.Track API</li>
-                    <li><b>ดำเนินการในฐานะ (Execute as):</b> ฉัน (Me)</li>
-                    <li><b>ผู้ที่มีสิทธิ์เข้าถึง (Who has access):</b> <b>ทุกคน (Anyone)</b> <i>(สำคัญมาก)</i></li>
-                  </ul>
+                <li style="background:rgba(245,158,11,.1);border-left:3px solid #F59E0B;padding:8px 10px;border-radius:6px;margin:4px 0">
+                  <b>⚡ กรณีเคย Deploy ไว้แล้ว (อัปเดตโค้ด):</b><br>
+                  กดปุ่มสีน้ำเงินมุมขวาบน <b>"การทำให้ใช้งานได้" (Deploy) &rarr; "จัดการการทำให้ใช้งานได้" (Manage deployments)</b><br>
+                  &rarr; กดไอคอน <b>ดินสอ (Edit)</b> ที่รายการ Web App<br>
+                  &rarr; ตรงช่อง <b>"เวอร์ชัน" (Version) ให้เลือก "เวอร์ชันใหม่" (New version)</b> <i>(สำคัญที่สุด เพื่อให้ระบบรันโค้ดล่าสุด)</i><br>
+                  &rarr; กดปุ่ม <b>"ทำให้ใช้งานได้" (Deploy)</b>
                 </li>
-                <li>กด <b>"ทำให้ใช้งานได้" (Deploy)</b> ให้สิทธิ์เข้าถึง และคัดลอก <b>"URL เว็บแอป"</b> (ลงท้ายด้วย <code>/exec</code>) มาวางในช่องด้านล่าง</li>
+                <li><b>กรณีติดตั้งครั้งแรก:</b> กด <b>"การทำให้ใช้งานได้" (Deploy) &rarr; "การทำให้ใช้งานได้รายการใหม่" (New deployment)</b> &rarr; เลือกประเภท <b>"เว็บแอป" (Web app)</b> &rarr; ผู้มีสิทธิ์เข้าถึง: <b>ทุกคน (Anyone)</b> &rarr; กด <b>ทำให้ใช้งานได้ (Deploy)</b> แล้วคัดลอก URL มาวางในช่องด้านล่าง</li>
               </ol>
 
               <div style="margin-top:12px">
                 <div style="font-size:12px;font-weight:700;color:var(--muted);margin-bottom:4px">โค้ด Code.gs ที่สร้างไว้ให้ในโฟลเดอร์:</div>
                 <pre style="background:var(--navy-900);color:#E0E7FF;padding:12px;border-radius:10px;font-size:11.5px;max-height:220px;overflow-y:auto;user-select:all" id="gsCodeBlock">/**
+ * ============================================================
  * PP.Track Dashboard — Google Apps Script Backend (Code.gs)
+ * ============================================================
+ * ระบบจัดการฐานข้อมูล Google Sheets สำหรับ PP.Track Dashboard
+ * รองรับการ: อ่าน (Read), เพิ่ม (Create), แก้ไข (Update), ลบ (Delete), และ ซิงก์ข้อมูล (Batch)
+ * ตรวจจับคอลัมน์อัตโนมัติ (Dynamic Column Header Detection) รวมทั้ง "ประเภทงาน" (scada / non scada)
+ *
+ * วิธีติดตั้ง / อัปเดต:
+ * 1. เปิด Google Sheets ของคุณ
+ * 2. ไปที่เมนู "ส่วนขยาย" (Extensions) &gt; "Apps Script"
+ * 3. ลบโค้ดเดิมทั้งหมดออก แล้ววางโค้ดนี้ลงไป แล้วกดปุ่ม "บันทึก" (รูปแผ่นดิสก์)
+ * 4. *** สำคัญมากในการอัปเดตโค้ดเดิม ***
+ *    - กดปุ่มสีน้ำเงินมุมขวาบน "การทำให้ใช้งานได้" (Deploy) &gt; "จัดการการทำให้ใช้งานได้" (Manage deployments)
+ *    - กดไอคอนรูปดินสอ (Edit) ที่รายการ Web App
+ *    - ตรงช่อง "เวอร์ชัน" (Version) ให้เลือกเป็น "เวอร์ชันใหม่" (New version)
+ *    - กดปุ่ม "ทำให้ใช้งานได้" (Deploy)
+ * ============================================================
  */
+
+const SCRIPT_VERSION = '2.5';
 const DEFAULT_SHEET_NAME = 'โครงการ';
-const HEADERS = ['No','Project Name','Area','ผู้รับผิดชอบ','ปีงบประมาณ','งบประมาณที่ได้รับ','งบประมาณที่ใช้ไป','งบคงเหลือ','Type','Status','% ความสำเร็จ','การดำเนินงานปัจจุบัน','Priority','วันที่เริ่มต้น','วันที่ติดตามความคืบหน้า','วันที่สิ้นสุด','หมายเหตุ/ปัญหา','ID','ประเภทงาน'];
+const DISBURSE_SHEET_NAME = 'ประวัติการเบิกจ่าย';
+const MEETING_SHEET_NAME = 'ติดตามการประชุม';
 
-function onOpen(){
+const HEADERS = [
+  'No',
+  'Project Name',
+  'Area',
+  'ผู้รับผิดชอบ',
+  'ปีงบประมาณ',
+  'งบประมาณที่ได้รับ',
+  'งบประมาณที่ใช้ไป',
+  'งบคงเหลือ',
+  'Type',
+  'Status',
+  '% ความสำเร็จ',
+  'การดำเนินงานปัจจุบัน',
+  'Priority',
+  'วันที่เริ่มต้น',
+  'วันที่ติดตามความคืบหน้า',
+  'วันที่สิ้นสุด',
+  'หมายเหตุ/ปัญหา',
+  'ID',
+  'ประเภทงาน'
+];
+
+const DISBURSE_HEADERS = [
+  'วันที่เบิกจ่าย',
+  'ชื่อโครงการ',
+  'งวดที่ / รายละเอียด',
+  'จำนวนเงินที่เบิก (บาท)',
+  'ยอดใช้ไปสะสม (บาท)',
+  'งบคงเหลือ (บาท)',
+  'ผู้รับผิดชอบ',
+  'Project ID',
+  'เวลาบันทึก'
+];
+
+const MEETING_HEADERS = [
+  'วันที่ประชุม',
+  'ครั้งที่ประชุม / วาระ',
+  'ชื่อโครงการ',
+  'ผู้รับผิดชอบ',
+  'ความคืบหน้าเดิม (%)',
+  'ความคืบหน้าใหม่ (%)',
+  'สถานะโครงการ',
+  'ประเด็นติดตาม / มติที่ประชุม',
+  'ปัญหา / อุปสรรค',
+  'กำหนดติดตามถัดไป',
+  'Project ID',
+  'เวลาบันทึก'
+];
+
+/**
+ * ฟังก์ชันช่วยค้นหาและจับคู่ตำแหน่งคอลัมน์ใน Google Sheet อัตโนมัติ (แม้ผู้ใช้จะสลับหรือแทรกคอลัมน์)
+ */
+function getHeaderMapping(sheet) {
+  const lastCol = Math.max(sheet.getLastColumn(), HEADERS.length);
+  const rowHeaders = (sheet.getLastRow() &gt;= 1)
+    ? sheet.getRange(1, 1, 1, lastCol).getValues()[0].map(h =&gt; String(h || '').trim())
+    : [...HEADERS];
+
+  const norm = s =&gt; String(s || '').toLowerCase().replace(/[\s\-_/\\()]/g, '');
+
+  const findCol = (patterns, defaultIdx) =&gt; {
+    // ขั้นตอนที่ 1: ตรวจสอบแบบตรงเป๊ะ (Exact match) ก่อนเสมอ เพื่อป้องกันคำคล้ายกันชนกัน เช่น "ประเภท" ชนกับ "ประเภทงาน" หรือ "งบประมาณ" ชนกับ "ปีงบประมาณ"
+    for (let i = 0; i &lt; rowHeaders.length; i++) {
+      const hNorm = norm(rowHeaders[i]);
+      if (!hNorm) continue;
+      for (let p = 0; p &lt; patterns.length; p++) {
+        if (hNorm === norm(patterns[p])) return i;
+      }
+    }
+    // ขั้นตอนที่ 2: ถ้าไม่พบ exact match ค่อยดูว่าชื่อหัวคอลัมน์ในชีตมีคีย์เวิร์ดนั้นอยู่หรือไม่ (ห้ามใช้กลับข้าง)
+    for (let i = 0; i &lt; rowHeaders.length; i++) {
+      const hNorm = norm(rowHeaders[i]);
+      if (!hNorm) continue;
+      for (let p = 0; p &lt; patterns.length; p++) {
+        const pNorm = norm(patterns[p]);
+        if (pNorm &amp;&amp; hNorm.indexOf(pNorm) &gt; -1) return i;
+      }
+    }
+    return defaultIdx;
+  };
+
+  return {
+    headers: rowHeaders,
+    lastCol: lastCol,
+    seq: findCol(['no', 'ลำดับที่', 'ลำดับ', 'ที่', 'ลําดับที่'], 0),
+    project: findCol(['projectname', 'ชื่อโครงการ', 'โครงการ', 'รายการ', 'project'], 1),
+    area: findCol(['area', 'พื้นที่', 'สถานที่', 'เขต'], 2),
+    unit: findCol(['ผู้รับผิดชอบ', 'หน่วยงาน', 'สังกัด', 'กอง', 'สำนัก', 'owner', 'responsible', 'department'], 3),
+    year: findCol(['ปีงบประมาณ', 'ปีงบฯ', 'ปีงบ', 'fiscal', 'ปี'], 4),
+    budget: findCol(['งบประมาณที่ได้รับ', 'งบที่ได้รับ', 'งบประมาณตั้งไว้', 'วงเงินงบประมาณ', 'งบประมาณ', 'วงเงิน', 'budget'], 5),
+    used: findCol(['งบประมาณที่ใช้ไป', 'งบที่ใช้ไป', 'งบที่ใช้', 'เบิกจ่าย', 'ใช้ไป', 'used'], 6),
+    remain: findCol(['งบคงเหลือ', 'คงเหลือ', 'เหลือจ่าย', 'remain'], 7),
+    source: findCol(['type', 'ประเภท', 'แหล่งเงิน', 'แหล่งงบประมาณ', 'source'], 8),
+    status: findCol(['status', 'สถานะโครงการ', 'สถานะ'], 9),
+    prog: findCol(['% ความสำเร็จ', 'ความสำเร็จ', 'ความคืบหน้า', '%ความสำเร็จ', '%', 'progress', 'prog'], 10),
+    detail: findCol(['การดำเนินงานปัจจุบัน', 'รายละเอียด', 'ขั้นตอน', 'ผลการดำเนินงาน', 'detail'], 11),
+    priority: findCol(['priority', 'ความสำคัญ', 'ลำดับความสำคัญ', 'ระดับความสำคัญ'], 12),
+    start: findCol(['วันที่เริ่มต้น', 'วันเริ่มต้น', 'วันเริ่ม', 'เริ่มต้น', 'start'], 13),
+    follow: findCol(['วันที่ติดตามความคืบหน้า', 'วันติดตาม', 'ติดตามความคืบหน้า', 'วันที่ติดตาม', 'follow'], 14),
+    end: findCol(['วันที่สิ้นสุด', 'วันสิ้นสุด', 'สิ้นสุด', 'end'], 15),
+    problem: findCol(['หมายเหตุ/ปัญหา', 'ปัญหา/อุปสรรค', 'หมายเหตุ', 'ปัญหา', 'problem'], 16),
+    id: findCol(['id', 'ไอดี', 'รหัส'], 17),
+    workType: findCol(['ประเภทงาน', 'worktype', 'scada', 'ประเภทระบบ', 'กลุ่มงาน'], 18)
+  };
+}
+
+/**
+ * เพิ่มเมนูบนแถบเครื่องมือ Google Sheets อัตโนมัติเมื่อเปิดไฟล์
+ */
+function onOpen() {
   try {
-    SpreadsheetApp.getUi().createMenu('🚀 PP.Track').addItem('✨ สร้างชีตและคอลัมน์อัตโนมัติ', 'setupSheetMenu').addToUi();
-  } catch(e){}
+    SpreadsheetApp.getUi()
+      .createMenu('🚀 PP.Track')
+      .addItem('✨ ตรวจสอบและสร้างชีต/คอลัมน์ที่ขาด (ไม่กระทบข้อมูลเดิม)', 'setupAllSheetsAndColumns')
+      .addSeparator()
+      .addItem('📋 ตั้งค่าชีตและคอลัมน์มาตรฐานทั้งหมด', 'setupSheetMenu')
+      .addToUi();
+  } catch (e) {}
 }
 
-function setupSheetMenu(){
-  const sheet = setupSheet('');
-  try { SpreadsheetApp.getUi().alert('✅ สร้างชีต "' + sheet.getName() + '" และตั้งค่าหัวคอลัมน์ทั้ง ' + HEADERS.length + ' คอลัมน์เรียบร้อยแล้ว!'); } catch(e){}
+/**
+ * ฟังก์ชันกดรันจากเมนู Google Sheets หรือกด Run ในหน้า Apps Script
+ */
+function setupSheetMenu() {
+  setupAllSheetsAndColumns();
 }
 
-function setupSheet(tabName){
+/**
+ * สร้างชีตใหม่ (หากยังไม่มี) และสร้าง/อัปเดตหัวคอลัมน์มาตรฐานพร้อมจัดรูปแบบอัตโนมัติ
+ */
+function setupSheet(tabName) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const cleanName = (tabName && tabName.toString().trim() !== '') ? tabName.toString().trim() : '';
-  let sheet = cleanName ? ss.getSheetByName(cleanName) : (ss.getSheetByName(DEFAULT_SHEET_NAME) || ss.getSheets()[0]);
-  if(!sheet) sheet = ss.insertSheet(cleanName || DEFAULT_SHEET_NAME);
+  const cleanName = (tabName &amp;&amp; tabName.toString().trim() !== '') ? tabName.toString().trim() : '';
+  let sheet = null;
+
+  if (cleanName) {
+    sheet = ss.getSheetByName(cleanName);
+    if (!sheet) {
+      sheet = ss.insertSheet(cleanName);
+    }
+  } else {
+    sheet = ss.getSheetByName(DEFAULT_SHEET_NAME) || ss.getSheets()[0];
+    if (!sheet) {
+      sheet = ss.insertSheet(DEFAULT_SHEET_NAME);
+    }
+  }
+
   ensureHeaders(sheet, true);
   return sheet;
 }
 
-function getTargetSheet(tabName){
+function getTargetSheet(tabName) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const cleanName = (tabName && tabName.toString().trim() !== '') ? tabName.toString().trim() : '';
-  let sheet = cleanName ? ss.getSheetByName(cleanName) : (ss.getSheetByName(DEFAULT_SHEET_NAME) || ss.getSheets()[0]);
-  if(!sheet) sheet = ss.insertSheet(cleanName || DEFAULT_SHEET_NAME);
+  const cleanName = (tabName &amp;&amp; tabName.toString().trim() !== '') ? tabName.toString().trim() : '';
+  let sheet = null;
+
+  if (cleanName) {
+    sheet = ss.getSheetByName(cleanName);
+    if (!sheet) {
+      sheet = ss.insertSheet(cleanName);
+    }
+  } else {
+    sheet = ss.getSheetByName(DEFAULT_SHEET_NAME) || ss.getSheets()[0];
+    if (!sheet) {
+      sheet = ss.insertSheet(DEFAULT_SHEET_NAME);
+    }
+  }
+
   ensureHeaders(sheet, false);
   return sheet;
 }
 
-function ensureHeaders(sheet, forceFormat){
+function ensureHeaders(sheet, forceFormat) {
   const lastRow = sheet.getLastRow();
   let needHeader = (lastRow === 0);
-  if(!needHeader){
-    const firstRow = sheet.getRange(1, 1, 1, HEADERS.length).getValues()[0];
-    const hasAll = HEADERS.every((h, idx) => String(firstRow[idx] || '').trim() === h);
-    if(!hasAll){
-      const isHeaderOrEmpty = firstRow.every(v => v === '' || isNaN(Number(v))) || String(firstRow[0]).toLowerCase() === 'no' || String(firstRow[0]).indexOf('ลำดับ') > -1;
-      if(!isHeaderOrEmpty && !forceFormat) sheet.insertRowBefore(1);
-      sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+
+  if (!needHeader) {
+    const lastCol = sheet.getLastColumn();
+    if (lastCol === 0) {
       needHeader = true;
+    } else {
+      const existingHeaders = sheet.getRange(1, 1, 1, lastCol).getValues()[0].map(h =&gt; String(h || '').trim());
+      const norm = s =&gt; String(s || '').toLowerCase().replace(/[\s\-_/\\()]/g, '');
+      const wtIdx = existingHeaders.findIndex(h =&gt; {
+        const n = norm(h);
+        return n === 'ประเภทงาน' || n === 'worktype' || n.indexOf('scada') &gt; -1;
+      });
+
+      // ถ้าในชีตยังไม่มีคอลัมน์ "ประเภทงาน" ให้เพิ่มต่อท้ายอัตโนมัติ
+      if (wtIdx === -1) {
+        const nextCol = lastCol + 1;
+        const targetCell = sheet.getRange(1, nextCol);
+        targetCell.setValue('ประเภทงาน')
+          .setFontWeight('bold')
+          .setBackground('#4338CA')
+          .setFontColor('#FFFFFF')
+          .setHorizontalAlignment('center')
+          .setVerticalAlignment('middle');
+        sheet.setColumnWidth(nextCol, 130);
+        try {
+          const rule = SpreadsheetApp.newDataValidation()
+            .requireValueInList(['scada', 'non scada'], true)
+            .setAllowInvalid(true)
+            .build();
+          sheet.getRange(2, nextCol, Math.max(lastRow - 1, 500), 1).setDataValidation(rule);
+        } catch (e) {}
+      } else {
+        // มีคอลัมน์ประเภทงานอยู่แล้ว ให้ตรวจสอบและผูก Data Validation dropdown ให้ตรงคอลัมน์นั้น
+        try {
+          const rule = SpreadsheetApp.newDataValidation()
+            .requireValueInList(['scada', 'non scada'], true)
+            .setAllowInvalid(true)
+            .build();
+          sheet.getRange(2, wtIdx + 1, Math.max(lastRow - 1, 500), 1).setDataValidation(rule);
+        } catch (e) {}
+      }
     }
-  } else {
-    sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
   }
-  if(needHeader || forceFormat){
-    sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight('bold').setBackground('#4338CA').setFontColor('#FFFFFF').setHorizontalAlignment('center').setVerticalAlignment('middle');
+
+  if (needHeader) {
+    sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+    const headerRange = sheet.getRange(1, 1, 1, HEADERS.length);
+    headerRange
+      .setFontWeight('bold')
+      .setBackground('#4338CA')
+      .setFontColor('#FFFFFF')
+      .setHorizontalAlignment('center')
+      .setVerticalAlignment('middle');
     sheet.setRowHeight(1, 36);
     sheet.setFrozenRows(1);
+
     const widths = [60, 260, 130, 160, 100, 140, 140, 140, 130, 160, 110, 220, 90, 120, 150, 120, 200, 140, 130];
-    widths.forEach((w, idx) => { try { sheet.setColumnWidth(idx + 1, w); } catch(e){} });
-    try { const rule = SpreadsheetApp.newDataValidation().requireValueInList(['scada', 'non scada'], true).setAllowInvalid(true).build(); sheet.getRange(2, 19, 500, 1).setDataValidation(rule); } catch(e){}
+    widths.forEach((w, idx) =&gt; {
+      try { sheet.setColumnWidth(idx + 1, w); } catch (e) {}
+    });
+    try {
+      const rule = SpreadsheetApp.newDataValidation()
+        .requireValueInList(['scada', 'non scada'], true)
+        .setAllowInvalid(true)
+        .build();
+      sheet.getRange(2, 19, 500, 1).setDataValidation(rule);
+    } catch (e) {}
   }
 }
 
-function jsonResponse(data){
-  return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);
+function jsonResponse(data) {
+  return ContentService.createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
-function doGet(e){
+function doGet(e) {
   try {
-    const params = (e && e.parameter) || {};
+    const params = (e &amp;&amp; e.parameter) || {};
     const tabName = params.sheet || params.tab || '';
     const action = params.action || 'read';
-    if(action === 'setup' || action === 'init_sheet'){
-      const s = setupSheet(tabName);
-      return jsonResponse({ status: 'success', action: 'setup', sheetName: s.getName(), cols: HEADERS, message: 'สร้างชีต "' + s.getName() + '" และคอลัมน์อัตโนมัติเรียบร้อยแล้ว' });
+
+    if (action === 'setup' || action === 'init_sheet') {
+      const sheetSetup = setupSheet(tabName);
+      return jsonResponse({
+        status: 'success',
+        action: 'setup',
+        version: SCRIPT_VERSION,
+        sheetName: sheetSetup.getName(),
+        cols: HEADERS,
+        message: 'สร้างชีต "' + sheetSetup.getName() + '" และคอลัมน์อัตโนมัติเรียบร้อยแล้ว'
+      });
     }
+
     const sheet = getTargetSheet(tabName);
-    if(action === 'read'){
+
+    if (action === 'read') {
       const data = getAllRecords(sheet);
-      return jsonResponse({ status: 'success', action: 'read', cols: HEADERS, rows: data.rows, records: data.records, count: data.rows.length });
+      return jsonResponse({
+        status: 'success',
+        action: 'read',
+        version: SCRIPT_VERSION,
+        cols: HEADERS,
+        rows: data.rows,
+        records: data.records,
+        count: data.rows.length
+      });
     }
-    return jsonResponse({ status: 'success', message: 'PP.Track API is ready' });
-  } catch(err){
-    return jsonResponse({ status: 'error', message: err.toString() });
+
+    if (action === 'setup' || action === 'setup_sheets' || action === 'check_sheets') {
+      const msg = setupAllSheetsAndColumns(params.sheet || '');
+      return jsonResponse({
+        status: 'success',
+        action: 'setup',
+        version: SCRIPT_VERSION,
+        message: msg
+      });
+    }
+
+    if (action === 'setup' || action === 'setup_sheets' || action === 'check_sheets') {
+      const msg = setupAllSheetsAndColumns(payload.sheet || payload.data?.sheet || '');
+      return jsonResponse({
+        status: 'success',
+        action: 'setup',
+        version: SCRIPT_VERSION,
+        message: msg
+      });
+    }
+
+    if (action === 'get_disbursements' || action === 'disbursements') {
+      const pid = params.projectId || params.id || params.project || '';
+      const list = getDisbursements(pid);
+      return jsonResponse({
+        status: 'success',
+        action: 'get_disbursements',
+        version: SCRIPT_VERSION,
+        records: list,
+        count: list.length
+      });
+    }
+
+    if (action === 'get_meeting_logs' || action === 'meeting_logs' || action === 'meetings') {
+      const pid = params.projectId || params.id || params.project || '';
+      const list = getMeetingLogs(pid);
+      return jsonResponse({
+        status: 'success',
+        action: 'get_meeting_logs',
+        version: SCRIPT_VERSION,
+        records: list,
+        count: list.length
+      });
+    }
+
+    return jsonResponse({ status: 'success', version: SCRIPT_VERSION, message: 'PP.Track Google Sheets Backend is active' });
+  } catch (err) {
+    return jsonResponse({ status: 'error', version: SCRIPT_VERSION, message: err.toString() });
   }
 }
 
-function doPost(e){
+function doPost(e) {
   try {
     let payload = {};
-    if(e && e.postData && e.postData.contents){
-      try { payload = JSON.parse(e.postData.contents); } catch(err){ payload = e.parameter || {}; }
-    } else if(e && e.parameter) payload = e.parameter;
+    if (e &amp;&amp; e.postData &amp;&amp; e.postData.contents) {
+      try {
+        payload = JSON.parse(e.postData.contents);
+      } catch (err) {
+        payload = e.parameter || {};
+      }
+    } else if (e &amp;&amp; e.parameter) {
+      payload = e.parameter;
+    }
 
     const action = payload.action || 'read';
     const tabName = payload.sheet || payload.tab || '';
-    if(action === 'setup' || action === 'init_sheet'){
-      const s = setupSheet(tabName);
-      return jsonResponse({ status: 'success', action: 'setup', sheetName: s.getName(), cols: HEADERS, message: 'สร้างชีต "' + s.getName() + '" และคอลัมน์อัตโนมัติเรียบร้อยแล้ว' });
+    if (action === 'setup' || action === 'init_sheet') {
+      const sheetSetup = setupSheet(tabName);
+      return jsonResponse({
+        status: 'success',
+        action: 'setup',
+        version: SCRIPT_VERSION,
+        sheetName: sheetSetup.getName(),
+        cols: HEADERS,
+        message: 'สร้างชีต "' + sheetSetup.getName() + '" และคอลัมน์อัตโนมัติเรียบร้อยแล้ว'
+      });
     }
+
     const sheet = getTargetSheet(tabName);
 
-    if(action === 'read'){
+    if (action === 'read') {
       const data = getAllRecords(sheet);
-      return jsonResponse({ status: 'success', action: 'read', cols: HEADERS, rows: data.rows, records: data.records, count: data.rows.length });
+      return jsonResponse({
+        status: 'success',
+        action: 'read',
+        version: SCRIPT_VERSION,
+        cols: HEADERS,
+        rows: data.rows,
+        records: data.records,
+        count: data.rows.length
+      });
     }
-    if(action === 'create' || action === 'add'){
+
+    if (action === 'add_disbursement' || action === 'disburse') {
       const item = payload.data || payload;
-      const budget = Number(item.budget) || 0, used = Number(item.used) || 0;
-      const remain = (item.remain !== '' && item.remain != null) ? Number(item.remain) : (budget - used);
-      const prog = Number(item.prog) || 0;
-      const newId = 'gs_' + new Date().getTime() + '_' + Math.floor(Math.random()*1000);
-      const row = [item.seq || sheet.getLastRow(), item.project||'', item.area||'', item.unit||'', item.year||'', budget, used, remain, item.source||'', item.status||'อยู่ระหว่างดำเนินการ', prog, item.detail||'', item.priority||'', item.start||'', item.follow||'', item.end||'', item.problem||'', newId, item.workType||''];
-      sheet.appendRow(row);
-      return jsonResponse({ status: 'success', action: 'create', record: { ...item, seq: row[0], id: newId, _rowIndex: sheet.getLastRow() } });
+      const result = addDisbursement(item);
+      return jsonResponse({
+        status: 'success',
+        action: 'add_disbursement',
+        version: SCRIPT_VERSION,
+        record: result
+      });
     }
-    if(action === 'update' || action === 'edit'){
-      const targetRow = findRowIndex(sheet, payload.id, payload.rowIndex);
-      if(targetRow < 2) throw new Error('ไม่พบแถวข้อมูล');
+
+    if (action === 'get_disbursements' || action === 'disbursements') {
+      const pid = payload.projectId || payload.id || payload.project || '';
+      const list = getDisbursements(pid);
+      return jsonResponse({
+        status: 'success',
+        action: 'get_disbursements',
+        version: SCRIPT_VERSION,
+        records: list,
+        count: list.length
+      });
+    }
+
+    if (action === 'add_meeting_log' || action === 'meeting_log' || action === 'save_meeting') {
       const item = payload.data || payload;
-      const budget = Number(item.budget) || 0, used = Number(item.used) || 0;
-      const remain = (item.remain !== '' && item.remain != null) ? Number(item.remain) : (budget - used);
-      const prog = item.prog != null && item.prog !== '' ? Number(item.prog) : null;
-      const ex = sheet.getRange(targetRow, 1, 1, HEADERS.length).getValues()[0];
-      const rowId = payload.id || ex[17] || ('gs_' + targetRow);
-      const row = [item.seq || ex[0] || (targetRow - 1), item.project != null ? item.project : ex[1], item.area != null ? item.area : ex[2], item.unit != null ? item.unit : ex[3], item.year != null ? item.year : ex[4], budget, used, remain, item.source != null ? item.source : ex[8], item.status != null ? item.status : ex[9], prog != null ? prog : (Number(ex[10]) || 0), item.detail != null ? item.detail : ex[11], item.priority != null ? item.priority : ex[12], item.start != null ? item.start : ex[13], item.follow != null ? item.follow : ex[14], item.end != null ? item.end : ex[15], item.problem != null ? item.problem : ex[16], rowId, item.workType != null ? item.workType : (ex[18] || '')];
-      sheet.getRange(targetRow, 1, 1, HEADERS.length).setValues([row]);
-      return jsonResponse({ status: 'success', action: 'update', record: { ...item, id: rowId, _rowIndex: targetRow } });
+      const result = addMeetingLog(item);
+      return jsonResponse({
+        status: 'success',
+        action: 'add_meeting_log',
+        version: SCRIPT_VERSION,
+        record: result
+      });
     }
-    if(action === 'delete'){
-      const targetRow = findRowIndex(sheet, payload.id, payload.rowIndex);
-      if(targetRow >= 2){ sheet.deleteRow(targetRow); return jsonResponse({ status: 'success', action: 'delete', id: payload.id }); }
-      throw new Error('ไม่พบแถวข้อมูล');
+
+    if (action === 'update_meeting_log') {
+      const item = payload.data || payload;
+      const result = updateMeetingLog(item);
+      return jsonResponse({
+        status: 'success',
+        action: 'update_meeting_log',
+        version: SCRIPT_VERSION,
+        record: result
+      });
     }
-    if(action === 'batch'){
+
+    if (action === 'delete_meeting_log') {
+      const item = payload.data || payload;
+      const result = deleteMeetingLog(item);
+      return jsonResponse({
+        status: 'success',
+        action: 'delete_meeting_log',
+        version: SCRIPT_VERSION,
+        success: result
+      });
+    }
+
+    if (action === 'get_meeting_logs' || action === 'meeting_logs' || action === 'meetings') {
+      const pid = payload.projectId || payload.id || payload.project || '';
+      const list = getMeetingLogs(pid);
+      return jsonResponse({
+        status: 'success',
+        action: 'get_meeting_logs',
+        version: SCRIPT_VERSION,
+        records: list,
+        count: list.length
+      });
+    }
+
+    if (action === 'create' || action === 'add') {
+      const item = payload.data || payload;
+      const result = createRecord(sheet, item);
+      return jsonResponse({ status: 'success', action: 'create', version: SCRIPT_VERSION, record: result });
+    }
+
+    if (action === 'update' || action === 'edit') {
+      const id = payload.id;
+      const rowIndex = payload.rowIndex;
+      const item = payload.data || payload;
+      const result = updateRecord(sheet, id, rowIndex, item);
+      return jsonResponse({ status: 'success', action: 'update', version: SCRIPT_VERSION, record: result });
+    }
+
+    if (action === 'delete') {
+      const id = payload.id;
+      const rowIndex = payload.rowIndex;
+      deleteRecord(sheet, id, rowIndex);
+      return jsonResponse({ status: 'success', action: 'delete', version: SCRIPT_VERSION, id: id });
+    }
+
+    if (action === 'batch') {
       const rows = payload.rows || [];
-      const toAppend = [];
-      const startSeq = sheet.getLastRow();
-      for(let i=0; i&lt;rows.length; i++){
-        const r = rows[i];
-        const b = Number(r.budget || (Array.isArray(r)?r[5]:0)) || 0;
-        const u = Number(r.used || (Array.isArray(r)?r[6]:0)) || 0;
-        const p = Number(r.prog != null ? r.prog : (Array.isArray(r)?r[10]:0)) || 0;
-        const newId = 'gs_' + new Date().getTime() + '_' + i;
-        if(Array.isArray(r)){
-          toAppend.push([r[0]||(startSeq+i), r[1]||'', r[2]||'', r[3]||'', r[4]||'', b, u, b-u, r[8]||'', r[9]||'', p, r[11]||'', r[12]||'', r[13]||'', r[14]||'', r[15]||'', r[16]||'', newId, r[18]||r[17]||'']);
-        } else {
-          toAppend.push([r.seq||(startSeq+i), r.project||'', r.area||'', r.unit||'', r.year||'', b, u, b-u, r.source||'', r.status||'อยู่ระหว่างดำเนินการ', p, r.detail||'', r.priority||'', r.start||'', r.follow||'', r.end||'', r.problem||'', newId, r.workType||'']);
-        }
-      }
-      if(toAppend.length) sheet.getRange(sheet.getLastRow()+1, 1, toAppend.length, HEADERS.length).setValues(toAppend);
-      return jsonResponse({ status: 'success', action: 'batch', count: toAppend.length });
+      const count = batchInsert(sheet, rows);
+      return jsonResponse({ status: 'success', action: 'batch', version: SCRIPT_VERSION, count: count });
     }
-    return jsonResponse({ status: 'error', message: 'Unknown action: ' + action });
-  } catch(err){
-    return jsonResponse({ status: 'error', message: err.toString() });
+
+    return jsonResponse({ status: 'error', version: SCRIPT_VERSION, message: 'Unknown action: ' + action });
+  } catch (err) {
+    return jsonResponse({ status: 'error', version: SCRIPT_VERSION, message: err.toString() });
   }
 }
 
-function getAllRecords(sheet){
+function getAllRecords(sheet) {
   const lastRow = sheet.getLastRow();
-  const lastCol = Math.max(sheet.getLastColumn(), HEADERS.length);
-  if(lastRow &lt;= 1) return { rows: [], records: [] };
-  const raw = sheet.getRange(2, 1, lastRow - 1, lastCol).getValues();
-  const rows = [], records = [];
-  for(let i=0; i&lt;raw.length; i++){
-    const r = raw[i];
-    if(!r.some(v=>v!==''&&v!==null)) continue;
-    const fmt = v => (v instanceof Date) ? `${v.getFullYear()}-${String(v.getMonth()+1).padStart(2,'0')}-${String(v.getDate()).padStart(2,'0')}` : (v?v.toString():'');
-    const row = [r[0]||(i+1), r[1]?r[1].toString():'', r[2]?r[2].toString():'', r[3]?r[3].toString():'', r[4]?r[4].toString():'', Number(r[5])||0, Number(r[6])||0, Number(r[7])||((Number(r[5])||0)-(Number(r[6])||0)), r[8]?r[8].toString():'', r[9]?r[9].toString():'', Number(r[10])||0, r[11]?r[11].toString():'', r[12]?r[12].toString():'', fmt(r[13]), fmt(r[14]), fmt(r[15]), r[16]?r[16].toString():'', r[17]?r[17].toString():('gs_'+(i+2)), r[18]?r[18].toString():''];
-    rows.push(row);
-    records.push({ seq:row[0], project:row[1], area:row[2], unit:row[3], year:row[4], budget:row[5], used:row[6], remain:row[7], source:row[8], status:row[9], prog:row[10], detail:row[11], priority:row[12], start:row[13], follow:row[14], end:row[15], problem:row[16], id:row[17], workType:row[18], _rowIndex:i+2 });
+  const lastCol = sheet.getLastColumn();
+  if (lastRow &lt;= 1 || lastCol === 0) {
+    return { rows: [], records: [] };
   }
+
+  const map = getHeaderMapping(sheet);
+  const totalCols = Math.max(lastCol, HEADERS.length);
+  const rawValues = sheet.getRange(2, 1, lastRow - 1, totalCols).getValues();
+  const rows = [];
+  const records = [];
+
+  const getVal = (r, idx) =&gt; (idx &gt;= 0 &amp;&amp; idx &lt; r.length &amp;&amp; r[idx] != null) ? r[idx] : '';
+
+  for (let i = 0; i &lt; rawValues.length; i++) {
+    const r = rawValues[i];
+    if (!r.some(val =&gt; val !== '' &amp;&amp; val !== null)) continue;
+
+    const seqVal = getVal(r, map.seq) || (i + 1);
+    const projVal = getVal(r, map.project).toString();
+    const areaVal = getVal(r, map.area).toString();
+    const unitVal = getVal(r, map.unit).toString();
+    const yearVal = getVal(r, map.year).toString();
+    const budVal = Number(getVal(r, map.budget)) || 0;
+    const usedVal = Number(getVal(r, map.used)) || 0;
+    const remainVal = (getVal(r, map.remain) !== '' &amp;&amp; getVal(r, map.remain) != null)
+      ? Number(getVal(r, map.remain))
+      : (budVal - usedVal);
+    const srcVal = getVal(r, map.source).toString();
+    const stVal = getVal(r, map.status).toString();
+    const progVal = Number(getVal(r, map.prog)) || 0;
+    const dtVal = getVal(r, map.detail).toString();
+    const priVal = getVal(r, map.priority).toString();
+    const startVal = formatDateVal(getVal(r, map.start));
+    const followVal = formatDateVal(getVal(r, map.follow));
+    const endVal = formatDateVal(getVal(r, map.end));
+    const probVal = getVal(r, map.problem).toString();
+    const idVal = getVal(r, map.id).toString() || ('gs_' + (i + 2));
+    const wtVal = getVal(r, map.workType).toString();
+
+    const row = [
+      seqVal,
+      projVal,
+      areaVal,
+      unitVal,
+      yearVal,
+      budVal,
+      usedVal,
+      remainVal,
+      srcVal,
+      stVal,
+      progVal,
+      dtVal,
+      priVal,
+      startVal,
+      followVal,
+      endVal,
+      probVal,
+      idVal,
+      wtVal
+    ];
+
+    rows.push(row);
+    records.push({
+      seq: seqVal,
+      project: projVal,
+      area: areaVal,
+      unit: unitVal,
+      year: yearVal,
+      budget: budVal,
+      used: usedVal,
+      remain: remainVal,
+      source: srcVal,
+      status: stVal,
+      prog: progVal,
+      detail: dtVal,
+      priority: priVal,
+      start: startVal,
+      follow: followVal,
+      end: endVal,
+      problem: probVal,
+      id: idVal,
+      workType: wtVal,
+      _rowIndex: i + 2
+    });
+  }
+
   return { rows, records };
 }
 
-function findRowIndex(sheet, id, rowIndex){
-  const lastRow = sheet.getLastRow();
-  if(lastRow &lt;= 1) return -1;
-  if(id){
-    const col = sheet.getRange(2, 18, lastRow - 1, 1).getValues();
-    for(let i=0; i&lt;col.length; i++) if(col[i][0] && col[i][0].toString() === id.toString()) return i + 2;
+function formatDateVal(val) {
+  if (!val) return '';
+  if (val instanceof Date) {
+    const y = val.getFullYear();
+    const m = (val.getMonth() + 1).toString().padStart(2, '0');
+    const d = val.getDate().toString().padStart(2, '0');
+    return `${y}-${m}-${d}`;
   }
-  if(rowIndex && rowIndex >= 2 && rowIndex &lt;= lastRow) return rowIndex;
+  return val.toString();
+}
+
+function createRecord(sheet, data) {
+  ensureHeaders(sheet, false);
+  const map = getHeaderMapping(sheet);
+  const lastRow = sheet.getLastRow();
+  const nextSeq = data.seq || lastRow;
+  const newId = data.id || ('gs_' + new Date().getTime() + '_' + Math.floor(Math.random() * 1000));
+
+  const budget = Number(data.budget) || 0;
+  const used = Number(data.used) || 0;
+  const remain = (data.remain !== '' &amp;&amp; data.remain != null) ? Number(data.remain) : (budget - used);
+  const prog = Number(data.prog) || 0;
+
+  const totalCols = Math.max(sheet.getLastColumn(), HEADERS.length);
+  const newRow = new Array(totalCols).fill('');
+
+  const put = (colIdx, val) =&gt; {
+    if (colIdx &gt;= 0 &amp;&amp; colIdx &lt; newRow.length) newRow[colIdx] = val;
+  };
+
+  put(map.seq, nextSeq);
+  put(map.project, data.project || '');
+  put(map.area, data.area || '');
+  put(map.unit, data.unit || '');
+  put(map.year, data.year || '');
+  put(map.budget, budget);
+  put(map.used, used);
+  put(map.remain, remain);
+  put(map.source, data.source || '');
+  put(map.status, data.status || 'กำลังดำเนินการ');
+  put(map.prog, prog);
+  put(map.detail, data.detail || '');
+  put(map.priority, data.priority || '');
+  put(map.start, data.start || '');
+  put(map.follow, data.follow || '');
+  put(map.end, data.end || '');
+  put(map.problem, data.problem || '');
+  put(map.id, newId);
+  put(map.workType, data.workType || '');
+
+  sheet.appendRow(newRow);
+  return { ...data, seq: nextSeq, id: newId, _rowIndex: sheet.getLastRow() };
+}
+
+function updateRecord(sheet, id, rowIndex, data) {
+  const targetRow = findRowIndex(sheet, id, rowIndex);
+  if (targetRow &lt; 2) {
+    throw new Error('ไม่พบรายการที่ต้องการแก้ไขใน Google Sheets');
+  }
+
+  const map = getHeaderMapping(sheet);
+  const totalCols = Math.max(sheet.getLastColumn(), HEADERS.length);
+  const existingVals = sheet.getRange(targetRow, 1, 1, totalCols).getValues()[0];
+
+  const setCell = (colIdx, val) =&gt; {
+    if (colIdx &gt;= 0) {
+      sheet.getRange(targetRow, colIdx + 1).setValue(val);
+    }
+  };
+
+  const budget = (data.budget !== undefined &amp;&amp; data.budget !== '') ? Number(data.budget) : Number(existingVals[map.budget] || 0);
+  const used = (data.used !== undefined &amp;&amp; data.used !== '') ? Number(data.used) : Number(existingVals[map.used] || 0);
+  const remain = (data.remain !== undefined &amp;&amp; data.remain !== '') ? Number(data.remain) : (budget - used);
+  const prog = (data.prog !== undefined &amp;&amp; data.prog !== '') ? Number(data.prog) : Number(existingVals[map.prog] || 0);
+
+  if (data.seq !== undefined) setCell(map.seq, data.seq);
+  if (data.project !== undefined) setCell(map.project, data.project);
+  if (data.area !== undefined) setCell(map.area, data.area);
+  if (data.unit !== undefined) setCell(map.unit, data.unit);
+  if (data.year !== undefined) setCell(map.year, data.year);
+  if (data.budget !== undefined) setCell(map.budget, budget);
+  if (data.used !== undefined) setCell(map.used, used);
+  if (data.remain !== undefined || data.budget !== undefined || data.used !== undefined) setCell(map.remain, remain);
+  if (data.source !== undefined) setCell(map.source, data.source);
+  if (data.status !== undefined) setCell(map.status, data.status);
+  if (data.prog !== undefined) setCell(map.prog, prog);
+  if (data.detail !== undefined) setCell(map.detail, data.detail);
+  if (data.priority !== undefined) setCell(map.priority, data.priority);
+  if (data.start !== undefined) setCell(map.start, data.start);
+  if (data.follow !== undefined) setCell(map.follow, data.follow);
+  if (data.end !== undefined) setCell(map.end, data.end);
+  if (data.problem !== undefined) setCell(map.problem, data.problem);
+  if (data.workType !== undefined) {
+    if (map.workType &gt;= 0) {
+      setCell(map.workType, data.workType);
+    } else {
+      const newCol = sheet.getLastColumn() + 1;
+      sheet.getRange(1, newCol).setValue('ประเภทงาน');
+      sheet.getRange(targetRow, newCol).setValue(data.workType);
+    }
+  }
+
+  const rowId = id || (map.id &gt;= 0 ? existingVals[map.id] : '') || ('gs_' + targetRow);
+  if (map.id &gt;= 0 &amp;&amp; !existingVals[map.id]) {
+    setCell(map.id, rowId);
+  }
+
+  return { ...data, id: rowId, _rowIndex: targetRow };
+}
+
+function deleteRecord(sheet, id, rowIndex) {
+  const targetRow = findRowIndex(sheet, id, rowIndex);
+  if (targetRow &gt;= 2) {
+    sheet.deleteRow(targetRow);
+    return true;
+  }
+  throw new Error('ไม่พบรายการที่ต้องการลบใน Google Sheets');
+}
+
+function findRowIndex(sheet, id, rowIndex) {
+  const lastRow = sheet.getLastRow();
+  if (lastRow &lt;= 1) return -1;
+
+  const map = getHeaderMapping(sheet);
+  if (id &amp;&amp; map.id &gt;= 0) {
+    const idColumn = sheet.getRange(2, map.id + 1, lastRow - 1, 1).getValues();
+    for (let i = 0; i &lt; idColumn.length; i++) {
+      if (idColumn[i][0] &amp;&amp; idColumn[i][0].toString() === id.toString()) {
+        return i + 2;
+      }
+    }
+  }
+
+  if (rowIndex &amp;&amp; rowIndex &gt;= 2 &amp;&amp; rowIndex &lt;= lastRow) {
+    return rowIndex;
+  }
+
   return -1;
-}</pre>
+}
+
+function batchInsert(sheet, rows) {
+  if (!rows || !rows.length) return 0;
+  ensureHeaders(sheet, false);
+  const map = getHeaderMapping(sheet);
+  const totalCols = Math.max(sheet.getLastColumn(), HEADERS.length);
+  const toAppend = [];
+  const startSeq = sheet.getLastRow();
+
+  for (let i = 0; i &lt; rows.length; i++) {
+    const r = rows[i];
+    const budget = Number(r.budget || (Array.isArray(r) ? r[5] : 0)) || 0;
+    const used = Number(r.used || (Array.isArray(r) ? r[6] : 0)) || 0;
+    const remain = (r.remain !== '' &amp;&amp; r.remain != null) ? Number(r.remain) : (budget - used);
+    const prog = Number(r.prog != null ? r.prog : (Array.isArray(r) ? r[10] : 0)) || 0;
+    const newId = r.id || ('gs_' + new Date().getTime() + '_' + i + '_' + Math.floor(Math.random() * 1000));
+
+    const row = new Array(totalCols).fill('');
+    const put = (colIdx, val) =&gt; {
+      if (colIdx &gt;= 0 &amp;&amp; colIdx &lt; row.length) row[colIdx] = val;
+    };
+
+    if (Array.isArray(r)) {
+      put(map.seq, r[0] || (startSeq + i));
+      put(map.project, r[1] || '');
+      put(map.area, r[2] || '');
+      put(map.unit, r[3] || '');
+      put(map.year, r[4] || '');
+      put(map.budget, budget);
+      put(map.used, used);
+      put(map.remain, remain);
+      put(map.source, r[8] || '');
+      put(map.status, r[9] || '');
+      put(map.prog, prog);
+      put(map.detail, r[11] || '');
+      put(map.priority, r[12] || '');
+      put(map.start, r[13] || '');
+      put(map.follow, r[14] || '');
+      put(map.end, r[15] || '');
+      put(map.problem, r[16] || '');
+      put(map.id, newId);
+      put(map.workType, r[18] || r[17] || '');
+    } else {
+      put(map.seq, r.seq || (startSeq + i));
+      put(map.project, r.project || '');
+      put(map.area, r.area || '');
+      put(map.unit, r.unit || '');
+      put(map.year, r.year || '');
+      put(map.budget, budget);
+      put(map.used, used);
+      put(map.remain, remain);
+      put(map.source, r.source || '');
+      put(map.status, r.status || 'กำลังดำเนินการ');
+      put(map.prog, prog);
+      put(map.detail, r.detail || '');
+      put(map.priority, r.priority || '');
+      put(map.start, r.start || '');
+      put(map.follow, r.follow || '');
+      put(map.end, r.end || '');
+      put(map.problem, r.problem || '');
+      put(map.id, newId);
+      put(map.workType, r.workType || '');
+    }
+
+    toAppend.push(row);
+  }
+
+  if (toAppend.length) {
+    sheet.getRange(sheet.getLastRow() + 1, 1, toAppend.length, totalCols).setValues(toAppend);
+  }
+  return toAppend.length;
+}
+
+/**
+ * ============================================================
+ * ระบบจัดการประวัติการเบิกจ่าย (Disbursement History System)
+ * ============================================================
+ */
+
+function getDisburseSheet(ss) {
+  if (!ss) ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName(DISBURSE_SHEET_NAME);
+  let needHeader = false;
+  if (!sheet) {
+    sheet = ss.insertSheet(DISBURSE_SHEET_NAME);
+    needHeader = true;
+  } else if (sheet.getLastRow() === 0) {
+    needHeader = true;
+  }
+
+  if (needHeader) {
+    sheet.getRange(1, 1, 1, DISBURSE_HEADERS.length).setValues([DISBURSE_HEADERS]);
+    const headerRange = sheet.getRange(1, 1, 1, DISBURSE_HEADERS.length);
+    headerRange
+      .setFontWeight('bold')
+      .setBackground('#059669')
+      .setFontColor('#FFFFFF')
+      .setHorizontalAlignment('center')
+      .setVerticalAlignment('middle');
+    sheet.setRowHeight(1, 36);
+    sheet.setFrozenRows(1);
+    const widths = [130, 260, 240, 160, 160, 160, 140, 120, 160];
+    widths.forEach((w, idx) =&gt; {
+      try { sheet.setColumnWidth(idx + 1, w); } catch (e) {}
+    });
+  }
+  return sheet;
+}
+
+function addDisbursement(data) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const disburseSheet = getDisburseSheet(ss);
+
+  const dateVal = data.date || Utilities.formatDate(new Date(), 'Asia/Bangkok', 'yyyy-MM-dd');
+  const amount = Number(data.amount) || 0;
+  const totalUsed = Number(data.totalUsed) || 0;
+  const remain = Number(data.remain) || 0;
+  const nowStr = Utilities.formatDate(new Date(), 'Asia/Bangkok', 'yyyy-MM-dd HH:mm:ss');
+
+  const row = [
+    dateVal,
+    data.project || '',
+    data.remark || data.detail || '',
+    amount,
+    totalUsed,
+    remain,
+    data.unit || '',
+    data.projectId || data.id || '',
+    nowStr
+  ];
+
+  disburseSheet.appendRow(row);
+
+  // อัปเดตยอดสะสมในชีตโครงการหลักอัตโนมัติ
+  if (data.projectId || data.rowIndex) {
+    const mainSheet = getTargetSheet(data.sheet || DEFAULT_SHEET_NAME);
+    try {
+      updateRecord(mainSheet, data.projectId || data.id, data.rowIndex, {
+        used: totalUsed,
+        remain: remain,
+        detail: data.remark || undefined,
+        prog: data.prog !== undefined ? data.prog : undefined
+      });
+    } catch (e) {}
+  }
+
+  return {
+    date: dateVal,
+    project: data.project || '',
+    remark: data.remark || data.detail || '',
+    amount: amount,
+    totalUsed: totalUsed,
+    remain: remain,
+    unit: data.unit || '',
+    projectId: data.projectId || data.id || '',
+    timestamp: nowStr
+  };
+}
+
+function getDisbursements(projectId) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName(DISBURSE_SHEET_NAME);
+  if (!sheet || sheet.getLastRow() &lt;= 1) {
+    return [];
+  }
+
+  const raw = sheet.getRange(2, 1, sheet.getLastRow() - 1, DISBURSE_HEADERS.length).getValues();
+  const list = [];
+  for (let i = 0; i &lt; raw.length; i++) {
+    const r = raw[i];
+    if (!r[0] &amp;&amp; !r[1]) continue;
+    const pid = String(r[7] || '').trim();
+    const pName = String(r[1] || '').trim();
+
+    if (projectId &amp;&amp; pid !== String(projectId).trim() &amp;&amp; pName !== String(projectId).trim()) {
+      continue;
+    }
+
+    list.push({
+      date: formatDateVal(r[0]),
+      project: pName,
+      remark: String(r[2] || '').trim(),
+      amount: Number(r[3]) || 0,
+      totalUsed: Number(r[4]) || 0,
+      remain: Number(r[5]) || 0,
+      unit: String(r[6] || '').trim(),
+      projectId: pid,
+      timestamp: String(r[8] || '').trim()
+    });
+  }
+  return list;
+}
+
+/**
+ * ============================================================
+ * ระบบติดตามการประชุมโครงการ (Meeting Tracking System)
+ * ============================================================
+ */
+
+function getMeetingSheet(ss) {
+  if (!ss) ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName(MEETING_SHEET_NAME);
+  let needHeader = false;
+  if (!sheet) {
+    sheet = ss.insertSheet(MEETING_SHEET_NAME);
+    needHeader = true;
+  } else if (sheet.getLastRow() === 0) {
+    needHeader = true;
+  }
+
+  if (needHeader) {
+    sheet.getRange(1, 1, 1, MEETING_HEADERS.length).setValues([MEETING_HEADERS]);
+    const headerRange = sheet.getRange(1, 1, 1, MEETING_HEADERS.length);
+    headerRange
+      .setFontWeight('bold')
+      .setBackground('#1E40AF')
+      .setFontColor('#FFFFFF')
+      .setHorizontalAlignment('center')
+      .setVerticalAlignment('middle');
+    sheet.setRowHeight(1, 36);
+    sheet.setFrozenRows(1);
+    const widths = [120, 220, 260, 140, 140, 140, 160, 280, 240, 140, 120, 160];
+    widths.forEach((w, idx) =&gt; {
+      try { sheet.setColumnWidth(idx + 1, w); } catch (e) {}
+    });
+  }
+  return sheet;
+}
+
+function addMeetingLog(data) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const meetingSheet = getMeetingSheet(ss);
+
+  const dateVal = data.date || Utilities.formatDate(new Date(), 'Asia/Bangkok', 'yyyy-MM-dd');
+  const oldProg = Number(data.oldProg) || 0;
+  const newProg = (data.newProg !== undefined &amp;&amp; data.newProg !== '') ? Number(data.newProg) : (Number(data.prog) || oldProg);
+  const nowStr = Utilities.formatDate(new Date(), 'Asia/Bangkok', 'yyyy-MM-dd HH:mm:ss');
+  const round = data.round || data.topic || data.title || 'การประชุมติดตามความคืบหน้า';
+  const notes = data.notes || data.remark || data.detail || '';
+  const problem = data.problem || '';
+  const nextDate = data.nextDate || data.follow || '';
+
+  const row = [
+    dateVal,
+    round,
+    data.project || '',
+    data.unit || '',
+    oldProg,
+    newProg,
+    data.status || 'กำลังดำเนินการ',
+    notes,
+    problem,
+    nextDate,
+    data.projectId || data.id || '',
+    nowStr
+  ];
+
+  meetingSheet.appendRow(row);
+
+  // อัปเดต % ความคืบหน้า และสถานะ ในชีตโครงการหลักอัตโนมัติ (2-in-1 Update)
+  if (data.projectId || data.rowIndex) {
+    const mainSheet = getTargetSheet(data.sheet || DEFAULT_SHEET_NAME);
+    try {
+      const updateData = {
+        prog: newProg
+      };
+      if (data.status) updateData.status = data.status;
+      if (notes) updateData.detail = notes;
+      if (problem) updateData.problem = problem;
+      if (nextDate) updateData.follow = nextDate;
+
+      updateRecord(mainSheet, data.projectId || data.id, data.rowIndex, updateData);
+    } catch (e) {
+      console.warn('Error auto updating main sheet from meeting:', e);
+    }
+  }
+
+  return {
+    date: dateVal,
+    round: round,
+    project: data.project || '',
+    unit: data.unit || '',
+    oldProg: oldProg,
+    newProg: newProg,
+    status: data.status || 'กำลังดำเนินการ',
+    notes: notes,
+    problem: problem,
+    nextDate: nextDate,
+    projectId: data.projectId || data.id || '',
+    timestamp: nowStr
+  };
+}
+
+function getMeetingLogs(projectId) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName(MEETING_SHEET_NAME);
+  if (!sheet || sheet.getLastRow() &lt;= 1) {
+    return [];
+  }
+
+  const raw = sheet.getRange(2, 1, sheet.getLastRow() - 1, MEETING_HEADERS.length).getValues();
+  const list = [];
+  for (let i = 0; i &lt; raw.length; i++) {
+    const r = raw[i];
+    if (!r[0] &amp;&amp; !r[2]) continue;
+    const pid = String(r[10] || '').trim();
+    const pName = String(r[2] || '').trim();
+
+    if (projectId &amp;&amp; pid !== String(projectId).trim() &amp;&amp; pName !== String(projectId).trim()) {
+      continue;
+    }
+
+    list.push({
+      date: formatDateVal(r[0]),
+      round: String(r[1] || '').trim(),
+      project: pName,
+      unit: String(r[3] || '').trim(),
+      oldProg: Number(r[4]) || 0,
+      newProg: Number(r[5]) || 0,
+      status: String(r[6] || '').trim(),
+      notes: String(r[7] || '').trim(),
+      problem: String(r[8] || '').trim(),
+      nextDate: formatDateVal(r[9]),
+      projectId: pid,
+      timestamp: String(r[11] || '').trim()
+    });
+  }
+  return list;
+}
+
+
+/**
+ * ============================================================
+ * ระบบตรวจสอบและสร้างชีต/คอลัมน์ที่จำเป็น โดยไม่กระทบข้อมูลเดิม
+ * (Safe Auto-Setup &amp; Repair System)
+ * ============================================================
+ * 1. ตรวจสอบคอลัมน์ในชีตโครงการหลัก (AllProject) หากขาดคอลัมน์ใด จะเพิ่มต่อท้ายขวาสุด
+ * 2. ไม่มีการลบ ย้าย หรือเขียนทับคอลัมน์และข้อมูลเดิม 100%
+ * 3. เติมรหัส ID สำหรับแถวที่ยังไม่มี ID เพื่อป้องกัน ID ซ้ำหรือสลับแถว
+ * 4. สร้างชีต "ประวัติการเบิกจ่าย" และ "ติดตามการประชุม" ให้อัตโนมัติ (หากยังไม่มี)
+ */
+function setupAllSheetsAndColumns(tabName) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const summary = [];
+
+  // 1. ชีตโครงการหลัก
+  const cleanName = (tabName &amp;&amp; tabName.toString().trim() !== '') ? tabName.toString().trim() : '';
+  const mainSheet = cleanName 
+    ? (ss.getSheetByName(cleanName) || ss.insertSheet(cleanName))
+    : (ss.getSheetByName('AllProject') || ss.getSheetByName(DEFAULT_SHEET_NAME) || ss.getSheets()[0]);
+
+  const mainRes = repairMainSheetColumns(mainSheet);
+  summary.push('📁 ชีตหลัก "' + mainSheet.getName() + '":\n' + mainRes);
+
+  // 2. ชีต "ประวัติการเบิกจ่าย"
+  const disburseRes = repairDisburseSheet(ss);
+  summary.push('💰 ชีต "' + DISBURSE_SHEET_NAME + '":\n' + disburseRes);
+
+  // 3. ชีต "ติดตามการประชุม"
+  const meetingRes = repairMeetingSheet(ss);
+  summary.push('👥 ชีต "' + MEETING_SHEET_NAME + '":\n' + meetingRes);
+
+  const fullMsg = summary.join('\n\n');
+  Logger.log(fullMsg);
+
+  try {
+    SpreadsheetApp.getUi().alert('✅ ผลการตรวจสอบและสร้างชีต/คอลัมน์ (ข้อมูลเดิมปลอดภัย 100%):\n\n' + fullMsg);
+  } catch (e) {}
+
+  return fullMsg;
+}
+
+function repairMainSheetColumns(sheet) {
+  const lastCol = sheet.getLastColumn();
+  const lastRow = sheet.getLastRow();
+
+  if (lastRow === 0 || lastCol === 0) {
+    sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+    const hr = sheet.getRange(1, 1, 1, HEADERS.length);
+    hr.setFontWeight('bold')
+      .setBackground('#312E81')
+      .setFontColor('#FFFFFF')
+      .setHorizontalAlignment('center')
+      .setVerticalAlignment('middle');
+    sheet.setRowHeight(1, 36);
+    sheet.setFrozenRows(1);
+    return '• สร้างหัวคอลัมน์มาตรฐานครบทั้ง ' + HEADERS.length + ' คอลัมน์เรียบร้อย';
+  }
+
+  const existingHeaders = sheet.getRange(1, 1, 1, lastCol).getValues()[0].map(h =&gt; String(h || '').trim());
+  const norm = s =&gt; String(s || '').toLowerCase().replace(/[\s\-_/\\()]/g, '');
+  const added = [];
+
+  HEADERS.forEach(reqCol =&gt; {
+    const reqNorm = norm(reqCol);
+    let found = false;
+
+    for (let i = 0; i &lt; existingHeaders.length; i++) {
+      const hNorm = norm(existingHeaders[i]);
+      if (!hNorm) continue;
+      if (hNorm === reqNorm) { found = true; break; }
+      if (reqCol === 'ประเภทงาน' &amp;&amp; (hNorm === 'worktype' || hNorm.indexOf('scada') &gt; -1)) { found = true; break; }
+      if (reqCol === 'ID' &amp;&amp; (hNorm === 'ไอดี' || hNorm === 'รหัส')) { found = true; break; }
+      if (reqCol === '% ความสำเร็จ' &amp;&amp; (hNorm.indexOf('ความสำเร็จ') &gt; -1 || hNorm.indexOf('progress') &gt; -1)) { found = true; break; }
+      if (reqCol === 'การดำเนินงานปัจจุบัน' &amp;&amp; (hNorm.indexOf('การดำเนินงาน') &gt; -1 || hNorm.indexOf('detail') &gt; -1)) { found = true; break; }
+      if (reqCol === 'หมายเหตุ/ปัญหา' &amp;&amp; (hNorm.indexOf('ปัญหา') &gt; -1 || hNorm.indexOf('หมายเหตุ') &gt; -1)) { found = true; break; }
+    }
+
+    if (!found) {
+      const nextCol = sheet.getLastColumn() + 1;
+      const cell = sheet.getRange(1, nextCol);
+      cell.setValue(reqCol)
+        .setFontWeight('bold')
+        .setBackground(reqCol === 'ประเภทงาน' ? '#4338CA' : (reqCol === 'ID' ? '#475569' : '#312E81'))
+        .setFontColor('#FFFFFF')
+        .setHorizontalAlignment('center')
+        .setVerticalAlignment('middle');
+      existingHeaders.push(reqCol);
+      added.push(reqCol);
+    }
+  });
+
+  const map = getHeaderMapping(sheet);
+  let idFilled = 0;
+  if (map.id &gt;= 0 &amp;&amp; lastRow &gt;= 2) {
+    const idRange = sheet.getRange(2, map.id + 1, lastRow - 1, 1);
+    const idVals = idRange.getValues();
+    let needUpdate = false;
+    for (let r = 0; r &lt; idVals.length; r++) {
+      if (!idVals[r][0] || String(idVals[r][0]).trim() === '') {
+        idVals[r][0] = 'gs_' + (r + 2);
+        needUpdate = true;
+        idFilled++;
+      }
+    }
+    if (needUpdate) {
+      idRange.setValues(idVals);
+    }
+  }
+
+  try { sheet.setFrozenRows(1); } catch (e) {}
+
+  let msg = '';
+  if (added.length &gt; 0) {
+    msg += '• เพิ่มคอลัมน์ที่ยังขาดต่อท้ายขวาสุด: ' + added.join(', ') + '\n';
+  } else {
+    msg += '• คอลัมน์ครบถ้วนแล้ว ไม่ต้องเพิ่มคอลัมน์ใหม่\n';
+  }
+  if (idFilled &gt; 0) {
+    msg += '• กำหนดรหัส ID อ้างอิงให้อัตโนมัติ ' + idFilled + ' แถว\n';
+  }
+  msg += '• ข้อมูลเดิมทั้งหมด ' + (lastRow - 1) + ' แถวคงอยู่ครบถ้วน ปลอดภัย 100%';
+  return msg;
+}
+
+function repairDisburseSheet(ss) {
+  let sheet = ss.getSheetByName(DISBURSE_SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(DISBURSE_SHEET_NAME);
+    sheet.getRange(1, 1, 1, DISBURSE_HEADERS.length).setValues([DISBURSE_HEADERS]);
+    const hr = sheet.getRange(1, 1, 1, DISBURSE_HEADERS.length);
+    hr.setFontWeight('bold')
+      .setBackground('#059669')
+      .setFontColor('#FFFFFF')
+      .setHorizontalAlignment('center')
+      .setVerticalAlignment('middle');
+    sheet.setRowHeight(1, 36);
+    sheet.setFrozenRows(1);
+    const widths = [130, 260, 240, 160, 160, 160, 140, 120, 160];
+    widths.forEach((w, idx) =&gt; {
+      try { sheet.setColumnWidth(idx + 1, w); } catch (e) {}
+    });
+    return '• สร้างชีตใหม่พร้อมหัวคอลัมน์มาตรฐานทั้ง ' + DISBURSE_HEADERS.length + ' คอลัมน์เรียบร้อย';
+  }
+
+  const lastCol = sheet.getLastColumn();
+  const lastRow = sheet.getLastRow();
+  if (lastCol === 0 || lastRow === 0) {
+    sheet.getRange(1, 1, 1, DISBURSE_HEADERS.length).setValues([DISBURSE_HEADERS]);
+    sheet.setRowHeight(1, 36);
+    sheet.setFrozenRows(1);
+    return '• กำหนดหัวคอลัมน์มาตรฐานทั้ง ' + DISBURSE_HEADERS.length + ' คอลัมน์เรียบร้อย';
+  }
+
+  const existing = sheet.getRange(1, 1, 1, lastCol).getValues()[0].map(h =&gt; String(h || '').trim());
+  const norm = s =&gt; String(s || '').toLowerCase().replace(/[\s\-_/\\()]/g, '');
+  const added = [];
+
+  DISBURSE_HEADERS.forEach(col =&gt; {
+    const cNorm = norm(col);
+    if (!existing.some(h =&gt; norm(h) === cNorm)) {
+      const nextCol = sheet.getLastColumn() + 1;
+      sheet.getRange(1, nextCol).setValue(col)
+        .setFontWeight('bold')
+        .setBackground('#059669')
+        .setFontColor('#FFFFFF')
+        .setHorizontalAlignment('center')
+        .setVerticalAlignment('middle');
+      existing.push(col);
+      added.push(col);
+    }
+  });
+
+  try { sheet.setFrozenRows(1); } catch (e) {}
+
+  if (added.length) {
+    return '• เพิ่มคอลัมน์ที่ขาดในชีตเบิกจ่าย: ' + added.join(', ') + '\n• ประวัติเดิม ' + (Math.max(0, lastRow - 1)) + ' รายการคงอยู่ครบถ้วน';
+  }
+  return '• คอลัมน์ในชีตเบิกจ่ายครบถ้วนสมบูรณ์แล้ว (' + (Math.max(0, lastRow - 1)) + ' รายการ)';
+}
+
+function repairMeetingSheet(ss) {
+  let sheet = ss.getSheetByName(MEETING_SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(MEETING_SHEET_NAME);
+    sheet.getRange(1, 1, 1, MEETING_HEADERS.length).setValues([MEETING_HEADERS]);
+    const hr = sheet.getRange(1, 1, 1, MEETING_HEADERS.length);
+    hr.setFontWeight('bold')
+      .setBackground('#1E40AF')
+      .setFontColor('#FFFFFF')
+      .setHorizontalAlignment('center')
+      .setVerticalAlignment('middle');
+    sheet.setRowHeight(1, 36);
+    sheet.setFrozenRows(1);
+    const widths = [120, 220, 260, 140, 140, 140, 160, 280, 240, 140, 120, 160];
+    widths.forEach((w, idx) =&gt; {
+      try { sheet.setColumnWidth(idx + 1, w); } catch (e) {}
+    });
+    return '• สร้างชีตใหม่พร้อมหัวคอลัมน์มาตรฐานทั้ง ' + MEETING_HEADERS.length + ' คอลัมน์เรียบร้อย';
+  }
+
+  const lastCol = sheet.getLastColumn();
+  const lastRow = sheet.getLastRow();
+  if (lastCol === 0 || lastRow === 0) {
+    sheet.getRange(1, 1, 1, MEETING_HEADERS.length).setValues([MEETING_HEADERS]);
+    sheet.setRowHeight(1, 36);
+    sheet.setFrozenRows(1);
+    return '• กำหนดหัวคอลัมน์มาตรฐานทั้ง ' + MEETING_HEADERS.length + ' คอลัมน์เรียบร้อย';
+  }
+
+  const existing = sheet.getRange(1, 1, 1, lastCol).getValues()[0].map(h =&gt; String(h || '').trim());
+  const norm = s =&gt; String(s || '').toLowerCase().replace(/[\s\-_/\\()]/g, '');
+  const added = [];
+
+  MEETING_HEADERS.forEach(col =&gt; {
+    const cNorm = norm(col);
+    if (!existing.some(h =&gt; norm(h) === cNorm)) {
+      const nextCol = sheet.getLastColumn() + 1;
+      sheet.getRange(1, nextCol).setValue(col)
+        .setFontWeight('bold')
+        .setBackground('#1E40AF')
+        .setFontColor('#FFFFFF')
+        .setHorizontalAlignment('center')
+        .setVerticalAlignment('middle');
+      existing.push(col);
+      added.push(col);
+    }
+  });
+
+  try { sheet.setFrozenRows(1); } catch (e) {}
+
+  if (added.length) {
+    return '• เพิ่มคอลัมน์ที่ขาดในชีตประชุม: ' + added.join(', ') + '\n• บันทึกเดิม ' + (Math.max(0, lastRow - 1)) + ' รายการคงอยู่ครบถ้วน';
+  }
+  return '• คอลัมน์ในชีตประชุมครบถ้วนสมบูรณ์แล้ว (' + (Math.max(0, lastRow - 1)) + ' รายการ)';
+}
+
+function updateMeetingLog(data) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = getMeetingSheet(ss);
+  if (!sheet || sheet.getLastRow() &lt;= 1) return null;
+
+  const raw = sheet.getRange(2, 1, sheet.getLastRow() - 1, MEETING_HEADERS.length).getValues();
+  let targetRow = -1;
+
+  for (let i = 0; i &lt; raw.length; i++) {
+    const r = raw[i];
+    const rTime = String(r[11] || '').trim();
+    const rDate = formatDateVal(r[0]);
+    const rRound = String(r[1] || '').trim();
+    const rProj = String(r[2] || '').trim();
+    const rPid = String(r[10] || '').trim();
+
+    if (data.timestamp &amp;&amp; rTime &amp;&amp; rTime === String(data.timestamp).trim()) {
+      targetRow = i + 2;
+      break;
+    }
+    if (rDate === data.date &amp;&amp; rRound === data.round &amp;&amp; (rProj === data.project || (data.projectId &amp;&amp; rPid === data.projectId))) {
+      targetRow = i + 2;
+      break;
+    }
+  }
+
+  const dateVal = data.date || Utilities.formatDate(new Date(), 'Asia/Bangkok', 'yyyy-MM-dd');
+  const oldProg = Number(data.oldProg) || 0;
+  const newProg = (data.newProg !== undefined &amp;&amp; data.newProg !== '') ? Number(data.newProg) : oldProg;
+  const round = data.round || data.topic || '';
+  const notes = data.notes || data.remark || data.detail || '';
+  const problem = data.problem || '';
+  const nextDate = data.nextDate || data.follow || '';
+  const nowStr = data.timestamp || Utilities.formatDate(new Date(), 'Asia/Bangkok', 'yyyy-MM-dd HH:mm:ss');
+
+  const row = [
+    dateVal,
+    round,
+    data.project || '',
+    data.unit || '',
+    oldProg,
+    newProg,
+    data.status || 'กำลังดำเนินการ',
+    notes,
+    problem,
+    nextDate,
+    data.projectId || data.id || '',
+    nowStr
+  ];
+
+  if (targetRow &gt;= 2) {
+    sheet.getRange(targetRow, 1, 1, MEETING_HEADERS.length).setValues([row]);
+  } else {
+    sheet.appendRow(row);
+  }
+
+  // อัปเดตชีตหลัก AllProject ให้ตรงกัน
+  if (data.projectId || data.rowIndex) {
+    const mainSheet = getTargetSheet(data.sheet || DEFAULT_SHEET_NAME);
+    try {
+      const updateData = { prog: newProg };
+      if (data.status) updateData.status = data.status;
+      if (notes) updateData.detail = notes;
+      updateData.problem = problem;
+      if (nextDate) updateData.follow = nextDate;
+      updateRecord(mainSheet, data.projectId || data.id, data.rowIndex, updateData);
+    } catch (e) {}
+  }
+
+  return { ...data, timestamp: nowStr };
+}
+
+function deleteMeetingLog(data) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName(MEETING_SHEET_NAME);
+  if (!sheet || sheet.getLastRow() &lt;= 1) return false;
+
+  const raw = sheet.getRange(2, 1, sheet.getLastRow() - 1, MEETING_HEADERS.length).getValues();
+  for (let i = 0; i &lt; raw.length; i++) {
+    const r = raw[i];
+    const rTime = String(r[11] || '').trim();
+    const rDate = formatDateVal(r[0]);
+    const rRound = String(r[1] || '').trim();
+    const rProj = String(r[2] || '').trim();
+    const rPid = String(r[10] || '').trim();
+
+    if ((data.timestamp &amp;&amp; rTime === String(data.timestamp).trim()) ||
+        (rDate === data.date &amp;&amp; rRound === data.round &amp;&amp; (rProj === data.project || (data.projectId &amp;&amp; rPid === data.projectId)))) {
+      sheet.deleteRow(i + 2);
+      return true;
+    }
+  }
+  return false;
+}
+</pre>
               </div>
             </div>
 
@@ -1120,6 +2389,124 @@ function findRowIndex(sheet, id, rowIndex){
     <button class="icon-btn" id="mClose" aria-label="ปิด"><svg><use href="#i-x"/></svg></button></div>
   <div class="modal-b" id="mBody"></div>
 </div></div>
+
+<!-- ========== MEETING RECORD MODAL ========== -->
+<div class="ov" id="ovMeeting">
+  <div class="modal" style="max-width:680px">
+    <div class="modal-h">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:rgba(30,64,175,.14);color:#2563EB">
+          <svg style="width:18px;height:18px"><use href="#i-meeting"/></svg>
+        </span>
+        <div>
+          <h3 id="mFormHeaderTitle" style="margin:0;font-size:16px">บันทึกผลการประชุมโครงการ</h3>
+          <p id="mFormHeaderSub" style="margin:0;font-size:12px;color:var(--muted)">บันทึกมติการประชุม และอัปเดต % ความคืบหน้าลง Google Sheets</p>
+        </div>
+      </div>
+      <button class="icon-btn" id="meetingClose" aria-label="ปิด"><svg><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-b" style="max-height:calc(85vh - 120px);overflow-y:auto">
+      <form id="meetingForm" onsubmit="return false">
+        <input type="hidden" id="mProjId" value="">
+        <input type="hidden" id="mRowIndex" value="">
+        <input type="hidden" id="mEditIdx" value="">
+
+        <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:12px;margin-bottom:12px">
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">📅 วันที่ประชุม <span style="color:#EF4444">*</span></label>
+            <input type="date" id="mDate" class="input-text" style="height:42px;font-weight:600">
+          </div>
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">🏢 ครั้งที่ประชุม / วาระ</label>
+            <input type="text" id="mRound" class="input-text" placeholder="ระบุครั้งที่ประชุม หรือวาระ (พิมพ์ได้ตามต้องการ)" style="height:42px">
+          </div>
+        </div>
+
+        <!-- Searchable Project Selector with visible interactive list -->
+        <div style="margin-bottom:14px" id="mProjGroup">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+            <label style="font-size:12.5px;font-weight:600;color:var(--muted)">
+              📁 เลือกโครงการที่ต้องการติดตาม <span style="color:#EF4444">*</span>
+            </label>
+            <span id="mProjCountBadge" style="font-size:11.5px;font-weight:600;color:#2563EB"></span>
+          </div>
+          <div style="position:relative">
+            <input type="text" id="mProjSearch" class="input-text" placeholder="🔍 พิมพ์คำค้นหา เช่น LAS, 5T, ผลิต, สารเคมี (ค้นหาคำใกล้เคียงได้)..." autocomplete="off" style="height:42px;font-weight:600;padding-right:34px">
+            <button type="button" id="mBtnClearProj" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);display:none;padding:4px" title="ล้างการค้นหา">
+              <svg width="14" height="14" viewBox="0 0 24 24"><use href="#i-x"/></svg>
+            </button>
+            <input type="hidden" id="mSelProject" value="">
+          </div>
+          <!-- Project List Box always visible with scrollbar and selection indicator -->
+          <div id="mProjDropdown" style="margin-top:6px;max-height:190px;overflow-y:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:inset 0 1px 3px rgba(0,0,0,.04);display:block">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">👤 ผู้รับผิดชอบ</label>
+            <input type="text" id="mUnit" class="input-text" placeholder="ระบุผู้รับผิดชอบ" style="height:42px">
+          </div>
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">📌 สถานะโครงการ</label>
+            <select id="mStatus" class="input-text" style="height:42px">
+              <option value="อยู่ระหว่างดำเนินการ">อยู่ระหว่างดำเนินการ</option>
+              <option value="รอส่งมอบ">รอส่งมอบ</option>
+              <option value="รอตรวจรับ">รอตรวจรับ</option>
+              <option value="เบิกจ่ายงวดสุดท้าย">เบิกจ่ายงวดสุดท้าย</option>
+              <option value="สิ้นสุดการดำเนินการ">สิ้นสุดการดำเนินการ</option>
+              <option value="on hold">on hold</option>
+              <option value="ยังไม่เริ่มดำเนินการ">ยังไม่เริ่มดำเนินการ</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Progress update section -->
+        <div style="background:var(--surface-2);padding:14px;border-radius:12px;border:1px solid var(--line);margin-bottom:12px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <span style="font-size:13px;font-weight:700;color:var(--ink)">อัปเดต % ความคืบหน้าโครงการ</span>
+            <div style="font-size:12px;color:var(--muted)">ความคืบหน้าเดิม: <b id="mOldProgTxt" style="color:#6366F1">0%</b></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <input type="range" id="mRangeProg" min="0" max="100" step="1" value="0" style="flex:1">
+            <div style="display:flex;align-items:center;gap:4px">
+              <input type="number" id="mNewProg" min="0" max="100" step="1" value="0" class="input-text" style="width:75px;height:38px;text-align:center;font-weight:700;font-size:15px">
+              <span style="font-weight:700;font-size:14px">%</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:12px">
+          <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">📝 ประเด็นติดตาม / มติที่ประชุม / ความก้าวหน้าล่าสุด</label>
+          <textarea id="mNotes" class="input-text" rows="3" placeholder="ระบุสิ่งที่ได้หารือในที่ประชุม มติที่ประชุม หรือขั้นตอนที่ดำเนินการอยู่..."></textarea>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin-bottom:16px">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;flex-wrap:wrap;gap:4px">
+              <label style="font-size:12.5px;font-weight:600;color:var(--muted)">⚠️ ปัญหา / อุปสรรคที่พบ</label>
+              <label style="font-size:11.5px;color:#059669;cursor:pointer;display:inline-flex;align-items:center;gap:4px;user-select:none" title="ติ๊กเมื่อปัญหาเดิมได้รับการแก้ไขเรียบร้อยแล้ว">
+                <input type="checkbox" id="mChkResolved"> ปัญหานี้แก้ไขเรียบร้อยแล้ว
+              </label>
+            </div>
+            <input type="text" id="mProblem" class="input-text" placeholder="ระบุปัญหา หรือเว้นว่างหากไม่มีปัญหา..." style="height:42px">
+          </div>
+          <div>
+            <label style="font-size:12.5px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px">🎯 กำหนดติดตามรอบถัดไป</label>
+            <input type="date" id="mNextDate" class="input-text" style="height:42px">
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:flex-end;gap:10px;padding-top:14px;border-top:1px solid var(--line)">
+          <button type="button" class="btn btn-ghost" id="mCancel">ยกเลิก</button>
+          <button type="button" class="btn btn-primary" id="mSubmit" style="box-shadow:0 4px 14px rgba(37,99,235,.28)">
+            <svg style="width:14px;height:14px"><use href="#i-check"/></svg> บันทึกผลการประชุมลงชีต
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- ========== PROJECT FORM MODAL (ADD / EDIT) ========== -->
 <div class="ov" id="ovForm">
@@ -2097,7 +3484,7 @@ function kpiSet(){
   const done=v.filter(x=>x.prog===100||x.status==='สิ้นสุดการดำเนินการ').length;
   const progAvg=v.length?v.reduce((s,x)=>s+x.prog,0)/v.length:0;
   return [
-    kpiCard({hero:true,go:'projects',ic:'folder',c:'#6366F1',label:'โครงการ / กิจกรรมทั้งหมด',
+    kpiCard({hero:true,go:'projects',ic:'folder',c:'#6366F1',label:'โครงการทั้งหมด',
       value:nf(v.length),unit:'รายการ',sub:`จากข้อมูลทั้งหมด ${nf(S.recs.length)} รายการ`}),
     kpiCard({go:'budget',ic:'money',c:'#4F46E5',label:'งบประมาณที่ได้รับ',value:money(b),unit:'บาท',
       sub:`เฉลี่ย ${money(v.length?b/v.length:0)} บาท/รายการ`}),
@@ -2303,25 +3690,62 @@ function renderBudget(){
     <td class="num">${nfd(pct(o.u,o.b),2)}%</td></tr>`).join('')+`</tbody></table>`:emptyBox('ไม่พบข้อมูลตามเงื่อนไข');
 }
 function renderUnits(){
-  const un=agg(S.view,'unit').sort((a,b)=>b.budget-a.budget);
-  hbars3d('#ch-unitbar',{items:un.map((u,i)=>({label:u.key,value:u.budget,color:colorAt(i),
-    sub:`${nf(u.n)} โครงการ`})),unitLabel:'งบที่ได้รับ (บาท)',fmtLabel:money});
-  $('#deptGrid').innerHTML=un.length?un.map((u,i)=>{
-    const c=colorAt(i);
-    return `<div class="dept" data-u="${esc(u.key)}" style="cursor:pointer;--kc:${c}">
-      <div class="dept-h"><span class="dept-bar"></span>
-        <div><div class="dept-n">${esc(u.key)}</div><div class="dept-c">${nf(u.n)} โครงการ / กิจกรรม</div></div></div>
-      <div class="dept-row"><span>งบที่ได้รับ</span><b>${nf(u.budget)}</b></div>
-      <div class="dept-row"><span>งบที่ใช้ไป</span><b>${nf(u.used)}</b></div>
-      <div class="dept-row"><span>คงเหลือ</span><b>${nf(u.remain)}</b></div>
-      <div class="dept-row"><span>ความคืบหน้าเฉลี่ย</span><b>${nfd(u.progAvg,1)}%</b></div>
-      <div class="kpi-bar" style="--kc2:${shade(c,-.3)}"><i style="width:${clamp(u.progAvg,0,100)}%"></i></div>
-    </div>`}).join(''):emptyBox('ไม่พบหน่วยงานตามเงื่อนไข');
-  $$('#deptGrid .dept').forEach(d=>d.onclick=()=>{
-    const u=d.dataset.u;
-    const host=$('#ms-unit'); $$('.ms-opt input',host).forEach(c=>c.checked=(c.value===u));
-    syncMS(MS.find(m=>m.key==='unit'),host); go('projects'); refresh();
+  const sortMode = $('#selProjBudgetSort')?.value || 'budget_desc';
+  let list = [...S.view].filter(r => r.project && r.project !== '(ไม่ระบุชื่อรายการ)');
+
+  if (sortMode === 'budget_desc') list.sort((a,b) => b.budget - a.budget);
+  else if (sortMode === 'used_desc') list.sort((a,b) => b.used - a.used);
+  else if (sortMode === 'remain_desc') list.sort((a,b) => b.remain - a.remain);
+  else if (sortMode === 'prog_desc') list.sort((a,b) => b.prog - a.prog);
+  else if (sortMode === 'prog_asc') list.sort((a,b) => a.prog - b.prog);
+
+  // Top 15 โครงการสำหรับกราฟเปรียบเทียบงบประมาณ
+  const top15 = list.slice(0, 15);
+  hbars3d('#ch-unitbar', {
+    items: top15.map((r, i) => ({
+      label: r.project,
+      value: r.budget,
+      color: colorAt(i),
+      sub: `ใช้ไป ${money(r.used)} | เหลือ ${money(r.remain)} (${r.prog}%)`
+    })),
+    unitLabel: 'งบประมาณที่ได้รับ (บาท)',
+    fmtLabel: money
   });
+
+  // การ์ดติดตามงบประมาณรายโครงการ (Project Name)
+  $('#deptGrid').innerHTML = list.length ? list.map((r, i) => {
+    const c = colorAt(i);
+    const usedPct = pct(r.used, r.budget);
+    return `<div class="dept" data-i="${r.i}" style="cursor:pointer;--kc:${c}" title="คลิกเพื่อดูรายละเอียด / อัปเดตงบประมาณ">
+      <div class="dept-h"><span class="dept-bar"></span>
+        <div style="min-width:0;flex:1">
+          <div class="dept-n ell" title="${esc(r.project)}" style="font-weight:700;font-size:13.5px;color:var(--ink)">${esc(r.project)}</div>
+          <div class="dept-c" style="display:flex;align-items:center;gap:6px;margin-top:3px;flex-wrap:wrap">
+            <span style="color:var(--muted)">👤 ${esc(r.unit || 'ไม่ระบุ')}</span>
+            <span>•</span>
+            <span style="color:${r.color};font-weight:600">● ${esc(r.status)}</span>
+            ${(r.workType && r.workType !== '—') ? `<span>•</span><span style="font-size:11px;color:#2563EB;background:rgba(37,99,235,.1);padding:1px 6px;border-radius:4px">${esc(r.workType)}</span>` : ''}
+          </div>
+        </div>
+      </div>
+      <div class="dept-row"><span>งบที่ได้รับ</span><b>${nf(r.budget)} บาท</b></div>
+      <div class="dept-row"><span>งบที่ใช้ไป</span><b style="color:#EC4899">${nf(r.used)} บาท (${nfd(usedPct, 1)}%)</b></div>
+      <div class="dept-row"><span>คงเหลือ</span><b style="color:#10B981">${nf(r.remain)} บาท</b></div>
+      <div class="dept-row"><span>ความคืบหน้า</span><b>${r.prog}%</b></div>
+      <div class="kpi-bar" style="--kc2:${shade(c,-.3)}"><i style="width:${clamp(r.prog,0,100)}%"></i></div>
+    </div>`;
+  }).join('') : emptyBox('ไม่พบโครงการตามเงื่อนไข');
+
+  // คลิกที่การ์ดโครงการเพื่อเปิดดูรายละเอียดและอัปเดตงบประมาณ
+  $$('#deptGrid .dept').forEach(d => {
+    d.onclick = () => openDetail(+d.dataset.i);
+  });
+
+  // ผูกเหตุการณ์เปลี่ยนตัวเลือกเรียงลำดับ
+  const selSort = $('#selProjBudgetSort');
+  if (selSort) {
+    selSort.onchange = () => renderUnits();
+  }
 }
 function renderProgress(){
   $('#kpis4').innerHTML=kpiSet();
@@ -2392,8 +3816,29 @@ function renderReport(){
     <div style="height:18px"></div>
     <div class="note warn">รายงานฉบับนี้จัดทำโดยระบบ PP.Track — ระบบติดตามการดำเนินโครงการ</div>`;
 }
+function getDisburseLocalList(projId, projName){
+  try {
+    const list = JSON.parse(LS.get('pt_disburse_cache') || '[]') || [];
+    if(!projId && !projName) return list;
+    return list.filter(d => (projId && d.projectId === projId) || (projName && d.project === projName));
+  } catch(e) { return []; }
+}
+function saveDisburseLocal(item){
+  try {
+    const list = JSON.parse(LS.get('pt_disburse_cache') || '[]') || [];
+    list.unshift(item);
+    LS.set('pt_disburse_cache', JSON.stringify(list));
+  } catch(e) {}
+}
+
 function openDetail(i){
   const r=S.recs.find(x=>x.i===i); if(!r)return;
+  const row=S.rows[i]; if(!row)return;
+
+  const disbList = getDisburseLocalList(row._dbId || r.id, r.project);
+  const totalDisb = disbList.reduce((sum, d) => sum + (Number(d.amount) || 0), 0);
+  const todayStr = new Date().toISOString().split('T')[0];
+
   $('#mTitle').textContent=r.project;
   $('#mBody').innerHTML=`
     <div class="kpis" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
@@ -2401,6 +3846,161 @@ function openDetail(i){
       ${kpiCard({ic:'download',c:'#EC4899',label:'ใช้ไป',value:nf(r.used),unit:'บาท',bar:pct(r.used,r.budget)})}
       ${kpiCard({ic:'bank',c:'#38BDF8',label:'คงเหลือ',value:nf(r.remain),unit:'บาท'})}
     </div>
+
+    <!-- Quick Disburse / Budget update box for installments -->
+    <div class="card" id="disburseBox" style="margin:16px 0;padding:16px 18px;background:var(--surface-2);border:1px solid var(--line);border-radius:14px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(16,185,129,.14);color:#10B981">
+            <svg style="width:16px;height:16px"><use href="#i-money"/></svg>
+          </span>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--ink)">อัปเดตงบประมาณ / บันทึกเบิกจ่ายเป็นงวด</div>
+            <div style="font-size:11.5px;color:var(--muted)">ระบุยอดเงินที่เบิกงวดนี้ พร้อมวันที่ ระบบจะบันทึกลงชีต <b>"ประวัติการเบิกจ่าย"</b> บน Google Sheets ให้อัตโนมัติ</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:12px;margin-bottom:12px">
+        <div>
+          <label style="font-size:12px;font-weight:600;color:var(--ink);display:block;margin-bottom:5px">
+            📅 วันที่เบิกจ่ายงวดนี้
+          </label>
+          <input type="date" id="inpDisburseDate" class="input-text" value="${todayStr}" style="font-size:13px;font-weight:600">
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:600;color:var(--ink);display:block;margin-bottom:5px">
+            ➕ เบิกจ่ายงวดนี้เพิ่ม (+บาท)
+          </label>
+          <input type="number" id="inpAddDisburse" class="input-text" placeholder="+ ใส่จำนวนเงินงวดนี้" min="0" step="any" style="font-weight:600">
+          <span style="font-size:11px;color:var(--muted)">เช่น เบิกงวดที่ 1: 50000</span>
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:600;color:var(--ink);display:block;margin-bottom:5px">
+            📊 ยอดงบที่ใช้ไปสะสมรวม (บาท)
+          </label>
+          <input type="number" id="inpTotalUsed" class="input-text" value="${r.used}" min="0" step="any" style="font-weight:600">
+          <span style="font-size:11px;color:var(--muted)">ยอดเดิม: ${nf(r.used)} บาท</span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:12px;margin-bottom:12px">
+        <div>
+          <label style="font-size:12px;font-weight:600;color:var(--ink);display:block;margin-bottom:5px">
+            📝 งวดที่ / รายละเอียดการเบิกงวดนี้
+          </label>
+          <input type="text" id="inpDisburseRemark" class="input-text" placeholder="เช่น เบิกงวดที่ 1 (จ่ายค่าสั่งซื้อตู้คอนโทรล)" value="${esc(r.detail||'')}">
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:600;color:var(--ink);display:block;margin-bottom:5px">
+            ความคืบหน้า (%)
+          </label>
+          <input type="number" id="inpDisburseProg" class="input-text" min="0" max="100" value="${r.prog}" style="font-weight:600">
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px dashed var(--line);flex-wrap:wrap;gap:10px">
+        <div style="font-size:12.5px;color:var(--ink)">
+          ยอดคงเหลือใหม่: <b id="previewDisburseRemain" style="font-size:15px;color:#10B981">${nf(r.remain)}</b> บาท
+          <span style="color:var(--muted);margin-left:6px">(ใช้ไปรวม <b id="previewDisburseUsed" style="color:#EC4899">${nf(r.used)}</b> บาท)</span>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-ghost btn-sm" id="btnResetDisburse" type="button">รีเซ็ต</button>
+          <button class="btn btn-success btn-sm" id="btnSaveDisburse" type="button" style="box-shadow:0 4px 14px rgba(16,185,129,.25)">
+            <svg style="width:13px;height:13px"><use href="#i-check"/></svg> บันทึกเบิกจ่ายลงชีต
+          </button>
+        </div>
+      </div>
+
+      
+      <!-- ประวัติการประชุมโครงการนี้ -->
+      <div class="card" style="margin:16px 0;padding:16px 18px;background:var(--surface-2);border:1px solid var(--line);border-radius:14px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(37,99,235,.14);color:#2563EB">
+              <svg style="width:16px;height:16px"><use href="#i-meeting"/></svg>
+            </span>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:var(--ink)">การติดตามการประชุมโครงการนี้</div>
+              <div style="font-size:11.5px;color:var(--muted)">บันทึกมติการประชุมและอัปเดตความคืบหน้าของโครงการนี้ลงชีต <b>"ติดตามการประชุม"</b></div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" id="btnOpenMeetingFromDetail" type="button" style="box-shadow:0 4px 14px rgba(37,99,235,.25)">
+            <svg style="width:13px;height:13px"><use href="#i-plus"/></svg> บันทึกผลการประชุมรอบนี้
+          </button>
+        </div>
+
+        ${(() => {
+          const mList = getMeetingLocalList(row._dbId || r.id, r.project);
+          if(!mList.length) {
+            return '<div style="font-size:12.5px;color:var(--muted);text-align:center;padding:14px 0">ยังไม่มีบันทึกการประชุมของโครงการนี้</div>';
+          }
+          return `
+            <div class="tbl-wrap" style="max-height:190px;overflow-y:auto;border:1px solid var(--line);border-radius:8px">
+              <table style="font-size:12px;margin:0">
+                <thead>
+                  <tr>
+                    <th style="padding:6px 10px">วันที่ประชุม</th>
+                    <th style="padding:6px 10px">ครั้งที่ / วาระ</th>
+                    <th style="padding:6px 10px;text-align:center">ความคืบหน้า</th>
+                    <th style="padding:6px 10px">ประเด็นติดตาม / มติ</th>
+                    <th style="padding:6px 10px">ปัญหาที่พบ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${mList.map(m => `
+                    <tr>
+                      <td style="font-weight:600;white-space:nowrap;padding:6px 10px;cursor:pointer" title="คลิกเพื่อแก้ไข" onclick="openMeetingForm(null, getMeetingLocalList().findIndex(x => x.timestamp === '${m.timestamp}'))">${esc(m.date || '—')} ✏️</td>
+                      <td style="padding:6px 10px;color:var(--muted)">${esc(m.round || '—')}</td>
+                      <td style="text-align:center;padding:6px 10px"><b style="color:#2563EB">${m.newProg}%</b> <span style="font-size:10.5px;color:var(--muted)">(เดิม ${m.oldProg}%)</span></td>
+                      <td style="padding:6px 10px">${esc(m.notes || '—')}</td>
+                      <td style="padding:6px 10px;color:${m.problem ? '#EF4444' : 'var(--muted)'}">${esc(m.problem || '—')}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          `;
+        })()}
+      </div>
+      <!-- รายการประวัติการเบิกจ่ายของโครงการนี้ -->
+      <div style="margin-top:14px;border-top:1px dashed var(--line);padding-top:12px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+          <div style="font-size:13px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:6px">
+            <span>📜 ประวัติการเบิกจ่ายโครงการนี้</span>
+            <span class="pill" style="font-size:11px;padding:1px 8px;background:rgba(16,185,129,.12);color:#059669">${disbList.length} งวด</span>
+          </div>
+          <span style="font-size:11.5px;color:var(--muted)">รวมเบิกจ่าย: <b style="color:#10B981">${nf(totalDisb)}</b> บาท</span>
+        </div>
+        ${disbList.length ? `
+          <div class="tbl-wrap" style="max-height:190px;overflow-y:auto;border:1px solid var(--line);border-radius:8px">
+            <table style="font-size:12px;margin:0">
+              <thead>
+                <tr>
+                  <th style="padding:6px 10px">วันที่เบิก</th>
+                  <th style="padding:6px 10px">งวดที่ / รายละเอียด</th>
+                  <th class="num" style="padding:6px 10px">เบิกงวดนี้ (บาท)</th>
+                  <th class="num" style="padding:6px 10px">ใช้ไปสะสม</th>
+                  <th class="num" style="padding:6px 10px">คงเหลือ</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${disbList.map((d, di) => `
+                  <tr>
+                    <td style="padding:6px 10px;white-space:nowrap">${esc(d.date || '—')}</td>
+                    <td style="padding:6px 10px">${esc(d.remark || ('งวดที่ ' + (disbList.length - di)))}</td>
+                    <td class="num" style="padding:6px 10px;font-weight:600;color:#10B981">+${nf(d.amount)}</td>
+                    <td class="num" style="padding:6px 10px">${nf(d.totalUsed)}</td>
+                    <td class="num" style="padding:6px 10px">${nf(d.remain)}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        ` : `<div style="padding:10px;text-align:center;font-size:12px;color:var(--muted);background:var(--surface);border-radius:8px;border:1px dashed var(--line)">ยังไม่มีประวัติการเบิกจ่าย บันทึกยอดและวันที่ด้านบนเพื่อเพิ่มงวดแรกได้เลย</div>`}
+      </div>
+    </div>
+
     <dl class="kv">
       <dt>No</dt><dd>${esc(r.seq)}</dd>
       <dt>Area</dt><dd>${esc(r.area||'—')}</dd>
@@ -2415,12 +4015,152 @@ function openDetail(i){
       <dt>วันที่เริ่มต้น</dt><dd>${esc(dstr(r.startRaw))}</dd>
       <dt>วันที่ติดตามความคืบหน้า</dt><dd>${esc(dstr(r.followRaw))}</dd>
       <dt>วันที่สิ้นสุด</dt><dd>${esc(dstr(r.endRaw))}</dd>
-      <dt>หมายเหตุ/ปัญหา</dt><dd>${esc(r.problem||'—')}</dd>
+      <dt>หมายเหตุ/ปัญหา</dt>
+      <dd style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px">
+        <span style="${r.problem ? 'color:#EF4444;font-weight:600' : ''}">${esc(r.problem||'—')}</span>
+        ${r.problem ? `<button class="btn btn-ghost btn-sm" id="btnQuickResolveProjProb" type="button" style="height:24px;font-size:11px;padding:2px 8px;color:#059669;border-color:rgba(5,150,105,.3);background:rgba(5,150,105,.08)">✓ ทำเครื่องหมายว่าแก้ไขแล้ว / ล้างปัญหา</button>` : ''}
+      </dd>
     </dl>
     <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:20px;padding-top:14px;border-top:1px solid var(--line)" class="no-print">
-      <button class="btn btn-ghost btn-sm" id="btnEditFromDetail"><svg><use href="#i-edit"/></svg>แก้ไขข้อมูล</button>
+      <button class="btn btn-ghost btn-sm" id="btnEditFromDetail"><svg><use href="#i-edit"/></svg>แก้ไขข้อมูลทั้งหมด</button>
       <button class="btn btn-ghost btn-sm btn-danger" id="btnDeleteFromDetail"><svg><use href="#i-trash"/></svg>ลบโครงการ</button>
     </div>`;
+
+  const baseBudget = Number(r.budget) || 0;
+  const baseUsed = Number(r.used) || 0;
+
+  const inpDate = $('#inpDisburseDate');
+  const inpAdd = $('#inpAddDisburse');
+  const inpTotal = $('#inpTotalUsed');
+  const inpRemark = $('#inpDisburseRemark');
+  const inpProg = $('#inpDisburseProg');
+  const prevRemain = $('#previewDisburseRemain');
+  const prevUsed = $('#previewDisburseUsed');
+  const btnSave = $('#btnSaveDisburse');
+  const btnReset = $('#btnResetDisburse');
+
+  const updatePreview = (newTotal) => {
+    const u = Math.max(0, newTotal);
+    const rm = baseBudget - u;
+    if(prevUsed) prevUsed.textContent = nf(u);
+    if(prevRemain) {
+      prevRemain.textContent = nf(rm);
+      prevRemain.style.color = rm < 0 ? '#EF4444' : '#10B981';
+    }
+  };
+
+  if(inpAdd && inpTotal){
+    inpAdd.oninput = () => {
+      const addVal = parseFloat(inpAdd.value) || 0;
+      const newTotal = baseUsed + addVal;
+      inpTotal.value = newTotal;
+      updatePreview(newTotal);
+    };
+    inpTotal.oninput = () => {
+      const totVal = parseFloat(inpTotal.value) || 0;
+      const diff = totVal - baseUsed;
+      inpAdd.value = diff > 0 ? diff : '';
+      updatePreview(totVal);
+    };
+  }
+
+  if(btnReset){
+    btnReset.onclick = () => {
+      if(inpDate) inpDate.value = todayStr;
+      if(inpAdd) inpAdd.value = '';
+      if(inpTotal) inpTotal.value = baseUsed;
+      if(inpRemark) inpRemark.value = r.detail || '';
+      if(inpProg) inpProg.value = r.prog;
+      updatePreview(baseUsed);
+    };
+  }
+
+  if(btnSave){
+    btnSave.onclick = async () => {
+      const dateVal = inpDate ? inpDate.value : todayStr;
+      const addVal = parseFloat(inpAdd ? inpAdd.value : 0) || 0;
+      const newTotalUsed = parseFloat(inpTotal.value) || 0;
+      const newRemark = inpRemark ? inpRemark.value.trim() : (r.detail || '');
+      const newProg = inpProg ? clamp(parseFloat(inpProg.value) || 0, 0, 100) : r.prog;
+      const newRemain = baseBudget - newTotalUsed;
+      const disbAmount = (addVal > 0) ? addVal : Math.max(0, newTotalUsed - baseUsed);
+
+      btnSave.disabled = true;
+      const oldHtml = btnSave.innerHTML;
+      btnSave.innerHTML = '<span>กำลังบันทึกลงชีต...</span>';
+
+      try {
+        ensureStandardCols();
+        const m = S.map;
+        if(m.used != null) row[m.used] = newTotalUsed;
+        if(m.remain != null) row[m.remain] = newRemain;
+        if(m.detail != null && newRemark) row[m.detail] = newRemark;
+        if(m.prog != null) row[m.prog] = newProg;
+
+        const disbItem = {
+          date: dateVal,
+          project: r.project,
+          projectId: row._dbId || r.id || ('gs_' + (i + 2)),
+          unit: r.unit || '',
+          remark: newRemark || `เบิกจ่ายงวดวันที่ ${dateVal}`,
+          amount: disbAmount,
+          totalUsed: newTotalUsed,
+          remain: newRemain,
+          prog: newProg,
+          rowIndex: row._rowIndex || (i + 2),
+          timestamp: new Date().toLocaleString('th-TH')
+        };
+
+        saveDisburseLocal(disbItem);
+
+        if(DB.hasApi()){
+          await DB.callApi({
+            action: 'add_disbursement',
+            data: disbItem
+          });
+        }
+
+        DB.saveLocal();
+        reload();
+        renderProjects();
+        renderOverview();
+        openDetail(i);
+        toast(`บันทึกการเบิกจ่ายงวดนี้ (+${nf(disbAmount)} บาท) ลงชีตประวัติเรียบร้อยแล้ว`, 'ok');
+      } catch(err){
+        console.error('Quick disburse save error:', err);
+        DB.saveLocal();
+        reload();
+        renderProjects();
+        openDetail(i);
+        toast(`บันทึกในเครื่องแล้ว: ${err.message || 'ซิงก์ออนไลน์ไม่สำเร็จ'}`, 'warn');
+      }
+    };
+  }
+
+  const btnResolveProb=$('#btnQuickResolveProjProb');
+  if(btnResolveProb){
+    btnResolveProb.onclick=async ()=>{
+      if(S.map.problem != null) row[S.map.problem] = '';
+      DB.saveLocal();
+      reload();
+      openDetail(i);
+      toast('ล้างปัญหา/อุปสรรคของโครงการนี้เรียบร้อยแล้ว', 'ok');
+      if(DB.hasApi()){
+        try {
+          await DB.callApi({
+            action: 'update',
+            id: row._dbId || null,
+            rowIndex: row._rowIndex || (i + 2),
+            data: { problem: '' }
+          });
+        } catch(e){}
+      }
+    };
+  }
+
+  const btnM=$('#btnOpenMeetingFromDetail');
+  if(btnM) btnM.onclick=()=>{ openMeetingForm(row._dbId || r.id || r.project); };
+
   const btnE=$('#btnEditFromDetail');
   if(btnE) btnE.onclick=()=>{ $('#ov').classList.remove('on'); openEditForm(i); };
   const btnD=$('#btnDeleteFromDetail');
@@ -2432,10 +4172,11 @@ function openDetail(i){
    PAGES / REFRESH
    ============================================================ */
 const TITLES={
+  meeting:['ติดตามการประชุม','บันทึกประเด็นการประชุม มติที่ประชุม และอัปเดต % ความคืบหน้ารายโครงการ'],
   overview:['ภาพรวมการดำเนินโครงการ','สรุปภาพรวมงบประมาณและความคืบหน้าทั้งหมด'],
   projects:['ทะเบียนโครงการ','ค้นหา จัดเรียง และดูรายละเอียดรายโครงการ'],
   budget:['วิเคราะห์งบประมาณ','เปรียบเทียบงบที่ได้รับกับการเบิกจ่ายจริง'],
-  units:['หน่วยงาน','ผลการดำเนินงานรายหน่วยงาน'],
+  units:['โครงการ','ติดตามงบประมาณที่ได้รับและการใช้จ่ายรายโครงการ (Project Name)'],
   progress:['ความคืบหน้า','ติดตามสถานะการดำเนินงานของแต่ละโครงการ'],
   report:['รายงานสรุป','รายงานพร้อมพิมพ์ตามเงื่อนไขตัวกรอง'],
   data:['จัดการและนำเข้าข้อมูล','เชื่อมต่อ Google Sheets ออนไลน์ หรืออัปโหลดไฟล์ Excel'],
@@ -2454,7 +4195,8 @@ function go(p){
 function render(){
   const p=S.page;
   $('#navCount').textContent=nf(S.view.length);
-  if(p==='overview')renderOverview();
+  if(p==='meeting')renderMeeting();
+  else if(p==='overview')renderOverview();
   else if(p==='projects')renderProjects();
   else if(p==='budget')renderBudget();
   else if(p==='units')renderUnits();
@@ -2468,6 +4210,747 @@ function reload(){ buildRecs(); buildFilters(); refresh(); }
 /* ============================================================
    EXCEL IMPORT / EXPORT
    ============================================================ */
+
+/* ============================================================
+   MEETING TRACKING SYSTEM
+   ============================================================ */
+function getMeetingLocalList(projId, projName){
+  try {
+    const list = JSON.parse(LS.get('pt_meeting_cache') || '[]') || [];
+    if(!projId && !projName) return list;
+    return list.filter(m => (projId && m.projectId === projId) || (projName && m.project === projName));
+  } catch(e) { return []; }
+}
+function saveMeetingLocal(item){
+  try {
+    const list = JSON.parse(LS.get('pt_meeting_cache') || '[]') || [];
+    list.unshift(item);
+    LS.set('pt_meeting_cache', JSON.stringify(list));
+  } catch(e) {}
+}
+
+let S_meetingRound = '';
+let S_meetingQuery = '';
+
+function renderMeeting(){
+  const allLogs = getMeetingLocalList();
+  
+  // 1. Render KPIs
+  const rounds = [...new Set(allLogs.map(m => m.round).filter(Boolean))];
+  const distinctProjects = [...new Set(allLogs.map(m => m.project).filter(Boolean))];
+  const latestDate = allLogs.length ? allLogs[0].date : '—';
+  const latestRound = allLogs.length ? allLogs[0].round : 'ยังไม่มีการประชุม';
+  const withProblems = allLogs.filter(m => {
+    if (!m.problem || !m.problem.trim()) return false;
+    if (m.resolved || m.problem.startsWith('✅ [แก้ไขแล้ว]')) return false;
+    return true;
+  }).length;
+
+  const kpisHtml = [
+    kpiCard({hero:true, ic:'meeting', c:'#2563EB', label:'รอบการประชุมล่าสุด', value:latestDate, unit:'', sub:latestRound}),
+    kpiCard({ic:'folder', c:'#6366F1', label:'โครงการที่ได้รับการติดตาม', value:nf(distinctProjects.length), unit:'โครงการ', sub:`จากทั้งหมด ${nf(allLogs.length)} บันทึก`}),
+    kpiCard({ic:'pulse', c:'#10B981', label:'รอบการประชุมทั้งหมด', value:nf(rounds.length), unit:'รอบ', sub:'มีการจัดประชุมติดตามงาน'}),
+    kpiCard({ic:'alert', c:'#F59E0B', label:'ประเด็นที่พบปัญหา', value:nf(withProblems), unit:'เรื่อง', sub:'รอการแก้ไข/ติดตามต่อ'})
+  ].join('');
+  const kpisEl = $('#kpis-meeting');
+  if(kpisEl) kpisEl.innerHTML = kpisHtml;
+
+  // 2. Populate Round Filter
+  const selRound = $('#selMeetingRoundFilter');
+  if(selRound){
+    const curVal = S_meetingRound;
+    selRound.innerHTML = '<option value="">ทั้งหมดทุกรอบการประชุม</option>' +
+      rounds.map(r => `<option value="${esc(r)}" ${r === curVal ? 'selected' : ''}>${esc(r)}</option>`).join('');
+    selRound.onchange = (e) => {
+      S_meetingRound = e.target.value;
+      renderMeetingTable();
+    };
+  }
+
+  // 3. Search Query
+  const inpSearch = $('#inpMeetingSearch');
+  if(inpSearch){
+    inpSearch.value = S_meetingQuery;
+    inpSearch.oninput = (e) => {
+      S_meetingQuery = e.target.value.trim().toLowerCase();
+      renderMeetingTable();
+    };
+  }
+
+  // 4. Buttons
+  const btnAdd = $('#btnOpenAddMeeting');
+  if(btnAdd) btnAdd.onclick = () => openMeetingForm();
+
+  const btnCsv = $('#btnExportMeetingCsv');
+  if(btnCsv) btnCsv.onclick = exportMeetingCsv;
+
+  renderMeetingTable();
+}
+
+function renderMeetingTable(){
+  const allLogs = getMeetingLocalList();
+  let filtered = allLogs;
+
+  if(S_meetingRound){
+    filtered = filtered.filter(m => m.round === S_meetingRound);
+  }
+  if(S_meetingQuery){
+    filtered = filtered.filter(m => 
+      (m.project && m.project.toLowerCase().includes(S_meetingQuery)) ||
+      (m.unit && m.unit.toLowerCase().includes(S_meetingQuery)) ||
+      (m.notes && m.notes.toLowerCase().includes(S_meetingQuery)) ||
+      (m.round && m.round.toLowerCase().includes(S_meetingQuery))
+    );
+  }
+
+  const countEl = $('#meetingCountTxt');
+  if(countEl) countEl.textContent = `พบ ${nf(filtered.length)} รายการ`;
+
+  const tb = $('#tb-meeting');
+  if(!tb) return;
+
+  if(!filtered.length){
+    tb.innerHTML = `<div class="empty-box" style="padding:48px 20px;text-align:center">
+      <svg style="width:48px;height:48px;stroke:var(--muted);fill:none;stroke-width:1.6;margin-bottom:12px"><use href="#i-meeting"/></svg>
+      <div style="font-weight:700;font-size:16px;color:var(--ink);margin-bottom:6px">ยังไม่มีบันทึกการประชุม</div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:18px">กดปุ่มด้านล่างเพื่อเริ่มบันทึกการติดตามการประชุมโครงการแรก</p>
+      <button class="btn btn-primary btn-sm" id="btnEmptyAddMeeting" data-act="add-meeting" type="button"><svg><use href="#i-plus"/></svg>บันทึกผลการประชุม</button>
+    </div>`;
+    const btnEmpty = $('#btnEmptyAddMeeting');
+    if(btnEmpty) btnEmpty.onclick = (e) => {
+      if(e) e.stopPropagation();
+      openMeetingForm();
+    };
+    return;
+  }
+
+  // ผูกการทำงานปุ่มจัดการปัญหาในตารางการประชุม
+  tb.onclick = async (e) => {
+    const btn = e.target.closest('button[data-act]');
+    if(!btn) return;
+    const act = btn.dataset.act;
+    const idx = +btn.dataset.idx;
+    const logs = getMeetingLocalList();
+    const item = logs[idx];
+    if(!item) return;
+
+    if(act === 'resolve-prob'){
+      item.resolved = true;
+      if(!item.problem.startsWith('✅ [แก้ไขแล้ว]')){
+        item.problem = '✅ [แก้ไขแล้ว] ' + item.problem;
+      }
+      LS.set('pt_meeting_cache', JSON.stringify(logs));
+
+      // ล้างปัญหาในโครงการหลักอัตโนมัติ
+      const rIdx = S.recs.findIndex(x => x.project === item.project || x.id === item.projectId);
+      if(rIdx !== -1 && S.rows[rIdx]){
+        const row = S.rows[rIdx];
+        if(S.map.problem != null) row[S.map.problem] = '';
+        DB.saveLocal();
+        reload();
+        if(DB.hasApi()){
+          try {
+            await DB.callApi({
+              action: 'update',
+              id: row._dbId || null,
+              rowIndex: row._rowIndex || (rIdx + 2),
+              data: { problem: '' }
+            });
+          } catch(err){}
+        }
+      }
+
+      renderMeeting();
+      toast('ทำเครื่องหมายว่าปัญหานี้ได้รับการแก้ไขแล้ว (ล้างปัญหาในโครงการเรียบร้อย)', 'ok');
+    }
+    else if(act === 'undo-prob'){
+      item.resolved = false;
+      item.problem = item.problem.replace('✅ [แก้ไขแล้ว]', '').trim();
+      LS.set('pt_meeting_cache', JSON.stringify(logs));
+      renderMeeting();
+      toast('เปลี่ยนสถานะปัญหากลับเป็นรอดำเนินการ', 'info');
+    }
+    else if(act === 'edit-prob'){
+      const cur = item.problem.replace('✅ [แก้ไขแล้ว]', '').trim();
+      const next = prompt('แก้ไขข้อความปัญหา/อุปสรรค:', cur);
+      if(next !== null){
+        item.problem = next.trim();
+        item.resolved = false;
+        LS.set('pt_meeting_cache', JSON.stringify(logs));
+        renderMeeting();
+        toast('แก้ไขข้อความปัญหาเรียบร้อยแล้ว', 'ok');
+      }
+    }
+    else if(act === 'del-prob'){
+      if(confirm('ต้องการลบข้อความปัญหานี้ออกจากบันทึกหรือไม่?')){
+        item.problem = '';
+        item.resolved = true;
+        LS.set('pt_meeting_cache', JSON.stringify(logs));
+        renderMeeting();
+        toast('ลบปัญหาออกจากบันทึกเรียบร้อยแล้ว', 'ok');
+      }
+    }
+    else if(act === 'edit-meeting'){
+      e.stopPropagation();
+      openMeetingForm(null, idx);
+    }
+    else if(act === 'del-meeting'){
+      e.stopPropagation();
+      if(confirm(`ต้องการลบบันทึกการประชุมของโครงการ "${item.project}" หรือไม่?`)){
+        logs.splice(idx, 1);
+        LS.set('pt_meeting_cache', JSON.stringify(logs));
+        renderMeeting();
+        toast('ลบบันทึกการประชุมเรียบร้อยแล้ว', 'ok');
+        if(DB.hasApi()){
+          try {
+            await DB.callApi({
+              action: 'delete_meeting_log',
+              data: { timestamp: item.timestamp, projectId: item.projectId, date: item.date, round: item.round }
+            });
+          } catch(err){}
+        }
+      }
+    }
+  };
+
+  tb.innerHTML = `<table>
+    <thead>
+      <tr>
+        <th style="width:100px">วันที่ประชุม</th>
+        <th style="width:190px">ครั้งที่ / วาระ</th>
+        <th>ชื่อโครงการ</th>
+        <th style="width:120px">ผู้รับผิดชอบ</th>
+        <th style="width:160px;text-align:center">ความคืบหน้า</th>
+        <th style="width:140px">สถานะ</th>
+        <th>ประเด็นติดตาม / มติที่ประชุม</th>
+        <th>ปัญหา / อุปสรรค</th>
+        <th style="width:110px">กำหนดถัดไป</th>
+        <th style="width:80px;text-align:center" class="no-print">จัดการ</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${filtered.map(m => {
+        const si = statusInfo(m.status || 'อยู่ระหว่างดำเนินการ');
+        const progDiff = (Number(m.newProg) || 0) - (Number(m.oldProg) || 0);
+        const diffPill = progDiff > 0 
+          ? `<span style="color:#10B981;font-size:11px;font-weight:700">(+${progDiff}%)</span>` 
+          : (progDiff < 0 ? `<span style="color:#EF4444;font-size:11px;font-weight:700">(${progDiff}%)</span>` : '');
+
+        return `<tr class="clickable m-row" data-idx="${allLogs.indexOf(m)}" style="cursor:pointer" title="คลิกเพื่อแก้ไขบันทึกการประชุมนี้">
+          <td style="font-weight:600;white-space:nowrap">${esc(m.date || '—')}</td>
+          <td style="font-size:12px;color:var(--muted)">${esc(m.round || '—')}</td>
+          <td><b style="color:var(--ink)">${esc(m.project || '—')}</b></td>
+          <td style="white-space:nowrap">${esc(m.unit || '—')}</td>
+          <td style="text-align:center">
+            <div style="display:flex;align-items:center;gap:6px;justify-content:center">
+              <span style="color:var(--muted);font-size:11.5px">${m.oldProg}%</span>
+              <span style="color:var(--muted)">➔</span>
+              <b style="color:#2563EB;font-size:13px">${m.newProg}%</b>
+              ${diffPill}
+            </div>
+            <div class="mini" style="margin-top:4px"><i style="width:${m.newProg}%;background:#2563EB"></i></div>
+          </td>
+          <td><span class="pill" style="color:${si.color};background:${si.color}1f;border-color:${si.color}40"><i></i>${esc(m.status || 'อยู่ระหว่างดำเนินการ')}</span></td>
+          <td style="font-size:12.5px">${esc(m.notes || '—')}</td>
+          <td style="font-size:12.5px">
+            ${(() => {
+              if(!m.problem || !m.problem.trim()) return '<span style="color:var(--muted)">—</span>';
+              const isResolved = m.resolved || m.problem.startsWith('✅ [แก้ไขแล้ว]');
+              const cleanProb = m.problem.replace('✅ [แก้ไขแล้ว]', '').trim();
+
+              if(isResolved){
+                return `<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+                  <span class="pill" style="color:#059669;background:rgba(5,150,105,.12);border-color:rgba(5,150,105,.3);font-size:11px;padding:2px 8px">
+                    ✓ แก้ไขแล้ว
+                  </span>
+                  <span style="text-decoration:line-through;color:var(--muted);font-size:12px">${esc(cleanProb)}</span>
+                  <button class="btn-sm-act" data-act="undo-prob" data-idx="${allLogs.indexOf(m)}" title="ยกเลิก / เปลี่ยนกลับเป็นยังไม่แก้ไข" style="font-size:11px;padding:2px 6px">↩</button>
+                </div>`;
+              }
+
+              return `<div style="display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap">
+                <span style="color:#EF4444;font-weight:600">${esc(m.problem)}</span>
+                <div style="display:flex;gap:4px">
+                  <button class="btn btn-ghost btn-sm" data-act="resolve-prob" data-idx="${allLogs.indexOf(m)}" style="height:26px;font-size:11px;padding:2px 8px;color:#059669;border-color:rgba(5,150,105,.3);background:rgba(5,150,105,.08)" title="ทำเครื่องหมายว่าปัญหานี้ได้รับการแก้ไขแล้ว">
+                    ✓ แก้ไขแล้ว
+                  </button>
+                  <button class="btn-sm-act" data-act="edit-prob" data-idx="${allLogs.indexOf(m)}" title="แก้ไขข้อความปัญหา" style="width:26px;height:26px">
+                    <svg width="12" height="12" viewBox="0 0 24 24"><use href="#i-edit"/></svg>
+                  </button>
+                  <button class="btn-sm-act del" data-act="del-prob" data-idx="${allLogs.indexOf(m)}" title="ลบปัญหานี้ออก" style="width:26px;height:26px">
+                    <svg width="12" height="12" viewBox="0 0 24 24"><use href="#i-trash"/></svg>
+                  </button>
+                </div>
+              </div>`;
+            })()}
+          </td>
+          <td style="font-size:12px;white-space:nowrap">${esc(m.nextDate || '—')}</td>
+          <td style="text-align:center" class="no-print" onclick="event.stopPropagation()">
+            <div class="tbl-acts">
+              <button class="btn-sm-act" data-act="edit-meeting" data-idx="${allLogs.indexOf(m)}" title="แก้ไขบันทึกการประชุม"><svg width="14" height="14" viewBox="0 0 24 24"><use href="#i-edit"/></svg></button>
+              <button class="btn-sm-act del" data-act="del-meeting" data-idx="${allLogs.indexOf(m)}" title="ลบบันทึกการประชุม"><svg width="14" height="14" viewBox="0 0 24 24"><use href="#i-trash"/></svg></button>
+            </div>
+          </td>
+        </tr>`;
+      }).join('')}
+    </tbody>
+  </table>`;
+
+  // คลิกที่แถวใดก็ได้ในตารางเพื่อเปิดแก้ไขบันทึกการประชุม
+  $$('#tb-meeting tbody tr.m-row').forEach(tr => {
+    tr.onclick = (e) => {
+      if(e.target.closest('button, a, input, select, textarea, .pill')) return;
+      const idx = +tr.dataset.idx;
+      openMeetingForm(null, idx);
+    };
+  });
+}
+
+function openMeetingForm(prefillProjId, editLogIdx){
+  const selProj = $('#mSelProject');
+  const projSearchInp = $('#mProjSearch');
+  const projDropdown = $('#mProjDropdown');
+  const btnClearProj = $('#mBtnClearProj');
+
+  if(!projSearchInp) {
+    console.error('#mProjSearch not found');
+    return;
+  }
+
+  const todayStr = new Date().toISOString().split('T')[0];
+  const allLogs = getMeetingLocalList();
+  const isEditing = (editLogIdx != null && editLogIdx >= 0 && allLogs[editLogIdx]);
+  const editItem = isEditing ? allLogs[editLogIdx] : null;
+
+  if($('#mEditIdx')) $('#mEditIdx').value = isEditing ? editLogIdx : '';
+  if($('#mFormHeaderTitle')) $('#mFormHeaderTitle').textContent = isEditing ? '✏️ แก้ไขบันทึกผลการประชุมโครงการ' : 'บันทึกผลการประชุมโครงการ';
+  if($('#mFormHeaderSub')) $('#mFormHeaderSub').textContent = isEditing ? 'ปรับปรุงมติการประชุม ความคืบหน้า หรือปัญหาของรอบนี้' : 'บันทึกมติการประชุม และอัปเดต % ความคืบหน้าลง Google Sheets';
+  if($('#mSubmit')) $('#mSubmit').innerHTML = isEditing 
+    ? '<svg style="width:14px;height:14px"><use href="#i-check"/></svg> บันทึกการแก้ไข'
+    : '<svg style="width:14px;height:14px"><use href="#i-check"/></svg> บันทึกผลการประชุมลงชีต';
+
+  if(isEditing){
+    if($('#mDate')) $('#mDate').value = editItem.date || todayStr;
+    if($('#mRound')) $('#mRound').value = editItem.round || '';
+    if($('#mNotes')) $('#mNotes').value = editItem.notes || '';
+    const cleanProb = (editItem.problem || '').replace('✅ [แก้ไขแล้ว]', '').trim();
+    if($('#mProblem')) $('#mProblem').value = cleanProb;
+    if($('#mChkResolved')) $('#mChkResolved').checked = Boolean(editItem.resolved || (editItem.problem && editItem.problem.startsWith('✅ [แก้ไขแล้ว]')));
+    if($('#mNextDate')) $('#mNextDate').value = editItem.nextDate || '';
+    if($('#mProjId')) $('#mProjId').value = editItem.projectId || '';
+    if($('#mRowIndex')) $('#mRowIndex').value = editItem.rowIndex || '';
+    if($('#mUnit')) $('#mUnit').value = editItem.unit || '';
+    if($('#mStatus')) $('#mStatus').value = editItem.status || 'อยู่ระหว่างดำเนินการ';
+    if($('#mOldProgTxt')) $('#mOldProgTxt').textContent = (editItem.oldProg || 0) + '%';
+    if(selProj) selProj.value = editItem.project || '';
+    projSearchInp.value = editItem.project || '';
+    if(btnClearProj) btnClearProj.style.display = 'block';
+  } else {
+    if($('#mDate')) $('#mDate').value = todayStr;
+    if($('#mRound')) $('#mRound').value = '';
+    if($('#mNotes')) $('#mNotes').value = '';
+    if($('#mProblem')) $('#mProblem').value = '';
+    if($('#mChkResolved')) $('#mChkResolved').checked = false;
+    if($('#mNextDate')) $('#mNextDate').value = '';
+    if($('#mProjId')) $('#mProjId').value = '';
+    if($('#mRowIndex')) $('#mRowIndex').value = '';
+    if($('#mUnit')) $('#mUnit').value = '';
+    if($('#mOldProgTxt')) $('#mOldProgTxt').textContent = '0%';
+    if(selProj) selProj.value = '';
+    projSearchInp.value = '';
+    if(btnClearProj) btnClearProj.style.display = 'none';
+  }
+
+  const syncProgUI = (val) => {
+    const v = clamp(Number(val) || 0, 0, 100);
+    if($('#mRangeProg')) $('#mRangeProg').value = v;
+    if($('#mNewProg')) $('#mNewProg').value = v;
+  };
+  syncProgUI(isEditing ? (Number(editItem.newProg) || 0) : 0);
+
+  if($('#mRangeProg')) $('#mRangeProg').oninput = (e) => syncProgUI(e.target.value);
+  if($('#mNewProg')) $('#mNewProg').oninput = (e) => syncProgUI(e.target.value);
+
+  // ฟังก์ชันเลือกโครงการ
+  function selectProjItem(item) {
+    if(!item) return;
+    if(selProj) selProj.value = item.project;
+    projSearchInp.value = item.project;
+    if($('#mProjId')) $('#mProjId').value = item.id || ('gs_' + (item.i + 2));
+    if($('#mRowIndex')) $('#mRowIndex').value = item.i != null ? (Number(item.i) + 2) : '';
+    if($('#mUnit')) $('#mUnit').value = item.unit || '';
+    const curProb = (item.problem && item.problem !== '—') ? item.problem : '';
+    if($('#mProblem')) $('#mProblem').value = curProb;
+    if($('#mChkResolved')) $('#mChkResolved').checked = false;
+    if($('#mStatus')) $('#mStatus').value = item.status || 'อยู่ระหว่างดำเนินการ';
+    if($('#mOldProgTxt')) $('#mOldProgTxt').textContent = (item.prog || 0) + '%';
+    syncProgUI(Number(item.prog) || 0);
+
+    if(btnClearProj) btnClearProj.style.display = 'block';
+    renderProjDropdownList('');
+  }
+
+  // ฟังก์ชันคำนวณคะแนนความคล้ายคลึงของคำ (Smart Fuzzy & Token Matching)
+  function calcProjMatchScore(projText, unitText, areaText, query) {
+    if (!query) return 100;
+    const q = String(query || '').trim().toLowerCase();
+    const p = String(projText || '').trim().toLowerCase();
+    const u = String(unitText || '').trim().toLowerCase();
+    const a = String(areaText || '').trim().toLowerCase();
+    const full = p + ' ' + u + ' ' + a;
+
+    // 1. ตรงกันทั้งหมดเป๊ะ
+    if (p === q) return 1000;
+    // 2. ขึ้นต้นด้วยคำค้นหา
+    if (p.startsWith(q)) return 850;
+    // 3. มีคำค้นหาอยู่ในชื่อโครงการ
+    if (p.includes(q)) return 700 - (p.indexOf(q) * 2);
+
+    // 4. ตัดวรรคและอักขระพิเศษเพื่อหาคำติดกัน (เช่น LAS+Caustic vs LAS Caustic)
+    const norm = s => String(s || '').replace(/[\s\-_/\\()+\*.,#]/g, '');
+    const pNorm = norm(p);
+    const qNorm = norm(q);
+    if (pNorm && qNorm && pNorm.includes(qNorm)) return 600;
+
+    // 5. แยกค้นหารายคำ (Multi-token match เช่น ถัง 5T หรือ LAS โซดา)
+    const tokens = q.split(/\s+/).filter(Boolean);
+    if (tokens.length > 1) {
+      let matched = 0;
+      for (const tk of tokens) {
+        if (full.includes(tk) || norm(full).includes(norm(tk))) matched++;
+      }
+      if (matched === tokens.length) return 500;
+      if (matched > 0) return 250 + (matched * 40);
+    }
+
+    // 6. คำค้นหาอยู่ในผู้รับผิดชอบหรือพื้นที่
+    if (u.includes(q) || a.includes(q)) return 450;
+
+    // 7. ตรวจจับคำใกล้เคียงด้วย Bigram Similarity (Dice coefficient สำหรับคำพิมพ์ผิด/ใกล้เคียง)
+    if (qNorm.length >= 2 && pNorm.length >= 2) {
+      const bQ = new Set();
+      for (let i = 0; i < qNorm.length - 1; i++) bQ.add(qNorm.substr(i, 2));
+      const bP = new Set();
+      for (let i = 0; i < pNorm.length - 1; i++) bP.add(pNorm.substr(i, 2));
+
+      let overlap = 0;
+      bQ.forEach(b => { if (bP.has(b)) overlap++; });
+      const dice = (2 * overlap) / (bQ.size + bP.size);
+      if (dice >= 0.18) {
+        return 150 + Math.round(dice * 200);
+      }
+    }
+
+    // 8. มีตัวอักษร 3 ตัวติดกันตรงกัน
+    if (qNorm.length >= 3) {
+      for (let i = 0; i <= qNorm.length - 3; i++) {
+        const sub = qNorm.substr(i, 3);
+        if (pNorm.includes(sub)) return 100;
+      }
+    }
+
+    return 0;
+  }
+
+  // ไฮไลต์คำค้นหาในข้อความ
+  function highlightKeyword(text, query) {
+    if (!query || !text) return esc(text);
+    const q = query.trim();
+    if (!q) return esc(text);
+    try {
+      const words = q.split(/\s+/).filter(w => w.length > 0).map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+      if (!words.length) return esc(text);
+      const re = new RegExp('(' + words.join('|') + ')', 'gi');
+      return esc(text).replace(re, '<mark style="background:rgba(245,158,11,.3);color:var(--ink);padding:0 2px;border-radius:2px;font-weight:700">$1</mark>');
+    } catch(e) {
+      return esc(text);
+    }
+  }
+
+  // ฟังก์ชันแสดงรายการค้นหาโครงการ (แสดงตลอดเวลาและค้นหาคำใกล้เคียงได้)
+  function renderProjDropdownList(filterText = '') {
+    if(!projDropdown) return;
+    const q = filterText.trim();
+    const allRecs = (S.recs || []).filter(r => r.project && r.project !== '(ไม่ระบุชื่อรายการ)');
+    const curSelectedProj = (selProj && selProj.value) ? selProj.value.trim() : '';
+
+    let scoredList = allRecs.map(r => {
+      const score = calcProjMatchScore(r.project, r.unit, r.area, q);
+      return { r, score };
+    });
+
+    if (q) {
+      scoredList = scoredList.filter(item => item.score > 0);
+      scoredList.sort((a, b) => b.score - a.score);
+    }
+
+    const badge = $('#mProjCountBadge');
+    if (badge) {
+      if (curSelectedProj) {
+        badge.innerHTML = `<span style="color:#059669">✓ เลือกแล้ว: ${esc(curSelectedProj)}</span>`;
+      } else {
+        badge.textContent = q ? `พบ ${scoredList.length} โครงการที่ใกล้เคียง` : `ทั้งหมด ${allRecs.length} โครงการ`;
+      }
+    }
+
+    if(!scoredList.length){
+      projDropdown.innerHTML = `<div style="padding:16px;text-align:center;color:var(--muted);font-size:12.5px">
+        <svg style="width:28px;height:28px;stroke:var(--muted);fill:none;margin-bottom:6px"><use href="#i-search"/></svg>
+        <div>ไม่พบโครงการที่ใกล้เคียงกับคำค้นหา "${esc(q)}"</div>
+        <div style="font-size:11px;margin-top:4px">ลองพิมพ์คำค้นหาอื่น เช่น 5T, LAS, SCADA, ผลิต...</div>
+      </div>`;
+      projDropdown.style.display = 'block';
+      return;
+    }
+
+    projDropdown.innerHTML = scoredList.map(({ r }) => {
+      const isSelected = curSelectedProj && curSelectedProj === r.project;
+      const activeStyle = isSelected 
+        ? 'background:rgba(37,99,235,.09);border-left:4px solid #2563EB;' 
+        : 'border-left:4px solid transparent;';
+
+      return `
+        <div class="m-proj-opt" data-idx="${r.i}" style="padding:9px 12px;cursor:pointer;border-bottom:1px solid var(--line);transition:background .15s;${activeStyle}">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:6px">
+            <div style="font-weight:700;font-size:13px;color:var(--ink);flex:1">${highlightKeyword(r.project, q)}</div>
+            ${isSelected ? '<span class="pill" style="color:#059669;background:rgba(5,150,105,.12);font-size:10.5px;padding:1px 6px">✓ เลือกแล้ว</span>' : ''}
+          </div>
+          <div style="font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;margin-top:3px;flex-wrap:wrap">
+            <span>👤 ${highlightKeyword(r.unit || 'ไม่ระบุ', q)}</span>
+            <span>•</span>
+            <span style="color:${r.color};font-weight:600">● ${esc(r.status)}</span>
+            <span>•</span>
+            <span style="color:#2563EB;font-weight:700">คืบหน้า ${r.prog}%</span>
+            ${r.budget > 0 ? `<span>•</span><span>งบ ${money(r.budget)}</span>` : ''}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    $$('#mProjDropdown .m-proj-opt').forEach(opt => {
+      opt.onmouseenter = () => { if (!opt.style.borderLeftColor.includes('37, 99, 235')) opt.style.background = 'var(--surface-2)'; };
+      opt.onmouseleave = () => { if (!opt.style.borderLeftColor.includes('37, 99, 235')) opt.style.background = 'transparent'; };
+      opt.onclick = () => {
+        const idx = +opt.dataset.idx;
+        const target = S.recs[idx];
+        selectProjItem(target);
+      };
+    });
+
+    projDropdown.style.display = 'block';
+  }
+
+  // ผูกการค้นหาแบบพิมพ์สด
+  projSearchInp.oninput = (e) => {
+    const val = e.target.value;
+    if(selProj) selProj.value = val;
+    if(btnClearProj) btnClearProj.style.display = val ? 'block' : 'none';
+    renderProjDropdownList(val);
+  };
+
+  projSearchInp.onfocus = () => {
+    renderProjDropdownList(projSearchInp.value);
+  };
+
+  if(btnClearProj){
+    btnClearProj.onclick = (e) => {
+      e.stopPropagation();
+      projSearchInp.value = '';
+      if(selProj) selProj.value = '';
+      if($('#mProjId')) $('#mProjId').value = '';
+      if($('#mRowIndex')) $('#mRowIndex').value = '';
+      if($('#mUnit')) $('#mUnit').value = '';
+      if($('#mOldProgTxt')) $('#mOldProgTxt').textContent = '0%';
+      syncProgUI(0);
+      btnClearProj.style.display = 'none';
+      renderProjDropdownList('');
+      projSearchInp.focus();
+    };
+  }
+
+  // ปิด dropdown เมื่อคลิกที่อื่น
+  document.addEventListener('click', (e) => {
+    if(!e.target.closest('#mProjGroup') && projDropdown){
+      projDropdown.style.display = 'none';
+    }
+  });
+
+  // แสดงรายการโครงการทั้งหมดทันทีเมื่อเปิดฟอร์ม
+  renderProjDropdownList('');
+
+  // Prefill if provided (เช่น กดจากป็อปอัพโครงการ)
+  if(prefillProjId){
+    const targetRec = (S.recs || []).find(x => x.id === prefillProjId || ('gs_' + (x.i + 2)) === prefillProjId || x.project === prefillProjId);
+    if(targetRec){
+      selectProjItem(targetRec);
+    }
+  }
+
+  // Modal Open/Close handlers
+  const ov = $('#ovMeeting');
+  if(ov) {
+    ov.classList.add('on');
+    ov.onclick = (e) => {
+      if(e.target.id === 'ovMeeting') ov.classList.remove('on');
+    };
+  }
+
+  const btnClose = $('#meetingClose');
+  if(btnClose) btnClose.onclick = () => ov && ov.classList.remove('on');
+
+  const btnCancel = $('#mCancel');
+  if(btnCancel) btnCancel.onclick = () => ov && ov.classList.remove('on');
+
+  const form = $('#meetingForm');
+  const btnSub = $('#mSubmit');
+
+  const handleMeetingSubmit = async (e) => {
+    if(e && e.preventDefault) e.preventDefault();
+    try {
+      const projName = (selProj && selProj.value) ? selProj.value.trim() : (projSearchInp ? projSearchInp.value.trim() : '');
+      if(!projName){
+        toast('กรุณาเลือกหรือค้นหาโครงการที่ต้องการบันทึกการประชุม', 'err');
+        if(projSearchInp) projSearchInp.focus();
+        return;
+      }
+
+      const dateVal = $('#mDate')?.value || todayStr;
+      const roundVal = $('#mRound')?.value.trim() || 'การประชุมติดตามความคืบหน้า';
+      const unitVal = $('#mUnit')?.value.trim() || '';
+      const statusVal = $('#mStatus')?.value || 'อยู่ระหว่างดำเนินการ';
+      const oldProgVal = parseInt($('#mOldProgTxt')?.textContent) || 0;
+      const newProgVal = clamp(Number($('#mNewProg')?.value) || 0, 0, 100);
+      const notesVal = $('#mNotes')?.value.trim() || '';
+      const rawProblemVal = $('#mProblem')?.value.trim() || '';
+      const isChkResolved = Boolean($('#mChkResolved')?.checked);
+
+      let problemVal = rawProblemVal;
+      if(isChkResolved){
+        if(problemVal && !problemVal.startsWith('✅ [แก้ไขแล้ว]')) {
+          problemVal = '✅ [แก้ไขแล้ว] ' + problemVal;
+        } else if(!problemVal) {
+          problemVal = '✅ [แก้ไขแล้ว]';
+        }
+      }
+
+      const nextDateVal = $('#mNextDate')?.value || '';
+      const projId = $('#mProjId')?.value || '';
+      const rowIdx = Number($('#mRowIndex')?.value) || undefined;
+
+      const curEditIdx = $('#mEditIdx')?.value;
+      const isEditMode = (curEditIdx !== '' && curEditIdx != null && !isNaN(Number(curEditIdx)));
+      const logs = getMeetingLocalList();
+      const origTimestamp = (isEditMode && logs[+curEditIdx]) ? logs[+curEditIdx].timestamp : '';
+
+      const meetingItem = {
+        date: dateVal,
+        round: roundVal,
+        project: projName,
+        unit: unitVal,
+        oldProg: oldProgVal,
+        newProg: newProgVal,
+        status: statusVal,
+        notes: notesVal,
+        problem: problemVal,
+        nextDate: nextDateVal,
+        projectId: projId,
+        rowIndex: rowIdx,
+        resolved: isChkResolved,
+        timestamp: origTimestamp || new Date().toLocaleString('th-TH')
+      };
+
+      if(isEditMode){
+        logs[+curEditIdx] = meetingItem;
+        LS.set('pt_meeting_cache', JSON.stringify(logs));
+      } else {
+        saveMeetingLocal(meetingItem);
+      }
+
+      // อัปเดตข้อมูลโครงการในหน่วยความจำทันที
+      const rIdx = S.recs.findIndex(x => (projId && (x.id === projId || ('gs_' + (x.i + 2)) === projId)) || x.project === projName);
+      if(rIdx !== -1 && S.rows[rIdx]){
+        const row = S.rows[rIdx];
+        if(S.map.prog != null) row[S.map.prog] = newProgVal;
+        if(statusVal && S.map.status != null) row[S.map.status] = statusVal;
+        if(notesVal && S.map.detail != null) row[S.map.detail] = notesVal;
+        if(S.map.problem != null){
+          row[S.map.problem] = isChkResolved ? '' : rawProblemVal;
+        }
+        if(nextDateVal && S.map.follow != null) row[S.map.follow] = nextDateVal;
+      }
+
+      DB.saveLocal();
+      reload();
+
+      if(S.page === 'meeting') renderMeeting();
+      if(ov) ov.classList.remove('on');
+
+      toast(isEditMode 
+        ? `แก้ไขบันทึกการประชุมโครงการ "${projName}" เรียบร้อยแล้ว` 
+        : `บันทึกผลการประชุมโครงการ "${projName}" (ความคืบหน้า ${newProgVal}%) แล้ว`, 'ok');
+
+      if(DB.hasApi()){
+        try {
+          await DB.callApi({
+            action: isEditMode ? 'update_meeting_log' : 'add_meeting_log',
+            data: meetingItem
+          });
+        } catch(err){
+          console.warn('Meeting sync to Google Sheets error:', err);
+          toast(`บันทึกในเครื่องแล้ว: ${err.message || 'ซิงก์ออนไลน์ไม่สำเร็จ'}`, 'warn');
+        }
+      }
+    } catch(err){
+      console.error('handleMeetingSubmit error:', err);
+      toast(`เกิดข้อผิดพลาดในการบันทึก: ${err.message}`, 'err');
+    }
+  };
+
+  if(form) form.onsubmit = handleMeetingSubmit;
+  if(btnSub) btnSub.onclick = handleMeetingSubmit;
+}
+
+function exportMeetingCsv(){
+  const allLogs = getMeetingLocalList();
+  if(!allLogs.length){
+    toast('ยังไม่มีข้อมูลการประชุมให้ส่งออก', 'warn');
+    return;
+  }
+  const headers = ['วันที่ประชุม','ครั้งที่ประชุม / วาระ','ชื่อโครงการ','ผู้รับผิดชอบ','ความคืบหน้าเดิม (%)','ความคืบหน้าใหม่ (%)','สถานะโครงการ','ประเด็นติดตาม / มติที่ประชุม','ปัญหา / อุปสรรค','กำหนดติดตามถัดไป','Project ID','เวลาบันทึก'];
+  const rows = allLogs.map(m => [
+    m.date || '',
+    m.round || '',
+    m.project || '',
+    m.unit || '',
+    m.oldProg != null ? m.oldProg : '',
+    m.newProg != null ? m.newProg : '',
+    m.status || '',
+    m.notes || '',
+    m.problem || '',
+    m.nextDate || '',
+    m.projectId || '',
+    m.timestamp || ''
+  ]);
+  const csvContent = '\uFEFF' + [headers, ...rows].map(row => 
+    row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(',')
+  ).join('\r\n');
+
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `PPTrack_Meeting_Logs_${new Date().toISOString().split('T')[0]}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  toast('ส่งออกไฟล์ CSV ประวัติการประชุมเรียบร้อยแล้ว', 'ok');
+}
+
+// Global exposure so inline onclick and any caller works seamlessly
+window.openMeetingForm = openMeetingForm;
+window.exportMeetingCsv = exportMeetingCsv;
+
 function renderData(){
   const none=!S.cols.length;
   $('#fileInfo').innerHTML=none
@@ -2706,25 +5189,163 @@ async function syncGoogleSheet(silent = false){
       const data = await resp.json();
       if(data.status === 'error') throw new Error(data.message || 'API Error');
 
-      ensureStandardCols();
-      if(data.rows && Array.isArray(data.rows)){
+      // กำหนด S.cols และ S.map ให้เป็นมาตรฐานเสมอ ป้องกันคอลัมน์สลับตำแหน่ง
+      S.cols = FIELDS.map(f => f[1]);
+      S.map = {};
+      FIELDS.forEach(([k], idx) => { S.map[k] = idx; });
+
+      if((data.records && Array.isArray(data.records) && data.records.length) || (data.rows && Array.isArray(data.rows))){
         const wtMap = getWorkTypeLocalMap();
-        S.rows = data.rows.map((r, i) => {
-          const rec = (data.records && data.records[i]) || {};
-          const rowArr = r.slice(0, 17);
-          while(rowArr.length < 17) rowArr.push('');
-          const dbId = rec.id || r[17] || r[16] || r[15] || ('gs_' + (i + 2));
-          const srvWt = rec.workType || (r.length > 18 ? r[18] : (r[17] && !String(r[17]).startsWith('gs_') ? r[17] : ''));
-          const projName = String(r[1] || '').trim();
-          const wt = srvWt || wtMap[dbId] || (projName ? wtMap['p:' + projName] : '') || '';
-          rowArr[17] = wt;
+        const records = data.records || [];
+        const rawRows = data.rows || [];
+        const count = Math.max(records.length, rawRows.length);
+        let srvHasWt = false;
+
+        S.rows = [];
+        for(let i = 0; i < count; i++){
+          const rec = records[i] || {};
+          const r = rawRows[i] || [];
+
+          const dbId = rec.id || r[17] || r[16] || ('gs_' + (i + 2));
+          const projName = String(rec.project || r[1] || '').trim();
+
+          // ตรวจจับค่าประเภทงาน (scada / non scada) จาก rec.workType หรือจากคอลัมน์ที่ 19 (index 18)
+          let srvWt = '';
+          const normWt = v => {
+            const s = String(v || '').trim().toLowerCase();
+            return (s === 'scada' || s === 'non scada' || s === 'nonscada') ? (s === 'nonscada' ? 'non scada' : s) : '';
+          };
+
+          if(normWt(rec.workType)) {
+            srvWt = normWt(rec.workType);
+            srvHasWt = true;
+          } else if(normWt(r[18])) {
+            srvWt = normWt(r[18]);
+            srvHasWt = true;
+          } else if(normWt(r[17])) {
+            srvWt = normWt(r[17]);
+            srvHasWt = true;
+          } else if(rec.workType !== undefined && rec.workType !== null && String(rec.workType).trim() !== '') {
+            srvWt = String(rec.workType).trim();
+            srvHasWt = true;
+          }
+
+          let wt = srvWt || wtMap[dbId] || (projName ? wtMap['p:' + projName] : '') || '';
+          if(srvWt){
+            if(dbId) wtMap[dbId] = srvWt;
+            if(projName) wtMap['p:' + projName] = srvWt;
+          }
+
+          const budget = (rec.budget !== undefined && rec.budget !== null && !isNaN(Number(rec.budget)))
+            ? Number(rec.budget) : (Number(r[5]) || 0);
+          const used = (rec.used !== undefined && rec.used !== null && !isNaN(Number(rec.used)))
+            ? Number(rec.used) : (Number(r[6]) || 0);
+          const remain = (rec.remain !== undefined && rec.remain !== null && !isNaN(Number(rec.remain)))
+            ? Number(rec.remain) : ((Number(r[7]) || 0) || (budget - used));
+
+          const rowArr = [
+            rec.seq != null ? rec.seq : (r[0] || (i + 1)),
+            projName,
+            String(rec.area != null ? rec.area : (r[2] || '')).trim(),
+            String(rec.unit != null ? rec.unit : (r[3] || '')).trim(),
+            String(rec.year != null ? rec.year : (r[4] || '')).trim(),
+            budget,
+            used,
+            remain,
+            String(rec.source != null ? rec.source : (r[8] || '')).trim(),
+            String(rec.status != null ? rec.status : (r[9] || 'อยู่ระหว่างดำเนินการ')).trim(),
+            Number(rec.prog != null ? rec.prog : (r[10] || 0)) || 0,
+            String(rec.detail != null ? rec.detail : (r[11] || '')).trim(),
+            String(rec.priority != null ? rec.priority : (r[12] || '')).trim(),
+            rec.start || r[13] || '',
+            rec.follow || r[14] || '',
+            rec.end || r[15] || '',
+            String(rec.problem != null ? rec.problem : (r[16] || '')).trim(),
+            wt
+          ];
           rowArr._dbId = dbId;
-          if(rec._rowIndex) rowArr._rowIndex = rec._rowIndex;
-          return rowArr;
-        });
+          if(rec._rowIndex || r._rowIndex) rowArr._rowIndex = rec._rowIndex || r._rowIndex;
+          S.rows.push(rowArr);
+        }
+        LS.set('pt_worktype_map', JSON.stringify(wtMap));
+
+        // หาก Web App ยังไม่ส่งประเภทงานมา และมี urlInput ให้ดึง CSV มาช่วยเติมประเภทงาน
+        if (!srvHasWt && urlInput) {
+          try {
+            const csvUrl = getGSheetFetchUrl(urlInput, tabName);
+            if (csvUrl) {
+              const csvResp = await fetch(csvUrl);
+              if (csvResp.ok) {
+                const text = await csvResp.text();
+                if (!text.includes('<!DOCTYPE html') && typeof XLSX !== 'undefined') {
+                  const wb = XLSX.read(text, { type: 'string', cellDates: true });
+                  const ws = wb.Sheets[wb.SheetNames[0]];
+                  const aoa = XLSX.utils.sheet_to_json(ws, { header: 1, raw: false, cellDates: true, defval: '' });
+                  if (aoa && aoa.length > 1) {
+                    let hi = 0;
+                    for (let h = 0; h < Math.min(aoa.length, 12); h++) {
+                      if (aoa[h].filter(x => String(x).trim() !== '').length > aoa[hi].filter(x => String(x).trim() !== '').length) hi = h;
+                    }
+                    const sheetCols = aoa[hi].map(c => String(c || '').trim());
+                    const csvWtIdx = sheetCols.findIndex(c => /ประเภทงาน|work\s*type|scada/i.test(c));
+                    const csvProjIdx = sheetCols.findIndex(c => /project|ชื่อโครงการ|โครงการ/i.test(c));
+                    if (csvWtIdx !== -1) {
+                      const csvRows = aoa.slice(hi + 1);
+                      csvRows.forEach((cr, ci) => {
+                        const cVal = String(cr[csvWtIdx] || '').trim();
+                        const pName = csvProjIdx !== -1 ? String(cr[csvProjIdx] || '').trim() : '';
+                        if (S.rows[ci]) {
+                          S.rows[ci][17] = cVal;
+                          if (S.rows[ci]._dbId) wtMap[S.rows[ci]._dbId] = cVal;
+                          if (pName) wtMap['p:' + pName] = cVal;
+                        }
+                      });
+                      LS.set('pt_worktype_map', JSON.stringify(wtMap));
+                    }
+                  }
+                }
+              }
+            }
+          } catch (e) {
+            console.warn('CSV fallback workType merge:', e);
+          }
+        }
+
+        if (!srvHasWt && !data.version && !silent) {
+          toast('⚠️ ตรวจพบว่า Google Apps Script ยังเป็นเวอร์ชันเดิม กรุณากด Deploy > New version ใน Apps Script เพื่อให้อัปเดตประเภทงานอัตโนมัติ', 'warn');
+        }
       }
       S.sheet = tabName || 'Google Sheets';
       S.fileName = 'Google Sheets (' + S.rows.length + ' รายการ)';
+
+      // ซิงก์ประวัติการประชุมจากชีต "ติดตามการประชุม" (ถ้ามี)
+      try {
+        const mUrl = apiUrl + (apiUrl.includes('?') ? '&' : '?') + 'action=get_meeting_logs';
+        const mResp = await fetch(mUrl);
+        if (mResp.ok) {
+          const mData = await mResp.json();
+          if (mData.status === 'success' && Array.isArray(mData.records)) {
+            LS.set('pt_meeting_cache', JSON.stringify(mData.records));
+          }
+        }
+      } catch(e) {
+        console.warn('Sync meeting logs warning:', e);
+      }
+
+      // ซิงก์ประวัติการเบิกจ่ายจากชีต "ประวัติการเบิกจ่าย" (ถ้ามี)
+      try {
+        const dUrl = apiUrl + (apiUrl.includes('?') ? '&' : '?') + 'action=get_disbursements';
+        const dResp = await fetch(dUrl);
+        if (dResp.ok) {
+          const dData = await dResp.json();
+          if (dData.status === 'success' && Array.isArray(dData.records)) {
+            LS.set('pt_disburse_cache', JSON.stringify(dData.records));
+          }
+        }
+      } catch(e) {
+        console.warn('Sync disbursements warning:', e);
+      }
+
       reload();
       GSheetDB.saveLocal();
       if(!silent) toast(`ซิงก์ Google Sheets สำเร็จ ${nf(S.rows.length)} รายการ`, 'ok');
@@ -3417,10 +6038,19 @@ function boot(){
     try{
       const d=JSON.parse(cached);
       if(d&&d.cols&&d.rows&&d.rows.length){
-        S.cols=d.cols; S.rows=d.rows; S.map=d.map||autoMap(S.cols);
-        S.sheet=d.sheet||'Google Sheets';
-        S.fileName=d.fileName||'Google Sheets (แคชออฟไลน์)';
-        S.fileSize=d.fileSize||'';
+        const isGSheet = (d.sheet==='Google Sheets' || String(d.fileName||'').includes('Google Sheets'));
+        if(isGSheet){
+          S.cols = FIELDS.map(f => f[1]);
+          S.map = {};
+          FIELDS.forEach(([k], idx) => { S.map[k] = idx; });
+        } else {
+          S.cols = d.cols;
+          S.map = d.map || autoMap(S.cols);
+        }
+        S.rows = d.rows;
+        S.sheet = d.sheet||'Google Sheets';
+        S.fileName = d.fileName||'Google Sheets (แคชออฟไลน์)';
+        S.fileSize = d.fileSize||'';
       }
     }catch(e){}
   }
@@ -3462,11 +6092,16 @@ function boot(){
   let qt; $('#q').oninput=function(){clearTimeout(qt);const v=this.value;qt=setTimeout(()=>{S.q=v;refresh()},220)};
   document.addEventListener('click',e=>{ if(!e.target.closest('.ms'))$$('.ms.open').forEach(x=>x.classList.remove('open')); });
   document.addEventListener('click',e=>{ const g=e.target.closest('[data-go]'); if(g)go(g.dataset.go); });
+  document.addEventListener('click',e=>{
+    const b = e.target.closest('#btnOpenAddMeeting, #btnEmptyAddMeeting, [data-act="add-meeting"]');
+    if(b){ e.preventDefault(); openMeetingForm(); }
+  });
   document.addEventListener('keydown',e=>{
     if(e.key==='Escape'){
       $$('.ms.open').forEach(x=>x.classList.remove('open'));
       $('#ov').classList.remove('on');
       $('#ovForm').classList.remove('on');
+      $('#ovMeeting')?.classList.remove('on');
     }
   });
   $('#mClose').onclick=()=>$('#ov').classList.remove('on');
@@ -3503,6 +6138,8 @@ function boot(){
     LS.set('pt_gsheet_cache', '');
     LS.set('pt_local_db', '');
     LS.set('pt_worktype_map', '');
+    LS.set('pt_disburse_cache', '');
+    LS.set('pt_meeting_cache', '');
     reload(); renderData(); toast('ล้างข้อมูลออกจากระบบแล้ว','ok');
   };
   const drop=$('#drop'), file=$('#file');
